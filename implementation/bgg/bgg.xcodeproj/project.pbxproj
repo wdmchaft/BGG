@@ -16,23 +16,7 @@
 		5F75745713400E1000C82F3B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F75745513400E1000C82F3B /* MainWindow.xib */; };
 		5F75745A13400E1000C82F3B /* bggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F75745913400E1000C82F3B /* bggViewController.m */; };
 		5F75745D13400E1000C82F3B /* bggViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F75745B13400E1000C82F3B /* bggViewController.xib */; };
-		5F75746413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
-		5F75746513400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
-		5F75746613400E1000C82F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744713400E1000C82F3B /* CoreGraphics.framework */; };
-		5F75746E13400E1000C82F3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F75746C13400E1000C82F3B /* InfoPlist.strings */; };
-		5F75747113400E1000C82F3B /* bggTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 5F75747013400E1000C82F3B /* bggTests.h */; };
-		5F75747313400E1000C82F3B /* bggTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F75747213400E1000C82F3B /* bggTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5F75746713400E1000C82F3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F75743613400E1000C82F3B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5F75743E13400E1000C82F3B;
-			remoteInfo = bgg;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5F75743F13400E1000C82F3B /* bgg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bgg.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,12 +33,6 @@
 		5F75745813400E1000C82F3B /* bggViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bggViewController.h; sourceTree = "<group>"; };
 		5F75745913400E1000C82F3B /* bggViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bggViewController.m; sourceTree = "<group>"; };
 		5F75745C13400E1000C82F3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/bggViewController.xib; sourceTree = "<group>"; };
-		5F75746313400E1000C82F3B /* bggTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bggTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F75746B13400E1000C82F3B /* bggTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bggTests-Info.plist"; sourceTree = "<group>"; };
-		5F75746D13400E1000C82F3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5F75746F13400E1000C82F3B /* bggTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bggTests-Prefix.pch"; sourceTree = "<group>"; };
-		5F75747013400E1000C82F3B /* bggTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bggTests.h; sourceTree = "<group>"; };
-		5F75747213400E1000C82F3B /* bggTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bggTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,16 +46,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F75745F13400E1000C82F3B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F75746413400E1000C82F3B /* UIKit.framework in Frameworks */,
-				5F75746513400E1000C82F3B /* Foundation.framework in Frameworks */,
-				5F75746613400E1000C82F3B /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				5F75744913400E1000C82F3B /* bgg */,
-				5F75746913400E1000C82F3B /* bggTests */,
 				5F75744213400E1000C82F3B /* Frameworks */,
 				5F75744013400E1000C82F3B /* Products */,
 			);
@@ -95,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				5F75743F13400E1000C82F3B /* bgg.app */,
-				5F75746313400E1000C82F3B /* bggTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,26 +101,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5F75746913400E1000C82F3B /* bggTests */ = {
-			isa = PBXGroup;
-			children = (
-				5F75747013400E1000C82F3B /* bggTests.h */,
-				5F75747213400E1000C82F3B /* bggTests.m */,
-				5F75746A13400E1000C82F3B /* Supporting Files */,
-			);
-			path = bggTests;
-			sourceTree = "<group>";
-		};
-		5F75746A13400E1000C82F3B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5F75746B13400E1000C82F3B /* bggTests-Info.plist */,
-				5F75746C13400E1000C82F3B /* InfoPlist.strings */,
-				5F75746F13400E1000C82F3B /* bggTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,25 +120,6 @@
 			productName = bgg;
 			productReference = 5F75743F13400E1000C82F3B /* bgg.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5F75746213400E1000C82F3B /* bggTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5F75747913400E1000C82F3B /* Build configuration list for PBXNativeTarget "bggTests" */;
-			buildPhases = (
-				5F75745E13400E1000C82F3B /* Sources */,
-				5F75745F13400E1000C82F3B /* Frameworks */,
-				5F75746013400E1000C82F3B /* Resources */,
-				5F75746113400E1000C82F3B /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5F75746813400E1000C82F3B /* PBXTargetDependency */,
-			);
-			name = bggTests;
-			productName = bggTests;
-			productReference = 5F75746313400E1000C82F3B /* bggTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -215,7 +142,6 @@
 			projectRoot = "";
 			targets = (
 				5F75743E13400E1000C82F3B /* bgg */,
-				5F75746213400E1000C82F3B /* bggTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,32 +157,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F75746013400E1000C82F3B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F75746E13400E1000C82F3B /* InfoPlist.strings in Resources */,
-				5F75747113400E1000C82F3B /* bggTests.h in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5F75746113400E1000C82F3B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F75743B13400E1000C82F3B /* Sources */ = {
@@ -269,23 +170,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F75745E13400E1000C82F3B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F75747313400E1000C82F3B /* bggTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5F75746813400E1000C82F3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5F75743E13400E1000C82F3B /* bgg */;
-			targetProxy = 5F75746713400E1000C82F3B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5F75744C13400E1000C82F3B /* InfoPlist.strings */ = {
@@ -310,14 +195,6 @@
 				5F75745C13400E1000C82F3B /* en */,
 			);
 			name = bggViewController.xib;
-			sourceTree = "<group>";
-		};
-		5F75746C13400E1000C82F3B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F75746D13400E1000C82F3B /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -383,50 +260,6 @@
 			};
 			name = Release;
 		};
-		5F75747A13400E1000C82F3B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bgg.app/bgg";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bggTests/bggTests-Prefix.pch";
-				INFOPLIST_FILE = "bggTests/bggTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		5F75747B13400E1000C82F3B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bgg.app/bgg";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bggTests/bggTests-Prefix.pch";
-				INFOPLIST_FILE = "bggTests/bggTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,14 +279,7 @@
 				5F75747813400E1000C82F3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		5F75747913400E1000C82F3B /* Build configuration list for PBXNativeTarget "bggTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5F75747A13400E1000C82F3B /* Debug */,
-				5F75747B13400E1000C82F3B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
