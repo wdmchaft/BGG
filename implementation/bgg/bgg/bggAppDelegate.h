@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class bggViewController;
+@class BGGViewController;
 
-@interface bggAppDelegate : NSObject <UIApplicationDelegate> {
+@interface BGGAppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet bggViewController *viewController;
+@property (nonatomic, retain) IBOutlet BGGViewController *viewController;
 
 @end

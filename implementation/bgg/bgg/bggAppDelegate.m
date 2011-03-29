@@ -6,11 +6,11 @@
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-#import "bggAppDelegate.h"
+#import "BGGAppDelegate.h"
 
-#import "bggViewController.h"
+#import "BGGViewController.h"
 
-@implementation bggAppDelegate
+@implementation BGGAppDelegate
 
 
 @synthesize window=_window;

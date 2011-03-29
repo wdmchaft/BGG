@@ -11,4 +11,20 @@
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
+	#import <CoreData/CoreData.h>
+	#import "Globals.h"
+	#import <QuartzCore/QuartzCore.h>
+	#import <CoreGraphics/CoreGraphics.h>
+#endif
+
+#if !defined(DEBUG) || DEBUG == 0
+#define ICAssert(condition, desc) do {} while (0)
+#define ICLog(...) do {} while (0)
+#define ICL(...) do {} while (0)
+#define ICError(...) do {} while (0)
+#else
+#define ICAssert(condition, desc) NSAssert(condition, desc)
+#define ICLog(...) NSLog(__VA_ARGS__)
+#define ICL(...) NSLog(@"%@", __VA_ARGS__)
+#define ICError(...) NSLog(@"\n\n***ERROR***\n%@\n\n", __VA_ARGS__)
 #endif

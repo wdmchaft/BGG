@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface bggViewController : UIViewController {
-    
-}
+#import "Three20/Three20.h"
 
+
+@interface BGGViewController : UIViewController{
+	
+	TTLauncherView *_launcherView;
+}
 @end
