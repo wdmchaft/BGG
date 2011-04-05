@@ -29,7 +29,12 @@
 		5F7575B61341456800C82F3B /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575B51341456700C82F3B /* Globals.m */; };
 		5F7575E0134166DA00C82F3B /* BreadcrumbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */; };
 		5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */; };
-		5F7575E4134166F700C82F3B /* CustomSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* CustomSegmentedControl.m */; };
+		5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* StackSegmentedControl.m */; };
+		5FB42463134B2280001E538A /* breadcrumb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB4245E134B2280001E538A /* breadcrumb-back.png */; };
+		5FB42464134B2280001E538A /* breadcrumb-home-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB4245F134B2280001E538A /* breadcrumb-home-selected.png */; };
+		5FB42465134B2280001E538A /* breadcrumb-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42460134B2280001E538A /* breadcrumb-home.png */; };
+		5FB42466134B2280001E538A /* breadcrumb-step-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42461134B2280001E538A /* breadcrumb-step-selected.png */; };
+		5FB42467134B2280001E538A /* breadcrumb-step.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42462134B2280001E538A /* breadcrumb-step.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +136,55 @@
 			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
 			remoteInfo = Three20UI;
 		};
+		5F75760C1341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UnitTests;
+		};
+		5F75760F1341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20CoreUnitTests;
+		};
+		5F7576121341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20NetworkUnitTests;
+		};
+		5F7576151341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20StyleUnitTests;
+		};
+		5F7576181341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UIUnitTests;
+		};
+		5F75761B1341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UICommonUnitTests;
+		};
+		5F75761E1341693B00C82F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UINavigatorUnitTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -163,8 +217,13 @@
 		5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreadcrumbView.xib; sourceTree = "<group>"; };
 		5F7575DE134166DA00C82F3B /* BreadcrumbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BreadcrumbViewController.h; sourceTree = "<group>"; };
 		5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreadcrumbViewController.m; sourceTree = "<group>"; };
-		5F7575E2134166F700C82F3B /* CustomSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentedControl.h; sourceTree = "<group>"; };
-		5F7575E3134166F700C82F3B /* CustomSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentedControl.m; sourceTree = "<group>"; };
+		5F7575E2134166F700C82F3B /* StackSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackSegmentedControl.h; sourceTree = "<group>"; };
+		5F7575E3134166F700C82F3B /* StackSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackSegmentedControl.m; sourceTree = "<group>"; };
+		5FB4245E134B2280001E538A /* breadcrumb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back.png"; path = "Images/breadcrumb-back.png"; sourceTree = "<group>"; };
+		5FB4245F134B2280001E538A /* breadcrumb-home-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-home-selected.png"; path = "Images/breadcrumb-home-selected.png"; sourceTree = "<group>"; };
+		5FB42460134B2280001E538A /* breadcrumb-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-home.png"; path = "Images/breadcrumb-home.png"; sourceTree = "<group>"; };
+		5FB42461134B2280001E538A /* breadcrumb-step-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-step-selected.png"; path = "Images/breadcrumb-step-selected.png"; sourceTree = "<group>"; };
+		5FB42462134B2280001E538A /* breadcrumb-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-step.png"; path = "Images/breadcrumb-step.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				3201088596B4756681693704 /* libThree20UICommon.a */,
+				5F75761C1341693B00C82F3B /* UICommonUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				320A2827FEC940B25BC42C64 /* libThree20Core.a */,
+				5F7576101341693B00C82F3B /* CoreUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				320A5A189C235877202780D4 /* libThree20Network.a */,
+				5F7576131341693B00C82F3B /* NetworkUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				320A737074758E53BA54BE94 /* libThree20UINavigator.a */,
+				5F75761F1341693B00C82F3B /* UINavigatorUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				320CC833B8AF0ACFD35E6224 /* libThree20Style.a */,
+				5F7576161341693B00C82F3B /* StyleUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				320D7DCCE32703ACAB9A45E4 /* libThree20.a */,
+				5F75760D1341693B00C82F3B /* Three20UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				320F2C48872C2E2C4DF86204 /* libThree20UI.a */,
+				5F7576191341693B00C82F3B /* UIUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +384,7 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FB4245D134B2244001E538A /* Breadcrumb */,
 				5F757599134142E200C82F3B /* Images */,
 			);
 			name = Resources;
@@ -349,10 +416,22 @@
 				5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */,
 				5F7575DE134166DA00C82F3B /* BreadcrumbViewController.h */,
 				5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */,
-				5F7575E2134166F700C82F3B /* CustomSegmentedControl.h */,
-				5F7575E3134166F700C82F3B /* CustomSegmentedControl.m */,
+				5F7575E2134166F700C82F3B /* StackSegmentedControl.h */,
+				5F7575E3134166F700C82F3B /* StackSegmentedControl.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5FB4245D134B2244001E538A /* Breadcrumb */ = {
+			isa = PBXGroup;
+			children = (
+				5FB4245E134B2280001E538A /* breadcrumb-back.png */,
+				5FB4245F134B2280001E538A /* breadcrumb-home-selected.png */,
+				5FB42460134B2280001E538A /* breadcrumb-home.png */,
+				5FB42461134B2280001E538A /* breadcrumb-step-selected.png */,
+				5FB42462134B2280001E538A /* breadcrumb-step.png */,
+			);
+			name = Breadcrumb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +566,55 @@
 			remoteRef = 320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5F75760D1341693B00C82F3B /* Three20UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Three20UnitTests.octest;
+			remoteRef = 5F75760C1341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F7576101341693B00C82F3B /* CoreUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreUnitTests.octest;
+			remoteRef = 5F75760F1341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F7576131341693B00C82F3B /* NetworkUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkUnitTests.octest;
+			remoteRef = 5F7576121341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F7576161341693B00C82F3B /* StyleUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StyleUnitTests.octest;
+			remoteRef = 5F7576151341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F7576191341693B00C82F3B /* UIUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIUnitTests.octest;
+			remoteRef = 5F7576181341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F75761C1341693B00C82F3B /* UICommonUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UICommonUnitTests.octest;
+			remoteRef = 5F75761B1341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F75761F1341693B00C82F3B /* UINavigatorUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UINavigatorUnitTests.octest;
+			remoteRef = 5F75761E1341693B00C82F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -500,6 +628,11 @@
 				5F75745D13400E1000C82F3B /* bggViewController.xib in Resources */,
 				5F75759B134142E200C82F3B /* Icon.png in Resources */,
 				5F7575E0134166DA00C82F3B /* BreadcrumbView.xib in Resources */,
+				5FB42463134B2280001E538A /* breadcrumb-back.png in Resources */,
+				5FB42464134B2280001E538A /* breadcrumb-home-selected.png in Resources */,
+				5FB42465134B2280001E538A /* breadcrumb-home.png in Resources */,
+				5FB42466134B2280001E538A /* breadcrumb-step-selected.png in Resources */,
+				5FB42467134B2280001E538A /* breadcrumb-step.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +648,7 @@
 				5F7575A1134144C100C82F3B /* BGGViewController.m in Sources */,
 				5F7575B61341456800C82F3B /* Globals.m in Sources */,
 				5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */,
-				5F7575E4134166F700C82F3B /* CustomSegmentedControl.m in Sources */,
+				5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

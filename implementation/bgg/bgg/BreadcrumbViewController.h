@@ -6,21 +6,18 @@
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-@class CustomSegmentedControl;
+@class StackSegmentedControl;
 
 
 @interface BreadcrumbViewController : UIViewController {
 	IBOutlet UIScrollView* scrollView;
 	IBOutlet UIView* contentView;
-	IBOutlet UIButton* scrollLeft;
-	IBOutlet UIButton* scrollRight;
 	
-	NSArray* viewControllers;
-	int selectedIndex;
-	CustomSegmentedControl* cSegmentedControl;
+	NSMutableArray* viewControllers;
+	StackSegmentedControl* cSegmentedControl;
 	
 }
 
--(void) setViewControllers:(NSArray*) mViewControllers;
+-(void) addViewController:(UIViewController*) mViewController;
 
 @end

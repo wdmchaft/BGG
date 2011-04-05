@@ -6,26 +6,25 @@
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-#import "CustomSegmentedControl.h"
+#import "StackSegmentedControl.h"
 
-@implementation CustomSegmentedControl
+@implementation StackSegmentedControl
 @synthesize buttons;
 @synthesize paddingX;
 @synthesize paddingY;
 
-- (id) initWithSegmentCount:(NSUInteger)msegmentCount delegate:(NSObject <CustomSegmentedControlDelegate>*)customSegmentedControlDelegate
+
+-(id) initWithSegmentDelegate:(NSObject <StackSegmentedControlDelegate>*)customSegmentedControlDelegate;
 {
-	if (self = [super init])
-	{
-		delegate = customSegmentedControlDelegate;
-		
-		paddingX = 0;
-		paddingY = 0;
-		
-		segmentCount = msegmentCount;
-		
-		self.buttons = [[NSMutableArray alloc] initWithCapacity:segmentCount];
-	}
+	self = [super init];
+	
+	delegate = customSegmentedControlDelegate;
+	
+	paddingX = 0;
+	paddingY = 0;
+	
+	
+	self.buttons = [[NSMutableArray alloc] initWithCapacity:1];
 	
 	return self;
 }
@@ -45,7 +44,7 @@
 	float height = 0;
 	
 
-	for (NSUInteger i = 0 ; i < segmentCount ; i++)
+	for (NSUInteger i = [buttons count] ; i < [delegate segmentCount] ; i++)
 	{
 		UIButton* button = [delegate buttonFor:self atIndex:i];
 		
@@ -80,7 +79,7 @@
 
 -(void) generateButtons
 {
-	[self generateButtons:segmentCount];
+	[self generateButtons:[delegate segmentCount]];
 }
 
 -(void) dimAllButtonsExcept:(UIButton*)selectedButton
@@ -103,6 +102,14 @@
 	if(index >= [buttons count] || index < 0)
 		return;
 	[self dimAllButtonsExcept:[buttons objectAtIndex:index]];
+}
+
+-(void) removeAllButtons
+{
+	for(UIButton* button in buttons)
+		[button removeFromSuperview];
+	
+	[buttons removeAllObjects];
 }
 
 - (void)touchDownAction:(UIButton*)button
