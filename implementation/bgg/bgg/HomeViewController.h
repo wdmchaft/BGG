@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Three20/Three20.h"
-
 @interface HomeViewController : UIViewController {
     
-	TTLauncherView *_launcherView;
 }
 
 @end

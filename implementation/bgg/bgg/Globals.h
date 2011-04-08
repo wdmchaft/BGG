@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BreadcrumbViewController.h"
 
 @interface Globals : NSObject {
+	
+	BreadcrumbViewController* breadcrumb;
 }
 
 +(Globals *)sharedGlobals;
 
 
-
+@property (nonatomic, retain) BreadcrumbViewController* breadcrumb;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back;
 

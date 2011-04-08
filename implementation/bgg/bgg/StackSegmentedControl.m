@@ -40,9 +40,22 @@
 	CGFloat horizontalOffset = 0;
 	CGFloat verticalOffset = 0;
 	
-	float width = 0;
+	//float width = 0;
 	float height = 0;
 	
+	if([delegate segmentCount] < [buttons count])
+	{
+		for(UIButton* button in buttons)
+		{
+			[button removeFromSuperview];
+		}
+		[buttons removeAllObjects];
+	}
+	
+	for(UIButton* button in buttons)
+	{
+		horizontalOffset = horizontalOffset + button.frame.size.width + paddingX;
+	}
 
 	for (NSUInteger i = [buttons count] ; i < [delegate segmentCount] ; i++)
 	{
@@ -51,7 +64,6 @@
 		if(button == nil)
 			continue;
 		
-		width += button.frame.size.width + paddingX;
 		height = button.frame.size.height;
 		
 		[button addTarget:self action:@selector(touchDownAction:) forControlEvents:UIControlEventTouchDown];
@@ -74,7 +86,7 @@
 		
 		horizontalOffset = horizontalOffset + button.frame.size.width + paddingX;
 	}
-	self.frame = CGRectMake(0, 0, width - paddingX, height);
+	self.frame = CGRectMake(0, 0, horizontalOffset - paddingX, height);
 }
 
 -(void) generateButtons

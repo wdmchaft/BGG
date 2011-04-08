@@ -7,11 +7,7 @@
 //
 
 #import "HomeViewController.h"
-
-
-@interface HomeViewController (Private) <TTLauncherViewDelegate>
-
-@end
+#import "Globals.h"
 
 @implementation HomeViewController
 
@@ -46,79 +42,28 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item
-{
-	
-}
-
 #pragma mark - View lifecycle
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // UIViewController
+
+-(void) clicked:(id) sender
+{
+	HomeViewController* newController = [[[HomeViewController alloc] init] autorelease];
+	[[[Globals sharedGlobals] breadcrumb] addViewController:newController animated:YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];	
 			
-		_launcherView = [[TTLauncherView alloc] initWithFrame:CGRectMake(0,0,320, 402)];
-		
-		[[self view] addSubview:_launcherView];
-		
-		_launcherView.backgroundColor = [UIColor blackColor];
-		_launcherView.delegate = self;
-		_launcherView.columnCount = 3;
-
-		_launcherView.pages = [NSArray arrayWithObjects:
-							   [NSArray arrayWithObjects:
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 1"
-																 image:@"bundle://Icon.png"
-																   URL:nil canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 2"
-																 image:@"bundle://Icon.png"
-																   URL:nil canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 3"
-																 image:@"bundle://Icon.png"
-																   URL:@"fb://item3" canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 4"
-																 image:@"bundle://Icon.png"
-																   URL:@"fb://item4" canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 5"
-																 image:@"bundle://Icon.png"
-																   URL:@"fb://item5" canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 6"
-																 image:@"bundle://Icon.png"
-																   URL:@"fb://item6" canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 7"
-																 image:@"bundle://Icon.png"
-																   URL:@"fb://item7" canDelete:YES] autorelease],
-								nil],
-							   [NSArray arrayWithObjects:
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 8"
-																 image:@"bundle://Icon.png"
-																   URL:nil canDelete:YES] autorelease],
-								[[[TTLauncherItem alloc] initWithTitle:@"Button 9"
-																 image:@"bundle://Icon.png"
-																   URL:nil canDelete:YES] autorelease],
-								nil],
-							   nil
-							   ];
-		
-		
-		TTLauncherItem* item = [_launcherView itemWithURL:@"fb://item3"];
-		item.badgeNumber = 4;
-		
-		item = [_launcherView itemWithURL:@"fb://item4"];
-		item.badgeNumber = 0;
-		
-		item = [_launcherView itemWithURL:@"fb://item5"];
-		item.badgeValue = @"100!";
-		
-		item = [_launcherView itemWithURL:@"fb://item6"];
-		item.badgeValue = @"Off";
-		
-		item = [_launcherView itemWithURL:@"fb://item7"];
-		item.badgeNumber = 300;
-	
-	//[mainView addViewController:controller];
+	UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setFrame:CGRectMake(10, 10, 100, 100)];
+	float r = arc4random() % 256 / 256.0;
+	float g = arc4random() % 256 / 256.0;
+	float b = arc4random() % 256 / 256.0;
+	[button setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
+	[button addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:button];
 }
 
 - (void)viewDidUnload

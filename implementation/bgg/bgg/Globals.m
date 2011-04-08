@@ -14,6 +14,8 @@
 
 static Globals *sharedSingleton = nil;
 
+@synthesize breadcrumb;
+
 #pragma mark -
 #pragma mark Object Life Cycle
 

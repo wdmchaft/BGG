@@ -48,7 +48,7 @@
 	[contentView addGestureRecognizer:swipeGesture];
 }
 
--(void) addViewController:(UIViewController*) mViewController;
+-(void) addViewController:(UIViewController*) mViewController animated:(BOOL) animated
 {
 	CGRect frame = contentView.frame;
 	frame.origin.x = 0;
@@ -57,8 +57,14 @@
 	[viewControllers insertObject:mViewController atIndex:[viewControllers count]];
 	[cSegmentedControl generateButtons];
 	[cSegmentedControl selectButton:[[cSegmentedControl buttons] count] -1];
-	[scrollView setContentSize:[cSegmentedControl frame].size];
+	
+	CGSize size = [scrollView frame].size;
+	
+	size.width = [cSegmentedControl frame].size.width;
+	
+	[scrollView setContentSize:size];
 	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:[[cSegmentedControl buttons] count]-1] frame]  animated:YES];
+	[self updateUIFrom:[viewControllers count]-2 to:[viewControllers count]-1 animated:animated];
 }
 
 
@@ -86,7 +92,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-	[self updateUIFrom:-1 to:[viewControllers count]-1 animated:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -136,6 +141,12 @@
 - (void) touchUpInsideSegmentIndex:(StackSegmentedControl*)segmentedControl:(NSUInteger)segmentIndex
 {
 	[self updateUIFrom:[viewControllers count]-1 to:segmentIndex animated:YES];
+	while([viewControllers count] > segmentIndex + 1)
+	{
+		[viewControllers removeLastObject];
+	}
+	[cSegmentedControl generateButtons];
+	[cSegmentedControl selectButton:segmentIndex];
 }
 
 - (NSUInteger) segmentCount
@@ -149,9 +160,7 @@
 -(void) updateUIFrom:(int) oldIndex to:(int) newIndex animated:(BOOL) animated
 {
 	ICAssert(newIndex >= 0 && newIndex < [viewControllers count], @"Invalid index on segmented header control");
-	if(oldIndex != -1 && newIndex == [viewControllers count]-1)
-		return;
-	
+		
 	UIViewController* currentController = nil;
 	if(oldIndex >= 0)
 		currentController = [viewControllers objectAtIndex:oldIndex];
@@ -160,7 +169,6 @@
 	
 	[currentController viewWillDisappear:NO];
 	[newController viewWillAppear:NO];
-	
 	
 	if(animated)
 	{

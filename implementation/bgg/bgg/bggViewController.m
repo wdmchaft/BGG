@@ -44,12 +44,14 @@
 	[super loadView];
 	
 	
-	breadcrumb = [[BreadcrumbViewController alloc] init];
+	breadcrumb = [[[BreadcrumbViewController alloc] init] autorelease];
 	[[breadcrumb view] setFrame:self.view.bounds];
+	
+	[[Globals sharedGlobals] setBreadcrumb:breadcrumb];
 	
 	
 	HomeViewController* controller = [[HomeViewController alloc] init];	
-	[breadcrumb addViewController:controller];
+	[breadcrumb addViewController:controller animated:NO];
 	
 	[self.view addSubview:breadcrumb.view];
 	

@@ -18,6 +18,6 @@
 	
 }
 
--(void) addViewController:(UIViewController*) mViewController;
+-(void) addViewController:(UIViewController*) mViewController animated:(BOOL) animated;
 
 @end
