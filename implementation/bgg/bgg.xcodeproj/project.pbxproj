@@ -35,6 +35,8 @@
 		5FB42465134B2280001E538A /* breadcrumb-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42460134B2280001E538A /* breadcrumb-home.png */; };
 		5FB42466134B2280001E538A /* breadcrumb-step-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42461134B2280001E538A /* breadcrumb-step-selected.png */; };
 		5FB42467134B2280001E538A /* breadcrumb-step.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB42462134B2280001E538A /* breadcrumb-step.png */; };
+		5FDAAABD134CBDBC002C97E0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */; };
+		5FDAAABE134CBDBC002C97E0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +226,9 @@
 		5FB42460134B2280001E538A /* breadcrumb-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-home.png"; path = "Images/breadcrumb-home.png"; sourceTree = "<group>"; };
 		5FB42461134B2280001E538A /* breadcrumb-step-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-step-selected.png"; path = "Images/breadcrumb-step-selected.png"; sourceTree = "<group>"; };
 		5FB42462134B2280001E538A /* breadcrumb-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-step.png"; path = "Images/breadcrumb-step.png"; sourceTree = "<group>"; };
+		5FDAAABA134CBDBC002C97E0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,13 +346,14 @@
 		5F75744913400E1000C82F3B /* bgg */ = {
 			isa = PBXGroup;
 			children = (
+				5FDAAAB9134CBDA7002C97E0 /* Home */,
 				5F7575DC134166CA00C82F3B /* Extensions */,
 				5F75759C1341449C00C82F3B /* BGGAppDelegate.h */,
 				5F75759D1341449C00C82F3B /* BGGAppDelegate.m */,
 				5F75745513400E1000C82F3B /* MainWindow.xib */,
+				5F75745B13400E1000C82F3B /* bggViewController.xib */,
 				5F75759F134144C000C82F3B /* BGGViewController.h */,
 				5F7575A0134144C100C82F3B /* BGGViewController.m */,
-				5F75745B13400E1000C82F3B /* bggViewController.xib */,
 				5F7575B41341456700C82F3B /* Globals.h */,
 				5F7575B51341456700C82F3B /* Globals.m */,
 				5F75744A13400E1000C82F3B /* Supporting Files */,
@@ -432,6 +438,16 @@
 				5FB42462134B2280001E538A /* breadcrumb-step.png */,
 			);
 			name = Breadcrumb;
+			sourceTree = "<group>";
+		};
+		5FDAAAB9134CBDA7002C97E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */,
+				5FDAAABA134CBDBC002C97E0 /* HomeViewController.h */,
+				5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +649,7 @@
 				5FB42465134B2280001E538A /* breadcrumb-home.png in Resources */,
 				5FB42466134B2280001E538A /* breadcrumb-step-selected.png in Resources */,
 				5FB42467134B2280001E538A /* breadcrumb-step.png in Resources */,
+				5FDAAABE134CBDBC002C97E0 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +666,7 @@
 				5F7575B61341456800C82F3B /* Globals.m in Sources */,
 				5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */,
 				5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */,
+				5FDAAABD134CBDBC002C97E0 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

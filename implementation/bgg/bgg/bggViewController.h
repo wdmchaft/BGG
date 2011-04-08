@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Three20/Three20.h"
-
+@class BreadcrumbViewController;
 
 @interface BGGViewController : UIViewController{
-	
-	TTLauncherView *_launcherView;
+	BreadcrumbViewController * breadcrumb;
 }
 @end

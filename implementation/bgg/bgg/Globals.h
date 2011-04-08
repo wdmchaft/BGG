@@ -15,8 +15,8 @@
 +(Globals *)sharedGlobals;
 
 
--(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;
 
+-(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back;
 
 @end

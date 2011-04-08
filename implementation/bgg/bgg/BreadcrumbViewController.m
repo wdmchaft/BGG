@@ -50,8 +50,13 @@
 
 -(void) addViewController:(UIViewController*) mViewController;
 {
+	CGRect frame = contentView.frame;
+	frame.origin.x = 0;
+	frame.origin.y = 0;
+	[mViewController.view setFrame:frame];
 	[viewControllers insertObject:mViewController atIndex:[viewControllers count]];
 	[cSegmentedControl generateButtons];
+	[cSegmentedControl selectButton:[[cSegmentedControl buttons] count] -1];
 	[scrollView setContentSize:[cSegmentedControl frame].size];
 	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:[[cSegmentedControl buttons] count]-1] frame]  animated:YES];
 }
@@ -66,30 +71,22 @@
 
 -(void) swipeLeftDone:(UISwipeGestureRecognizer *)sender
 {
+	if([viewControllers count] == 1)
+		return;
 	[self updateUIFrom:[viewControllers count]-1 to:[viewControllers count]-2 animated:NO];
 }
 
 #pragma mark - View lifecycle
 
+-(void) viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 	[self updateUIFrom:-1 to:[viewControllers count]-1 animated:NO];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -106,11 +103,22 @@
 	UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
 	UIViewController* currentController = [viewControllers objectAtIndex:segmentIndex];
 		
-	button.frame = CGRectMake(0.0, 0.0, 99, 50);
-	
-	[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step.png"] forState:UIControlStateNormal];
-	[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step-selected.png"] forState:UIControlStateHighlighted];
-	[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step-selected.png"] forState:UIControlStateSelected];
+	if(segmentIndex == 0)
+	{
+		button.frame = CGRectMake(0.0, 0.0, 116, 61);
+		
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-home.png"] forState:UIControlStateNormal];
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-home-selected.png"] forState:UIControlStateHighlighted];
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-home-selected.png"] forState:UIControlStateSelected];
+	}
+	else
+	{
+		button.frame = CGRectMake(0.0, 0.0, 118, 61);
+		
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step.png"] forState:UIControlStateNormal];
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step-selected.png"] forState:UIControlStateHighlighted];
+		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step-selected.png"] forState:UIControlStateSelected];
+	}
 	
 	button.tag = segmentIndex;
 	button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -130,15 +138,21 @@
 	[self updateUIFrom:[viewControllers count]-1 to:segmentIndex animated:YES];
 }
 
+- (NSUInteger) segmentCount
+{
+	return [viewControllers count];
+}
+
+
 #pragma mark Private
 
 -(void) updateUIFrom:(int) oldIndex to:(int) newIndex animated:(BOOL) animated
 {
 	ICAssert(newIndex >= 0 && newIndex < [viewControllers count], @"Invalid index on segmented header control");
-	if(newIndex == [viewControllers count]-1)
+	if(oldIndex != -1 && newIndex == [viewControllers count]-1)
 		return;
 	
-	UIViewController* currentController;
+	UIViewController* currentController = nil;
 	if(oldIndex >= 0)
 		currentController = [viewControllers objectAtIndex:oldIndex];
 	

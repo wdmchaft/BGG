@@ -8,6 +8,8 @@
 
 #import "Globals.h"
 #import "BGGAppDelegate.h"
+#import "BreadcrumbViewController.h"
+
 @implementation Globals
 
 static Globals *sharedSingleton = nil;
