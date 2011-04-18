@@ -64,6 +64,9 @@
 	[button setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
 	[button addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:button];
+    
+    SSCollectionViewController* viewController = [[[SSCollectionViewController alloc] init] autorelease];
+    
 }
 
 - (void)viewDidUnload

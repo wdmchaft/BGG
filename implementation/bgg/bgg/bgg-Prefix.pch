@@ -15,6 +15,7 @@
 	#import "Globals.h"
 	#import <QuartzCore/QuartzCore.h>
 	#import <CoreGraphics/CoreGraphics.h>
+    #import "SSToolkit.h"
 #endif
 
 #if !defined(DEBUG) || DEBUG == 0

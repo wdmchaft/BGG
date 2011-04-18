@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
-		320B6C86F11D9990244A9731 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 320B6C86F11D9990244A9730 /* Three20.bundle */; };
+		5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */; };
+		5F1F97C5135C7417007EB84C /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1F97C4135C7416007EB84C /* libSSToolkit.a */; };
 		5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
 		5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
 		5F75744813400E1000C82F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744713400E1000C82F3B /* CoreGraphics.framework */; };
@@ -39,9 +40,35 @@
 		5FDAAABE134CBDBC002C97E0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5F1F97BC135C7091007EB84C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SSToolkit;
+		};
+		5F1F97BE135C7091007EB84C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B239101D1357DC3E00ADE21B;
+			remoteInfo = SSToolkitTests;
+		};
+		5F1F97C0135C70AC007EB84C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = SSToolkit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		320B6C86F11D9990244A9730 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../../libs/three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
+		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
+		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
+		5F1F97C4135C7416007EB84C /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = SOURCE_ROOT; };
 		5F75743F13400E1000C82F3B /* BGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F75744313400E1000C82F3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5F75744513400E1000C82F3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1F97C5135C7417007EB84C /* libSSToolkit.a in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
 				5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */,
 				5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */,
@@ -96,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F1F97B4135C7090007EB84C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F1F97BD135C7091007EB84C /* libSSToolkit.a */,
+				5F1F97BF135C7091007EB84C /* SSToolkitTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5F75743413400E1000C82F3B = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +181,6 @@
 		5F75744A13400E1000C82F3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				5F75744B13400E1000C82F3B /* bgg-Info.plist */,
 				5F75744C13400E1000C82F3B /* InfoPlist.strings */,
 				5F75744F13400E1000C82F3B /* bgg-Prefix.pch */,
@@ -156,6 +192,7 @@
 		5F75748D1340D9DD00C82F3B /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -163,6 +200,7 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */,
 				5FCF605E135C45D600D9696E /* background.png */,
 				5FCF605F135C45D600D9696E /* background@2x.png */,
 				5FB4245D134B2244001E538A /* Breadcrumb */,
@@ -187,6 +225,7 @@
 				5F75744313400E1000C82F3B /* UIKit.framework */,
 				5F75744513400E1000C82F3B /* Foundation.framework */,
 				5F75744713400E1000C82F3B /* CoreGraphics.framework */,
+				5F1F97C4135C7416007EB84C /* libSSToolkit.a */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -244,6 +283,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F1F97C1135C70AC007EB84C /* PBXTargetDependency */,
 			);
 			name = BGG;
 			productName = bgg;
@@ -268,6 +308,12 @@
 			mainGroup = 5F75743413400E1000C82F3B;
 			productRefGroup = 5F75744013400E1000C82F3B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5F1F97B4135C7090007EB84C /* Products */;
+					ProjectRef = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5F75743E13400E1000C82F3B /* BGG */,
@@ -275,12 +321,28 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5F1F97BD135C7091007EB84C /* libSSToolkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSSToolkit.a;
+			remoteRef = 5F1F97BC135C7091007EB84C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F1F97BF135C7091007EB84C /* SSToolkitTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SSToolkitTests.app;
+			remoteRef = 5F1F97BE135C7091007EB84C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		5F75743D13400E1000C82F3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				5F75744E13400E1000C82F3B /* InfoPlist.strings in Resources */,
 				5F75745713400E1000C82F3B /* MainWindow.xib in Resources */,
 				5F75745D13400E1000C82F3B /* bggViewController.xib in Resources */,
@@ -299,6 +361,7 @@
 				5FCF605D135C45C300D9696E /* breadcrumb-step@2x.png in Resources */,
 				5FCF6060135C45D600D9696E /* background.png in Resources */,
 				5FCF6061135C45D600D9696E /* background@2x.png in Resources */,
+				5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +383,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F1F97C1135C70AC007EB84C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSToolkit;
+			targetProxy = 5F1F97C0135C70AC007EB84C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5F75744C13400E1000C82F3B /* InfoPlist.strings */ = {
@@ -366,7 +437,7 @@
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					../../libs/three20/Build/Products/three20,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
@@ -386,7 +457,7 @@
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					../../libs/three20/Build/Products/three20,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -404,9 +475,15 @@
 				INFOPLIST_FILE = "bgg/bgg-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../libs/three20/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../libs/sstoolkit/SSToolkit/**",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ./../../libs/sstoolkit/SSToolkit;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,9 +498,15 @@
 				INFOPLIST_FILE = "bgg/bgg-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../libs/three20/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../libs/sstoolkit/SSToolkit/**",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ./../../libs/sstoolkit/SSToolkit;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

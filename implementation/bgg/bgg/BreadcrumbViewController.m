@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	cSegmentedControl = [[[StackSegmentedControl alloc] initWithSegmentDelegate:self] autorelease];
-	[cSegmentedControl setPadding:-9 :0];
+	[cSegmentedControl setPadding:-16 :0];
 	[scrollView setDelegate:self];
 	[scrollView addSubview:cSegmentedControl];
 	
@@ -111,7 +111,7 @@
 		
 	if(segmentIndex == 0)
 	{
-		button.frame = CGRectMake(0.0, 0.0, 116, 61);
+		button.frame = CGRectMake(0.0, 0.0, 116, 41);
 		
 		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-home.png"] forState:UIControlStateNormal];
 		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-home-selected.png"] forState:UIControlStateHighlighted];
@@ -119,7 +119,7 @@
 	}
 	else
 	{
-		button.frame = CGRectMake(0.0, 0.0, 118, 61);
+		button.frame = CGRectMake(0.0, 0.0, 118, 41);
 		
 		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step.png"] forState:UIControlStateNormal];
 		[button setBackgroundImage:[UIImage imageNamed:@"breadcrumb-step-selected.png"] forState:UIControlStateHighlighted];
@@ -128,6 +128,7 @@
 	
 	button.tag = segmentIndex;
 	button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3, 0, 3, 0)];
 	[[button titleLabel] setLineBreakMode:UILineBreakModeWordWrap];
 	[[button titleLabel] setNumberOfLines:2];
 	[[button titleLabel] setTextAlignment:UITextAlignmentCenter];
