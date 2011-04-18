@@ -10,6 +10,11 @@
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
 		5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */; };
 		5F1F97C5135C7417007EB84C /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1F97C4135C7416007EB84C /* libSSToolkit.a */; };
+		5F1F97DA135C7A57007EB84C /* menu-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */; };
+		5F1F97DB135C7A57007EB84C /* menu-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */; };
+		5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D8135C7A57007EB84C /* menu-icon.png */; };
+		5F1F97DD135C7A57007EB84C /* menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */; };
+		5F1F97E8135C7DF6007EB84C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
 		5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
 		5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
 		5F75744813400E1000C82F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744713400E1000C82F3B /* CoreGraphics.framework */; };
@@ -37,7 +42,6 @@
 		5FCF6060135C45D600D9696E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF605E135C45D600D9696E /* background.png */; };
 		5FCF6061135C45D600D9696E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF605F135C45D600D9696E /* background@2x.png */; };
 		5FDAAABD134CBDBC002C97E0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */; };
-		5FDAAABE134CBDBC002C97E0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
 		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
 		5F1F97C4135C7416007EB84C /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = SOURCE_ROOT; };
+		5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected.png"; path = "../../../../design/png/menu-icon-selected.png"; sourceTree = "<group>"; };
+		5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected@2x.png"; path = "../../../../design/png/menu-icon-selected@2x.png"; sourceTree = "<group>"; };
+		5F1F97D8135C7A57007EB84C /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon.png"; path = "../../../../design/png/menu-icon.png"; sourceTree = "<group>"; };
+		5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon@2x.png"; path = "../../../../design/png/menu-icon@2x.png"; sourceTree = "<group>"; };
 		5F75743F13400E1000C82F3B /* BGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F75744313400E1000C82F3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5F75744513400E1000C82F3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +139,17 @@
 				5F1F97BF135C7091007EB84C /* SSToolkitTests.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5F1F97D5135C79DF007EB84C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */,
+				5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */,
+				5F1F97D8135C7A57007EB84C /* menu-icon.png */,
+				5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		5F75743413400E1000C82F3B = {
@@ -200,6 +219,7 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F1F97D5135C79DF007EB84C /* CollectionView */,
 				5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */,
 				5FCF605E135C45D600D9696E /* background.png */,
 				5FCF605F135C45D600D9696E /* background@2x.png */,
@@ -348,7 +368,6 @@
 				5F75745D13400E1000C82F3B /* bggViewController.xib in Resources */,
 				5F75759B134142E200C82F3B /* Icon.png in Resources */,
 				5F7575E0134166DA00C82F3B /* BreadcrumbView.xib in Resources */,
-				5FDAAABE134CBDBC002C97E0 /* HomeViewController.xib in Resources */,
 				5FCF6054135C45C300D9696E /* breadcrumb-back.png in Resources */,
 				5FCF6055135C45C300D9696E /* breadcrumb-back@2x.png in Resources */,
 				5FCF6056135C45C300D9696E /* breadcrumb-home-selected.png in Resources */,
@@ -362,6 +381,11 @@
 				5FCF6060135C45D600D9696E /* background.png in Resources */,
 				5FCF6061135C45D600D9696E /* background@2x.png in Resources */,
 				5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */,
+				5F1F97DA135C7A57007EB84C /* menu-icon-selected.png in Resources */,
+				5F1F97DB135C7A57007EB84C /* menu-icon-selected@2x.png in Resources */,
+				5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */,
+				5F1F97DD135C7A57007EB84C /* menu-icon@2x.png in Resources */,
+				5F1F97E8135C7DF6007EB84C /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
