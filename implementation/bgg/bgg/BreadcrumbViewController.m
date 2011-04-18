@@ -42,8 +42,9 @@
 	
 	viewControllers = [[NSMutableArray alloc] initWithCapacity:1];
 	
-	UISwipeGestureRecognizer* swipeGesture = [[[UISwipeGestureRecognizer alloc] initWithTarget:self 
-																						action:@selector(swipeLeftDone:)] autorelease];
+	UISwipeGestureRecognizer* swipeGesture = [[[UISwipeGestureRecognizer alloc] 
+                                               initWithTarget:self 
+                                               action:@selector(swipeLeftDone:)] autorelease];
 	swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
 	[contentView addGestureRecognizer:swipeGesture];
 }
