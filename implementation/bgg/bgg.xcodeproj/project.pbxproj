@@ -167,12 +167,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FEFA339135DE66700D53F28 /* libSSToolkit.a in Frameworks */,
 				5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
 				5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */,
 				5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */,
 				5F75744813400E1000C82F3B /* CoreGraphics.framework in Frameworks */,
+				5FEFA339135DE66700D53F28 /* libSSToolkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +666,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../libs/sstoolkit/SSToolkit/**",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -691,7 +690,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../libs/sstoolkit/SSToolkit/**",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
