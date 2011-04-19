@@ -1,0 +1,3 @@
+[submodule "libs/sstoolkit"]
+	path = libs/sstoolkit
+	url = https://caxaria@github.com/caxaria/sstoolkit.git
