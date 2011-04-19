@@ -13,7 +13,8 @@
 @implementation Globals
 
 static Globals *sharedSingleton = nil;
-
+@synthesize dataAccess;
+@synthesize remoteConnector;
 @synthesize breadcrumb;
 
 #pragma mark -
@@ -33,7 +34,9 @@ static Globals *sharedSingleton = nil;
 -(id) init
 {
 	self = [super init];
-	
+	dataAccess = [[DataAccess alloc] init];
+    
+	remoteConnector = [[RemoteConnector alloc] init];
 	return self;
 }
 

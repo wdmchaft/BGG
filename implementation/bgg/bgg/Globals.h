@@ -9,14 +9,21 @@
 #import <Foundation/Foundation.h>
 
 #import "BreadcrumbViewController.h"
+#import "DataAccess.h"
+#import "RemoteConnector.h"
+#import "GamesRemoteConnector.h"
 
 @interface Globals : NSObject {
-	
+	DataAccess* dataAccess;
+	RemoteConnector * remoteConnector;
 	BreadcrumbViewController* breadcrumb;
 }
 
 +(Globals *)sharedGlobals;
 
+
+@property (readonly) DataAccess *dataAccess;
+@property (readonly) RemoteConnector * remoteConnector;
 
 @property (nonatomic, retain) BreadcrumbViewController* breadcrumb;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;

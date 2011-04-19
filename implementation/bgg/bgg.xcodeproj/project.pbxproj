@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
 		5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */; };
-		5F1F97C5135C7417007EB84C /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1F97C4135C7416007EB84C /* libSSToolkit.a */; };
 		5F1F97DA135C7A57007EB84C /* menu-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */; };
 		5F1F97DB135C7A57007EB84C /* menu-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */; };
 		5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D8135C7A57007EB84C /* menu-icon.png */; };
@@ -42,6 +41,24 @@
 		5FCF6060135C45D600D9696E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF605E135C45D600D9696E /* background.png */; };
 		5FCF6061135C45D600D9696E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF605F135C45D600D9696E /* background@2x.png */; };
 		5FDAAABD134CBDBC002C97E0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */; };
+		5FDBA746135DC2C6001C8292 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA744135DC2C6001C8292 /* Model.xcdatamodeld */; };
+		5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDBA759135DC3EE001C8292 /* CoreData.framework */; };
+		5FDBA75D135DC5EA001C8292 /* DataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA75C135DC5EA001C8292 /* DataAccess.m */; };
+		5FDBA762135DC64E001C8292 /* RemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA761135DC64E001C8292 /* RemoteConnector.m */; };
+		5FDBA773135DC724001C8292 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA765135DC724001C8292 /* CDataScanner.m */; };
+		5FDBA774135DC724001C8292 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA768135DC724001C8292 /* CDataScanner_Extensions.m */; };
+		5FDBA775135DC724001C8292 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA76A135DC724001C8292 /* NSDictionary_JSONExtensions.m */; };
+		5FDBA776135DC724001C8292 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA76D135DC724001C8292 /* CJSONDeserializer.m */; };
+		5FDBA777135DC724001C8292 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA76F135DC724001C8292 /* CJSONScanner.m */; };
+		5FDBA778135DC724001C8292 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA771135DC724001C8292 /* CJSONSerializer.m */; };
+		5FDBA783135DD15B001C8292 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA782135DD15B001C8292 /* DataLoader.m */; };
+		5FDBA787135DD182001C8292 /* BGGHTMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */; };
+		5FDBA790135DD207001C8292 /* BBGSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA789135DD206001C8292 /* BBGSearchResult.m */; };
+		5FDBA791135DD207001C8292 /* BGGForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA78B135DD206001C8292 /* BGGForum.m */; };
+		5FDBA792135DD207001C8292 /* BGGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA78D135DD207001C8292 /* BGGMessage.m */; };
+		5FDBA793135DD207001C8292 /* BGGThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA78F135DD207001C8292 /* BGGThread.m */; };
+		5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */; };
+		5FDBA7C0135DD799001C8292 /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDBA7BF135DD799001C8292 /* libSSToolkit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +68,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = SSToolkit;
-		};
-		5F1F97BE135C7091007EB84C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B239101D1357DC3E00ADE21B;
-			remoteInfo = SSToolkitTests;
 		};
 		5F1F97C0135C70AC007EB84C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -72,7 +82,6 @@
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
 		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
-		5F1F97C4135C7416007EB84C /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = SOURCE_ROOT; };
 		5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected.png"; path = "../../../../design/png/menu-icon-selected.png"; sourceTree = "<group>"; };
 		5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected@2x.png"; path = "../../../../design/png/menu-icon-selected@2x.png"; sourceTree = "<group>"; };
 		5F1F97D8135C7A57007EB84C /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon.png"; path = "../../../../design/png/menu-icon.png"; sourceTree = "<group>"; };
@@ -114,6 +123,40 @@
 		5FDAAABA134CBDBC002C97E0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		5FDBA745135DC2C6001C8292 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		5FDBA759135DC3EE001C8292 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5FDBA75B135DC5EA001C8292 /* DataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccess.h; sourceTree = "<group>"; };
+		5FDBA75C135DC5EA001C8292 /* DataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccess.m; sourceTree = "<group>"; };
+		5FDBA760135DC64E001C8292 /* RemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteConnector.h; sourceTree = "<group>"; };
+		5FDBA761135DC64E001C8292 /* RemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteConnector.m; sourceTree = "<group>"; };
+		5FDBA764135DC724001C8292 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		5FDBA765135DC724001C8292 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		5FDBA767135DC724001C8292 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		5FDBA768135DC724001C8292 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		5FDBA769135DC724001C8292 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		5FDBA76A135DC724001C8292 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		5FDBA76C135DC724001C8292 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		5FDBA76D135DC724001C8292 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		5FDBA76E135DC724001C8292 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		5FDBA76F135DC724001C8292 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		5FDBA770135DC724001C8292 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		5FDBA771135DC724001C8292 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		5FDBA772135DC724001C8292 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		5FDBA781135DD15A001C8292 /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
+		5FDBA782135DD15B001C8292 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
+		5FDBA785135DD182001C8292 /* BGGHTMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGHTMLScraper.h; sourceTree = "<group>"; };
+		5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGHTMLScraper.m; sourceTree = "<group>"; };
+		5FDBA788135DD206001C8292 /* BBGSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBGSearchResult.h; sourceTree = "<group>"; };
+		5FDBA789135DD206001C8292 /* BBGSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGSearchResult.m; sourceTree = "<group>"; };
+		5FDBA78A135DD206001C8292 /* BGGForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGForum.h; sourceTree = "<group>"; };
+		5FDBA78B135DD206001C8292 /* BGGForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGForum.m; sourceTree = "<group>"; };
+		5FDBA78C135DD206001C8292 /* BGGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGMessage.h; sourceTree = "<group>"; };
+		5FDBA78D135DD207001C8292 /* BGGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGMessage.m; sourceTree = "<group>"; };
+		5FDBA78E135DD207001C8292 /* BGGThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGThread.h; sourceTree = "<group>"; };
+		5FDBA78F135DD207001C8292 /* BGGThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGThread.m; sourceTree = "<group>"; };
+		5FDBA795135DD304001C8292 /* GamesRemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesRemoteConnector.h; sourceTree = "<group>"; };
+		5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesRemoteConnector.m; sourceTree = "<group>"; };
+		5FDBA7BF135DD799001C8292 /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F1F97C5135C7417007EB84C /* libSSToolkit.a in Frameworks */,
+				5FDBA7C0135DD799001C8292 /* libSSToolkit.a in Frameworks */,
+				5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
 				5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */,
 				5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */,
@@ -136,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				5F1F97BD135C7091007EB84C /* libSSToolkit.a */,
-				5F1F97BF135C7091007EB84C /* SSToolkitTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +225,7 @@
 		5F75744913400E1000C82F3B /* bgg */ = {
 			isa = PBXGroup;
 			children = (
+				5FDBA742135DC26F001C8292 /* BoardGames */,
 				5FDAAAB9134CBDA7002C97E0 /* Home */,
 				5F7575DC134166CA00C82F3B /* Extensions */,
 				5F75759C1341449C00C82F3B /* BGGAppDelegate.h */,
@@ -192,6 +236,7 @@
 				5F7575A0134144C100C82F3B /* BGGViewController.m */,
 				5F7575B41341456700C82F3B /* Globals.h */,
 				5F7575B51341456700C82F3B /* Globals.m */,
+				5FDBA743135DC2AB001C8292 /* Data */,
 				5F75744A13400E1000C82F3B /* Supporting Files */,
 			);
 			path = bgg;
@@ -211,6 +256,7 @@
 		5F75748D1340D9DD00C82F3B /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				5FDBA763135DC724001C8292 /* TouchJSON */,
 				5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */,
 			);
 			name = Dependencies;
@@ -241,11 +287,12 @@
 		5F7575B7134145F400C82F3B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5FDBA7BF135DD799001C8292 /* libSSToolkit.a */,
+				5FDBA759135DC3EE001C8292 /* CoreData.framework */,
 				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
 				5F75744313400E1000C82F3B /* UIKit.framework */,
 				5F75744513400E1000C82F3B /* Foundation.framework */,
 				5F75744713400E1000C82F3B /* CoreGraphics.framework */,
-				5F1F97C4135C7416007EB84C /* libSSToolkit.a */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -287,6 +334,108 @@
 				5FDAAABB134CBDBC002C97E0 /* HomeViewController.m */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		5FDBA742135DC26F001C8292 /* BoardGames */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BoardGames;
+			sourceTree = "<group>";
+		};
+		5FDBA743135DC2AB001C8292 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA784135DD161001C8292 /* Parser */,
+				5FDBA75F135DC644001C8292 /* WS */,
+				5FDBA75E135DC638001C8292 /* DB */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		5FDBA75E135DC638001C8292 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA75B135DC5EA001C8292 /* DataAccess.h */,
+				5FDBA75C135DC5EA001C8292 /* DataAccess.m */,
+				5FDBA744135DC2C6001C8292 /* Model.xcdatamodeld */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		5FDBA75F135DC644001C8292 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA781135DD15A001C8292 /* DataLoader.h */,
+				5FDBA782135DD15B001C8292 /* DataLoader.m */,
+				5FDBA760135DC64E001C8292 /* RemoteConnector.h */,
+				5FDBA761135DC64E001C8292 /* RemoteConnector.m */,
+				5FDBA795135DD304001C8292 /* GamesRemoteConnector.h */,
+				5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */,
+			);
+			name = WS;
+			sourceTree = "<group>";
+		};
+		5FDBA763135DC724001C8292 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA764135DC724001C8292 /* CDataScanner.h */,
+				5FDBA765135DC724001C8292 /* CDataScanner.m */,
+				5FDBA766135DC724001C8292 /* Extensions */,
+				5FDBA76B135DC724001C8292 /* JSON */,
+			);
+			name = TouchJSON;
+			path = ../../libs/TouchJSON;
+			sourceTree = "<group>";
+		};
+		5FDBA766135DC724001C8292 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA767135DC724001C8292 /* CDataScanner_Extensions.h */,
+				5FDBA768135DC724001C8292 /* CDataScanner_Extensions.m */,
+				5FDBA769135DC724001C8292 /* NSDictionary_JSONExtensions.h */,
+				5FDBA76A135DC724001C8292 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5FDBA76B135DC724001C8292 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA76C135DC724001C8292 /* CJSONDeserializer.h */,
+				5FDBA76D135DC724001C8292 /* CJSONDeserializer.m */,
+				5FDBA76E135DC724001C8292 /* CJSONScanner.h */,
+				5FDBA76F135DC724001C8292 /* CJSONScanner.m */,
+				5FDBA770135DC724001C8292 /* CJSONSerializer.h */,
+				5FDBA771135DC724001C8292 /* CJSONSerializer.m */,
+				5FDBA772135DC724001C8292 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		5FDBA784135DD161001C8292 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA794135DD20C001C8292 /* Objects */,
+				5FDBA785135DD182001C8292 /* BGGHTMLScraper.h */,
+				5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		5FDBA794135DD20C001C8292 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5FDBA788135DD206001C8292 /* BBGSearchResult.h */,
+				5FDBA789135DD206001C8292 /* BBGSearchResult.m */,
+				5FDBA78A135DD206001C8292 /* BGGForum.h */,
+				5FDBA78B135DD206001C8292 /* BGGForum.m */,
+				5FDBA78C135DD206001C8292 /* BGGMessage.h */,
+				5FDBA78D135DD207001C8292 /* BGGMessage.m */,
+				5FDBA78E135DD207001C8292 /* BGGThread.h */,
+				5FDBA78F135DD207001C8292 /* BGGThread.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,13 +498,6 @@
 			remoteRef = 5F1F97BC135C7091007EB84C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5F1F97BF135C7091007EB84C /* SSToolkitTests.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SSToolkitTests.app;
-			remoteRef = 5F1F97BE135C7091007EB84C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -403,6 +545,22 @@
 				5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */,
 				5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */,
 				5FDAAABD134CBDBC002C97E0 /* HomeViewController.m in Sources */,
+				5FDBA746135DC2C6001C8292 /* Model.xcdatamodeld in Sources */,
+				5FDBA75D135DC5EA001C8292 /* DataAccess.m in Sources */,
+				5FDBA762135DC64E001C8292 /* RemoteConnector.m in Sources */,
+				5FDBA773135DC724001C8292 /* CDataScanner.m in Sources */,
+				5FDBA774135DC724001C8292 /* CDataScanner_Extensions.m in Sources */,
+				5FDBA775135DC724001C8292 /* NSDictionary_JSONExtensions.m in Sources */,
+				5FDBA776135DC724001C8292 /* CJSONDeserializer.m in Sources */,
+				5FDBA777135DC724001C8292 /* CJSONScanner.m in Sources */,
+				5FDBA778135DC724001C8292 /* CJSONSerializer.m in Sources */,
+				5FDBA783135DD15B001C8292 /* DataLoader.m in Sources */,
+				5FDBA787135DD182001C8292 /* BGGHTMLScraper.m in Sources */,
+				5FDBA790135DD207001C8292 /* BBGSearchResult.m in Sources */,
+				5FDBA791135DD207001C8292 /* BGGForum.m in Sources */,
+				5FDBA792135DD207001C8292 /* BGGMessage.m in Sources */,
+				5FDBA793135DD207001C8292 /* BGGThread.m in Sources */,
+				5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +716,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5FDBA744135DC2C6001C8292 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FDBA745135DC2C6001C8292 /* Model.xcdatamodel */,
+			);
+			currentVersion = 5FDBA745135DC2C6001C8292 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5F75743613400E1000C82F3B /* Project object */;
 }

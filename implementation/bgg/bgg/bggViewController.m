@@ -55,6 +55,7 @@
 	
 	[self.view addSubview:breadcrumb.view];
 	
+    //[[[Globals sharedGlobals] remoteConnector] getTop100];
 }
 
 
