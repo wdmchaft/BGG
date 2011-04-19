@@ -58,7 +58,8 @@
 		5FDBA792135DD207001C8292 /* BGGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA78D135DD207001C8292 /* BGGMessage.m */; };
 		5FDBA793135DD207001C8292 /* BGGThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA78F135DD207001C8292 /* BGGThread.m */; };
 		5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */; };
-		5FDBA7C0135DD799001C8292 /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDBA7BF135DD799001C8292 /* libSSToolkit.a */; };
+		5FEFA335135DE58C00D53F28 /* InitialSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */; };
+		5FEFA339135DE66700D53F28 /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEFA338135DE66700D53F28 /* libSSToolkit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,7 @@
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = SSToolkit;
 		};
-		5F1F97C0135C70AC007EB84C /* PBXContainerItemProxy */ = {
+		5FEFA336135DE66200D53F28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */;
 			proxyType = 1;
@@ -156,7 +157,9 @@
 		5FDBA78F135DD207001C8292 /* BGGThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGThread.m; sourceTree = "<group>"; };
 		5FDBA795135DD304001C8292 /* GamesRemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesRemoteConnector.h; sourceTree = "<group>"; };
 		5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesRemoteConnector.m; sourceTree = "<group>"; };
-		5FDBA7BF135DD799001C8292 /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FEFA333135DE58C00D53F28 /* InitialSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSyncViewController.h; sourceTree = "<group>"; };
+		5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSyncViewController.m; sourceTree = "<group>"; };
+		5FEFA338135DE66700D53F28 /* libSSToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSSToolkit.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FDBA7C0135DD799001C8292 /* libSSToolkit.a in Frameworks */,
+				5FEFA339135DE66700D53F28 /* libSSToolkit.a in Frameworks */,
 				5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
 				5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */,
@@ -198,6 +201,7 @@
 		5F75743413400E1000C82F3B = {
 			isa = PBXGroup;
 			children = (
+				5FEFA338135DE66700D53F28 /* libSSToolkit.a */,
 				5F75748D1340D9DD00C82F3B /* Dependencies */,
 				5F75744913400E1000C82F3B /* bgg */,
 				5F757598134142E200C82F3B /* Resources */,
@@ -287,7 +291,6 @@
 		5F7575B7134145F400C82F3B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				5FDBA7BF135DD799001C8292 /* libSSToolkit.a */,
 				5FDBA759135DC3EE001C8292 /* CoreData.framework */,
 				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
 				5F75744313400E1000C82F3B /* UIKit.framework */,
@@ -339,6 +342,8 @@
 		5FDBA742135DC26F001C8292 /* BoardGames */ = {
 			isa = PBXGroup;
 			children = (
+				5FEFA333135DE58C00D53F28 /* InitialSyncViewController.h */,
+				5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */,
 			);
 			name = BoardGames;
 			sourceTree = "<group>";
@@ -452,7 +457,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5F1F97C1135C70AC007EB84C /* PBXTargetDependency */,
+				5FEFA337135DE66200D53F28 /* PBXTargetDependency */,
 			);
 			name = BGG;
 			productName = bgg;
@@ -561,16 +566,17 @@
 				5FDBA792135DD207001C8292 /* BGGMessage.m in Sources */,
 				5FDBA793135DD207001C8292 /* BGGThread.m in Sources */,
 				5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */,
+				5FEFA335135DE58C00D53F28 /* InitialSyncViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F1F97C1135C70AC007EB84C /* PBXTargetDependency */ = {
+		5FEFA337135DE66200D53F28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SSToolkit;
-			targetProxy = 5F1F97C0135C70AC007EB84C /* PBXContainerItemProxy */;
+			targetProxy = 5FEFA336135DE66200D53F28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -654,7 +660,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bgg/bgg-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "bgg/bgg-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -677,7 +685,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bgg/bgg-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "bgg/bgg-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

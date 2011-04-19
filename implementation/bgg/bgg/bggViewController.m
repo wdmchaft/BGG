@@ -9,6 +9,7 @@
 #import "BGGViewController.h"
 #import "BreadcrumbViewController.h"
 #import "HomeViewController.h"
+#import "InitialSyncViewController.h"
 
 @implementation BGGViewController
 
@@ -55,7 +56,8 @@
 	
 	[self.view addSubview:breadcrumb.view];
 	
-    //[[[Globals sharedGlobals] remoteConnector] getTop100];
+    InitialSyncViewController* sync = [[InitialSyncViewController alloc] init];
+    [sync start];
 }
 
 

@@ -113,7 +113,7 @@
     if (managedObjectModel_ != nil) {
         return managedObjectModel_;
     }
-    NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"vigia_2_0" ofType:@"momd"];
+    NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"Model" ofType:@"momd"];
     NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
     managedObjectModel_ = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return managedObjectModel_;
@@ -130,7 +130,7 @@
         return persistentStoreCoordinator_;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"vigia_2_0.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"model.sqlite"];
     
     NSError *error = nil;
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
