@@ -7,7 +7,15 @@
 //
 
 #import "InitialSyncViewController.h"
+#import "BBGSearchResult.h"
+#import "StorageHelper.h"
+#import "DataAccess+BoardGame.h"
 
+@interface InitialSyncViewController(Private)
+
+-(void) doUpdateNextGame;
+-(void) completed;
+@end
 
 @implementation InitialSyncViewController
 
@@ -29,7 +37,7 @@
 
 -(void)start
 {
-    _hud = [[SSHUDView alloc] initWithTitle:@"Loading..."];
+    _hud = [[SSHUDView alloc] initWithTitle:@"Loading games..."];
     [_hud show];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -42,9 +50,59 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
 	
-	NSArray* result = [[notification object] objectForKey:@"data"];
-	
+	results = [[[notification object] objectForKey:@"data"] retain];
+    currentIndex = 0;    
     
+    [self doUpdateNextGame];
+}
+
+-(void) doUpdateNextGame
+{
+    if([results count] <= currentIndex)
+    {
+        [self completed];
+        return;
+    }
+    
+    BBGSearchResult* currentGame = [results objectAtIndex:currentIndex];
+    
+    [_hud.textLabel setText:[NSString stringWithFormat:@"Getting %@ details", currentGame.primaryTitle]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(gotGameImage:) 
+                                                 name:[[[Globals sharedGlobals] remoteConnector] getRawRequest:currentGame.imageURL]
+                                               object:nil];
+
+}
+
+-(void) gotGameImage:(NSNotification*) notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
+	
+	NSData* imageData = [[[notification object] objectForKey:@"data"] retain];
+    BBGSearchResult* currentGame = [results objectAtIndex:currentIndex];
+    
+    NSString* filenamePath = [NSString stringWithFormat:@"/%@/preview.png", currentGame.gameId];
+    [StorageHelper createDirectory:currentGame.gameId];
+    
+    [imageData writeToFile:[[StorageHelper baseStorageDirectory] stringByAppendingPathComponent:filenamePath] atomically:NO];
+    
+    DBBoardGame* game = [[[Globals sharedGlobals] dataAccess] createBoardGame];
+    
+    game.gameId = currentGame.gameId;
+    game.primaryTitle = currentGame.primaryTitle;
+    game.rank = [NSNumber numberWithInt:currentIndex+1];
+    
+    [[[Globals sharedGlobals] dataAccess] saveChanges];
+    
+    currentIndex++;
+    
+    [self doUpdateNextGame];
+}
+
+
+-(void) completed
+{
     [_hud completeWithTitle:@"Completed!"];
     [self performSelector:@selector(dismissPopup:) withObject:nil afterDelay:0.7];
 }

@@ -12,6 +12,9 @@
 
 @interface InitialSyncViewController : NSObject {
     SSHUDView *_hud;
+    
+    NSArray* results;
+    int currentIndex;
 }
 -(void)start;
 @end

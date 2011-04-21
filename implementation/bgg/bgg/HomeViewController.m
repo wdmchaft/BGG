@@ -9,6 +9,14 @@
 #import "HomeViewController.h"
 #import "Globals.h"
 #import "SSCollectionViewItem.h"
+#import "BoardGameListController.h"
+#import "DataAccess+BoardGame.h"
+
+@interface HomeViewController(Private)
+
+-(void) navigateToBoardGameList;
+
+@end
 
 @implementation HomeViewController
 
@@ -135,13 +143,34 @@
 }
 
 - (void)collectionView:(SSCollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	HomeViewController* newController = [[[HomeViewController alloc] init] autorelease];
-	[[[Globals sharedGlobals] breadcrumb] addViewController:newController animated:YES];
+	
+    
+    
+    switch (indexPath.row) {
+        case 0:
+            [self navigateToBoardGameList];
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSInteger)section
 {
     return 10;
+}
+
+#pragma mark private
+
+-(void) navigateToBoardGameList
+{
+    NSArray* products = [[[Globals sharedGlobals] dataAccess] getAllBoardGames];
+    BoardGameListController* controller = [[[BoardGameListController alloc] init] autorelease];
+    [controller setBoardGames:products];
+    
+	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }
 
 @end

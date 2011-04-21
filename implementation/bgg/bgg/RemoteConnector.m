@@ -47,6 +47,43 @@ static NSString * _server = @"http://www.boardgamegeek.com/";
 	return [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", key, @"key", nil]; 
 }
 
+
+#pragma mark Raw Request
+-(NSString*) getRawRequest:(NSString*)url
+{
+    NSString* requestIdentifier = url;
+	
+	if([flagDictionary valueForKey:requestIdentifier] != nil)
+		return requestIdentifier;
+	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
+	
+	DataLoader* loader = [[DataLoader alloc] init];
+	loader.tag = requestIdentifier;
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(gotRawRequest:) 
+												 name:Notifications_DataLoader 
+											   object:loader];
+	
+	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+													   timeoutInterval:timeout];
+	
+	[loader performRequest:request];
+	
+	return requestIdentifier;
+}
+
+-(void) gotRawRequest:(NSNotification*) sender
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Notifications_DataLoader object:[sender object]];
+	NSString* requestIdentifier = [(DataLoader*)[sender object] tag];
+	NSData* remoteData = [[sender object] getData];
+	
+    
+	[[NSNotificationCenter defaultCenter] postNotificationName:requestIdentifier 
+                                                        object:[self generateResult:remoteData :requestIdentifier]];
+	[flagDictionary removeObjectForKey:requestIdentifier];
+}
 @end
 
 

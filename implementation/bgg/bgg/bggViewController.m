@@ -10,6 +10,7 @@
 #import "BreadcrumbViewController.h"
 #import "HomeViewController.h"
 #import "InitialSyncViewController.h"
+#import "DataAccess+BoardGame.h"
 
 @implementation BGGViewController
 
@@ -55,9 +56,12 @@
 	[breadcrumb addViewController:controller animated:NO];
 	
 	[self.view addSubview:breadcrumb.view];
-	
-    InitialSyncViewController* sync = [[InitialSyncViewController alloc] init];
-    [sync start];
+
+	if([[[[Globals sharedGlobals] dataAccess] getAllBoardGames] count] == 0)
+    {
+        InitialSyncViewController* sync = [[InitialSyncViewController alloc] init];
+        [sync start];
+    }
 }
 
 

@@ -128,13 +128,13 @@
 	
 	button.tag = segmentIndex;
 	button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3, 0, 3, 0)];
-	[[button titleLabel] setLineBreakMode:UILineBreakModeWordWrap];
-	[[button titleLabel] setNumberOfLines:2];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3, 8, 3, 7)];
+	[[button titleLabel] setLineBreakMode:UILineBreakModeTailTruncation];
+	[[button titleLabel] setNumberOfLines:1];
 	[[button titleLabel] setTextAlignment:UITextAlignmentCenter];
 	[[button titleLabel] setFont:[UIFont fontWithName: @"ITCAvantGardeStd-Md" size: 10.0]];
 	[button setTitle:currentController.title forState:UIControlStateNormal];
-
+	[[button titleLabel] setAdjustsFontSizeToFitWidth:NO];
 	button.adjustsImageWhenHighlighted = NO;
 	
 	return button;
@@ -142,6 +142,8 @@
 
 - (void) touchUpInsideSegmentIndex:(StackSegmentedControl*)segmentedControl:(NSUInteger)segmentIndex
 {
+    if([viewControllers count]-1 == segmentIndex)
+        return;
 	[self updateUIFrom:[viewControllers count]-1 to:segmentIndex animated:YES];
 	while([viewControllers count] > segmentIndex + 1)
 	{
@@ -161,6 +163,8 @@
 
 -(void) updateUIFrom:(int) oldIndex to:(int) newIndex animated:(BOOL) animated
 {
+    if(oldIndex == newIndex) 
+        return;
 	ICAssert(newIndex >= 0 && newIndex < [viewControllers count], @"Invalid index on segmented header control");
 		
 	UIViewController* currentController = nil;

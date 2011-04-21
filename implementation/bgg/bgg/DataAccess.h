@@ -16,5 +16,12 @@
 -(BOOL) saveChanges;
 -(void) deleteObject:(NSManagedObject*) object;
 
+@end
+
+@interface DataAccess (Private)
+
+- (NSManagedObjectContext *)managedObjectContext;
+- (NSManagedObjectModel *) managedObjectModel;
+- (NSEntityDescription *) entityDescription:(NSString*) entity;
 
 @end

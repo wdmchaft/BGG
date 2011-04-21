@@ -9,13 +9,6 @@
 #import "DataAccess.h"
 #import "BGGAppDelegate.h"
 
-@interface DataAccess (Private)
-
-- (NSManagedObjectContext *)managedObjectContext;
-- (NSManagedObjectModel *) managedObjectModel;
-- (NSEntityDescription *) entityDescription:(NSString*) entity;
-
-@end
 
 @implementation DataAccess
 

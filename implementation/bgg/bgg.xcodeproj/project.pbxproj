@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		5F1645021360674A001179CA /* DataAccess+BoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1645011360674A001179CA /* DataAccess+BoardGame.m */; };
+		5F16451813606948001179CA /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16451713606948001179CA /* DBBoardGame.m */; };
+		5F16451C13606A8C001179CA /* BoardGameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16451A13606A8B001179CA /* BoardGameListController.m */; };
+		5F16451D13606A8C001179CA /* BoardGameListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F16451B13606A8B001179CA /* BoardGameListController.xib */; };
+		5F1645211360768C001179CA /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F16451F1360768C001179CA /* cell-background.png */; };
+		5F1645221360768C001179CA /* cell-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1645201360768C001179CA /* cell-background@2x.png */; };
+		5F164525136077FB001179CA /* BoardGameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F164524136077FA001179CA /* BoardGameListCell.m */; };
+		5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16452713607EE0001179CA /* DBBoardGame+Images.m */; };
 		5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */; };
 		5F1F97DA135C7A57007EB84C /* menu-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */; };
 		5F1F97DB135C7A57007EB84C /* menu-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */; };
 		5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D8135C7A57007EB84C /* menu-icon.png */; };
 		5F1F97DD135C7A57007EB84C /* menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */; };
 		5F1F97E8135C7DF6007EB84C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
+		5F43ECD6135F2BC4004EA6AB /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */; };
+		5F43ECD8135F2C29004EA6AB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43ECD7135F2C29004EA6AB /* libxml2.dylib */; };
+		5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7798135E10AD00891634 /* StorageHelper.m */; };
 		5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
 		5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
 		5F75744813400E1000C82F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744713400E1000C82F3B /* CoreGraphics.framework */; };
@@ -81,12 +92,30 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F1645001360674A001179CA /* DataAccess+BoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+BoardGame.h"; sourceTree = "<group>"; };
+		5F1645011360674A001179CA /* DataAccess+BoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+BoardGame.m"; sourceTree = "<group>"; };
+		5F16451613606948001179CA /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
+		5F16451713606948001179CA /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
+		5F16451913606A8B001179CA /* BoardGameListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameListController.h; sourceTree = "<group>"; };
+		5F16451A13606A8B001179CA /* BoardGameListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameListController.m; sourceTree = "<group>"; };
+		5F16451B13606A8B001179CA /* BoardGameListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameListController.xib; sourceTree = "<group>"; };
+		5F16451F1360768C001179CA /* cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-background.png"; path = "Images/cell-background.png"; sourceTree = "<group>"; };
+		5F1645201360768C001179CA /* cell-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-background@2x.png"; path = "Images/cell-background@2x.png"; sourceTree = "<group>"; };
+		5F164523136077FA001179CA /* BoardGameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameListCell.h; sourceTree = "<group>"; };
+		5F164524136077FA001179CA /* BoardGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameListCell.m; sourceTree = "<group>"; };
+		5F16452613607EE0001179CA /* DBBoardGame+Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBBoardGame+Images.h"; sourceTree = "<group>"; };
+		5F16452713607EE0001179CA /* DBBoardGame+Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBBoardGame+Images.m"; sourceTree = "<group>"; };
 		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
 		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
 		5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected.png"; path = "../../../../design/png/menu-icon-selected.png"; sourceTree = "<group>"; };
 		5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected@2x.png"; path = "../../../../design/png/menu-icon-selected@2x.png"; sourceTree = "<group>"; };
 		5F1F97D8135C7A57007EB84C /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon.png"; path = "../../../../design/png/menu-icon.png"; sourceTree = "<group>"; };
 		5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon@2x.png"; path = "../../../../design/png/menu-icon@2x.png"; sourceTree = "<group>"; };
+		5F43ECD4135F2BC4004EA6AB /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		5F43ECD7135F2C29004EA6AB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5F6C7797135E10AD00891634 /* StorageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageHelper.h; sourceTree = "<group>"; };
+		5F6C7798135E10AD00891634 /* StorageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageHelper.m; sourceTree = "<group>"; };
 		5F75743F13400E1000C82F3B /* BGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F75744313400E1000C82F3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5F75744513400E1000C82F3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F43ECD8135F2C29004EA6AB /* libxml2.dylib in Frameworks */,
 				5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
 				5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */,
@@ -179,6 +209,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F164515136068B8001179CA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5F16451613606948001179CA /* DBBoardGame.h */,
+				5F16451713606948001179CA /* DBBoardGame.m */,
+				5F16452613607EE0001179CA /* DBBoardGame+Images.h */,
+				5F16452713607EE0001179CA /* DBBoardGame+Images.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		5F16451E13607674001179CA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5F16451F1360768C001179CA /* cell-background.png */,
+				5F1645201360768C001179CA /* cell-background@2x.png */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		5F1F97B4135C7090007EB84C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +248,19 @@
 			name = CollectionView;
 			sourceTree = "<group>";
 		};
+		5F43ECD3135F2BC4004EA6AB /* XPathQuery */ = {
+			isa = PBXGroup;
+			children = (
+				5F43ECD4135F2BC4004EA6AB /* XPathQuery.h */,
+				5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */,
+			);
+			name = XPathQuery;
+			path = ../../libs/XPathQuery;
+			sourceTree = "<group>";
+		};
 		5F75743413400E1000C82F3B = {
 			isa = PBXGroup;
 			children = (
-				5FEFA338135DE66700D53F28 /* libSSToolkit.a */,
 				5F75748D1340D9DD00C82F3B /* Dependencies */,
 				5F75744913400E1000C82F3B /* bgg */,
 				5F757598134142E200C82F3B /* Resources */,
@@ -221,6 +280,8 @@
 		5F75744213400E1000C82F3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F43ECD7135F2C29004EA6AB /* libxml2.dylib */,
+				5FEFA338135DE66700D53F28 /* libSSToolkit.a */,
 				5F7575B7134145F400C82F3B /* Base */,
 			);
 			name = Frameworks;
@@ -229,6 +290,7 @@
 		5F75744913400E1000C82F3B /* bgg */ = {
 			isa = PBXGroup;
 			children = (
+				5FDBA743135DC2AB001C8292 /* Data */,
 				5FDBA742135DC26F001C8292 /* BoardGames */,
 				5FDAAAB9134CBDA7002C97E0 /* Home */,
 				5F7575DC134166CA00C82F3B /* Extensions */,
@@ -240,7 +302,6 @@
 				5F7575A0134144C100C82F3B /* BGGViewController.m */,
 				5F7575B41341456700C82F3B /* Globals.h */,
 				5F7575B51341456700C82F3B /* Globals.m */,
-				5FDBA743135DC2AB001C8292 /* Data */,
 				5F75744A13400E1000C82F3B /* Supporting Files */,
 			);
 			path = bgg;
@@ -260,6 +321,7 @@
 		5F75748D1340D9DD00C82F3B /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				5F43ECD3135F2BC4004EA6AB /* XPathQuery */,
 				5FDBA763135DC724001C8292 /* TouchJSON */,
 				5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */,
 			);
@@ -269,6 +331,7 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F16451E13607674001179CA /* List */,
 				5F1F97D5135C79DF007EB84C /* CollectionView */,
 				5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */,
 				5FCF605E135C45D600D9696E /* background.png */,
@@ -303,6 +366,8 @@
 		5F7575DC134166CA00C82F3B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F6C7797135E10AD00891634 /* StorageHelper.h */,
+				5F6C7798135E10AD00891634 /* StorageHelper.m */,
 				5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */,
 				5F7575DE134166DA00C82F3B /* BreadcrumbViewController.h */,
 				5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */,
@@ -344,6 +409,11 @@
 			children = (
 				5FEFA333135DE58C00D53F28 /* InitialSyncViewController.h */,
 				5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */,
+				5F16451B13606A8B001179CA /* BoardGameListController.xib */,
+				5F16451913606A8B001179CA /* BoardGameListController.h */,
+				5F16451A13606A8B001179CA /* BoardGameListController.m */,
+				5F164523136077FA001179CA /* BoardGameListCell.h */,
+				5F164524136077FA001179CA /* BoardGameListCell.m */,
 			);
 			name = BoardGames;
 			sourceTree = "<group>";
@@ -361,9 +431,12 @@
 		5FDBA75E135DC638001C8292 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				5F164515136068B8001179CA /* Objects */,
+				5FDBA744135DC2C6001C8292 /* Model.xcdatamodeld */,
 				5FDBA75B135DC5EA001C8292 /* DataAccess.h */,
 				5FDBA75C135DC5EA001C8292 /* DataAccess.m */,
-				5FDBA744135DC2C6001C8292 /* Model.xcdatamodeld */,
+				5F1645001360674A001179CA /* DataAccess+BoardGame.h */,
+				5F1645011360674A001179CA /* DataAccess+BoardGame.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -533,6 +606,9 @@
 				5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */,
 				5F1F97DD135C7A57007EB84C /* menu-icon@2x.png in Resources */,
 				5F1F97E8135C7DF6007EB84C /* HomeViewController.xib in Resources */,
+				5F16451D13606A8C001179CA /* BoardGameListController.xib in Resources */,
+				5F1645211360768C001179CA /* cell-background.png in Resources */,
+				5F1645221360768C001179CA /* cell-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +643,13 @@
 				5FDBA793135DD207001C8292 /* BGGThread.m in Sources */,
 				5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */,
 				5FEFA335135DE58C00D53F28 /* InitialSyncViewController.m in Sources */,
+				5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */,
+				5F43ECD6135F2BC4004EA6AB /* XPathQuery.m in Sources */,
+				5F1645021360674A001179CA /* DataAccess+BoardGame.m in Sources */,
+				5F16451813606948001179CA /* DBBoardGame.m in Sources */,
+				5F16451C13606A8C001179CA /* BoardGameListController.m in Sources */,
+				5F164525136077FB001179CA /* BoardGameListCell.m in Sources */,
+				5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,8 +705,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)/../three20",
-					"$(BUILT_PRODUCTS_DIR)/../../three20",
-					../../libs/three20/Build/Products/three20,
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -642,8 +724,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)/../three20",
-					"$(BUILT_PRODUCTS_DIR)/../../three20",
-					../../libs/three20/Build/Products/three20,
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -672,7 +753,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = ./../../libs/sstoolkit/SSToolkit;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../../libs/sstoolkit/SSToolkit $(SDKROOT)/usr/include/libxml2/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -696,7 +777,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = ./../../libs/sstoolkit/SSToolkit;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../../libs/sstoolkit/SSToolkit $(SDKROOT)/usr/include/libxml2/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

@@ -24,14 +24,8 @@
 
 @interface BGGHTMLScraper : NSObject
 {
-	BOOL	cancelled;
 }
 
--(void) cancel; // Stops current scraping process. Is meant to be called from another thread.
-
--(NSArray *) scrapeGamesFromTop100:(NSString *)document;
--(NSArray *) scrapeForumsFromList:(NSString *)document;
--(NSArray *) scrapeThreadsFromForum:(NSString *)document;
--(NSArray *) scrapeMessagesFromThread:(NSString *)document;
+-(NSArray *) scrapeGamesFromTop100:(NSData *)document;
 
 @end

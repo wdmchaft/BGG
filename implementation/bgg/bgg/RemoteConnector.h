@@ -17,5 +17,7 @@
 +(NSString*) server;
 -(NSDictionary*) generateResult:(id) data :(NSString*) key;
 
+-(NSString*) getRawRequest:(NSString*)url;
+
 @end
 
