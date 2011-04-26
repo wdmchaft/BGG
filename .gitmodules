@@ -1,3 +1,6 @@
 [submodule "libs/sstoolkit"]
 	path = libs/sstoolkit
 	url = https://github.com/samsoffes/sstoolkit.git
+[submodule "libs/wePopover"]
+	path = libs/wePopover
+	url = https://github.com/werner77/WEPopover.git

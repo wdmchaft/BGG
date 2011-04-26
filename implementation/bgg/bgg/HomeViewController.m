@@ -11,6 +11,7 @@
 #import "SSCollectionViewItem.h"
 #import "BoardGameListController.h"
 #import "DataAccess+BoardGame.h"
+#import "AMinhaView.h"
 
 @interface HomeViewController(Private)
 
@@ -43,14 +44,6 @@
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // UIViewController
@@ -65,16 +58,6 @@
     [self.collectionView.scrollView setContentInset:UIEdgeInsetsMake(40,0,0,0)];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 #pragma mark SSCollectionViewDataSource
 
@@ -145,12 +128,22 @@
 - (void)collectionView:(SSCollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
     
-    
+    int x;
     switch (indexPath.row) {
         case 0:
             [self navigateToBoardGameList];
             
             break;
+            
+        case 1:
+            if(false)
+                x = 1;
+            
+            AMinhaView* myView;
+            
+            myView = [[[AMinhaView alloc] init] autorelease];
+            
+            [[[Globals sharedGlobals] breadcrumb] addViewController:myView animated:YES];
             
         default:
             break;

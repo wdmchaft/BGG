@@ -11,4 +11,6 @@
 
 @protocol IBreadcrumbMenu <NSObject>
 
+@required
+-(UIView*) menuClicked;
 @end
