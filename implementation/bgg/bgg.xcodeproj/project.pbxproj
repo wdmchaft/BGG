@@ -92,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F07A55D13670F2A007336DC /* IBreadcrumbMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenu.h; sourceTree = "<group>"; };
 		5F1645001360674A001179CA /* DataAccess+BoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+BoardGame.h"; sourceTree = "<group>"; };
 		5F1645011360674A001179CA /* DataAccess+BoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+BoardGame.m"; sourceTree = "<group>"; };
 		5F16451613606948001179CA /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
@@ -368,6 +369,7 @@
 			children = (
 				5F6C7797135E10AD00891634 /* StorageHelper.h */,
 				5F6C7798135E10AD00891634 /* StorageHelper.m */,
+				5F07A55D13670F2A007336DC /* IBreadcrumbMenu.h */,
 				5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */,
 				5F7575DE134166DA00C82F3B /* BreadcrumbViewController.h */,
 				5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */,

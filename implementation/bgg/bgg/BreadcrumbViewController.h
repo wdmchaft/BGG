@@ -12,6 +12,10 @@
 @interface BreadcrumbViewController : UIViewController {
 	IBOutlet UIScrollView* scrollView;
 	IBOutlet UIView* contentView;
+    
+    
+	IBOutlet UIView* footerView;
+    IBOutlet UIButton* footerButton;
 	
 	NSMutableArray* viewControllers;
 	StackSegmentedControl* cSegmentedControl;

@@ -24,12 +24,12 @@ static NSString* _entity = @"DBBoardGame";
     NSError *error = nil;
 	NSFetchRequest *fetchRequest = [[self managedObjectModel] fetchRequestTemplateForName:@"GetAllBoardGames"];
 	NSArray *fetchedObjects = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-	
-#ifdef DEBUG
-	for (DBBoardGame *game in fetchedObjects) {
-		ICLog(@"Name: %@ Id: %@", game.primaryTitle, game.gameId);
-	}        
-#endif
+//	
+//#ifdef DEBUG
+//	for (DBBoardGame *game in fetchedObjects) {
+//		ICLog(@"Name: %@ Id: %@", game.primaryTitle, game.gameId);
+//	}        
+//#endif
 	return fetchedObjects;
 }
 

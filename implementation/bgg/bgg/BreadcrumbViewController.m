@@ -8,10 +8,16 @@
 
 #import "BreadcrumbViewController.h"
 #import "StackSegmentedControl.h"
+#import "IBreadcrumbMenu.h"
+
+#define BREADCRUMB_FOOTER_CONTROL_SIZE 60
+#define BREADCRUMB_FOOTER_VIEW_SIZE 36
 
 @interface BreadcrumbViewController (Private)<StackSegmentedControlDelegate,UIScrollViewDelegate>
 
 -(void) updateUIFrom:(int) oldIndex to:(int) newIndex animated:(BOOL) animated;
+-(void) showFooter;
+-(void) hideFooter;
 
 @end
 
@@ -189,14 +195,64 @@
 		[[theWindow layer] addAnimation:animation forKey:@"SwitchToView"];
 		/*End Animation*/
 	}
+    
+    
 	[[currentController view] removeFromSuperview];
-	[contentView addSubview:[newController view]];
-	
+    if([newController conformsToProtocol:@protocol(IBreadcrumbMenu)])
+    {
+        [self showFooter];
+    }
+    else
+    {
+        [self hideFooter];
+    }
+    
+    [[newController view] setFrame:CGRectMake(0, 0, contentView.frame.size.width, contentView.frame.size.height) ];
+    [contentView addSubview:[newController view]];
+	[contentView layoutSubviews];
+    
 	[currentController viewDidDisappear:NO];
 	[newController viewDidAppear:NO];
 	
 	[cSegmentedControl selectButton:newIndex];
 	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:newIndex] frame]  animated:YES];
+}
+
+-(void) showFooter
+{
+    if(![footerView isHidden])
+        return;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+		footerView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -BREADCRUMB_FOOTER_CONTROL_SIZE);
+        [footerView setHidden:NO];
+        [contentView setFrame:CGRectMake(contentView.frame.origin.x, 
+                                          contentView.frame.origin.y, 
+                                          contentView.frame.size.width, 
+                                          contentView.frame.size.height-BREADCRUMB_FOOTER_VIEW_SIZE)]; 
+    
+    } completion:^(BOOL finished) {
+		
+	}];
+    
+
+}
+
+-(void) hideFooter
+{
+    if([footerView isHidden])
+        return;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        footerView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, BREADCRUMB_FOOTER_CONTROL_SIZE);
+        [contentView setFrame:CGRectMake(contentView.frame.origin.x, 
+                                          contentView.frame.origin.y, 
+                                          contentView.frame.size.width, 
+                                          contentView.frame.size.height+BREADCRUMB_FOOTER_VIEW_SIZE)];
+    } completion:^(BOOL finished) {
+        [footerView setHidden:YES];
+    }];
+    
 }
 
 #pragma mark UIScrollViewDelegate
