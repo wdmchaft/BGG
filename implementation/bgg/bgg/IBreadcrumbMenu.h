@@ -12,5 +12,10 @@
 @protocol IBreadcrumbMenu <NSObject>
 
 @required
+
+/* 
+ MAX UIVIEW WIDTH: 230px
+ MIN UIVIEW HEIGHT: 100px   
+ */
 -(UIView*) menuClicked;
 @end

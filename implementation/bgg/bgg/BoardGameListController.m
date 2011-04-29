@@ -123,4 +123,12 @@
 
 }
 
+-(UIView*) menuClicked
+{
+    UIView* result = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 110)] autorelease];
+    [result setBackgroundColor:[UIColor redColor]];
+    
+    return result;
+}
+
 @end

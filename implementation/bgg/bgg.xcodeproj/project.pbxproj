@@ -30,8 +30,6 @@
 		5F32321213672F210051F624 /* popoverArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32320C13672F210051F624 /* popoverArrowUp.png */; };
 		5F32321313672F210051F624 /* popoverBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32320D13672F210051F624 /* popoverBg.png */; };
 		5F32321413672F210051F624 /* popoverBgSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32320E13672F210051F624 /* popoverBgSmall.png */; };
-		5F32321B13675B740051F624 /* AMinhaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F32321913675B640051F624 /* AMinhaView.m */; };
-		5F32321C13675B740051F624 /* AMinhaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F32321A13675B710051F624 /* AMinhaView.xib */; };
 		5F43ECD6135F2BC4004EA6AB /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */; };
 		5F43ECD8135F2C29004EA6AB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43ECD7135F2C29004EA6AB /* libxml2.dylib */; };
 		5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7798135E10AD00891634 /* StorageHelper.m */; };
@@ -140,9 +138,6 @@
 		5F32320C13672F210051F624 /* popoverArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverArrowUp.png; path = ../../../../libs/wePopover/popoverArrowUp.png; sourceTree = "<group>"; };
 		5F32320D13672F210051F624 /* popoverBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverBg.png; path = ../../../../libs/wePopover/popoverBg.png; sourceTree = "<group>"; };
 		5F32320E13672F210051F624 /* popoverBgSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverBgSmall.png; path = ../../../../libs/wePopover/popoverBgSmall.png; sourceTree = "<group>"; };
-		5F32321813675B620051F624 /* AMinhaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMinhaView.h; sourceTree = "<group>"; };
-		5F32321913675B640051F624 /* AMinhaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMinhaView.m; sourceTree = "<group>"; };
-		5F32321A13675B710051F624 /* AMinhaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMinhaView.xib; sourceTree = "<group>"; };
 		5F43ECD4135F2BC4004EA6AB /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		5F43ECD7135F2C29004EA6AB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -361,9 +356,6 @@
 				5F7575B41341456700C82F3B /* Globals.h */,
 				5F7575B51341456700C82F3B /* Globals.m */,
 				5F75744A13400E1000C82F3B /* Supporting Files */,
-				5F32321813675B620051F624 /* AMinhaView.h */,
-				5F32321913675B640051F624 /* AMinhaView.m */,
-				5F32321A13675B710051F624 /* AMinhaView.xib */,
 			);
 			path = bgg;
 			sourceTree = "<group>";
@@ -686,7 +678,6 @@
 				5F32321213672F210051F624 /* popoverArrowUp.png in Resources */,
 				5F32321313672F210051F624 /* popoverBg.png in Resources */,
 				5F32321413672F210051F624 /* popoverBgSmall.png in Resources */,
-				5F32321C13675B740051F624 /* AMinhaView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +721,6 @@
 				5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */,
 				5F32320613672EE90051F624 /* WEPopoverContainerView.m in Sources */,
 				5F32320713672EE90051F624 /* WEPopoverController.m in Sources */,
-				5F32321B13675B740051F624 /* AMinhaView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

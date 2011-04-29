@@ -11,7 +11,6 @@
 #import "SSCollectionViewItem.h"
 #import "BoardGameListController.h"
 #import "DataAccess+BoardGame.h"
-#import "AMinhaView.h"
 
 @interface HomeViewController(Private)
 
@@ -127,25 +126,14 @@
 
 - (void)collectionView:(SSCollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-    
-    int x;
-    switch (indexPath.row) {
+        switch (indexPath.row) {
         case 0:
             [self navigateToBoardGameList];
             
             break;
             
         case 1:
-            if(false)
-                x = 1;
-            
-            AMinhaView* myView;
-            
-            myView = [[[AMinhaView alloc] init] autorelease];
-            
-            [[[Globals sharedGlobals] breadcrumb] addViewController:myView animated:YES];
-            
-        default:
+                default:
             break;
     }
 }

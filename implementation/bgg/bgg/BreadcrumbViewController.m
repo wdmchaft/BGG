@@ -9,6 +9,7 @@
 #import "BreadcrumbViewController.h"
 #import "StackSegmentedControl.h"
 #import "IBreadcrumbMenu.h"
+#import "WEPopoverController.h"
 
 #define BREADCRUMB_FOOTER_CONTROL_SIZE 60
 #define BREADCRUMB_FOOTER_VIEW_SIZE 36
@@ -22,6 +23,8 @@
 @end
 
 @implementation BreadcrumbViewController
+
+@synthesize popoverController;
 
 -(id) init
 {
@@ -53,6 +56,8 @@
                                                action:@selector(swipeLeftDone:)] autorelease];
 	swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
 	[contentView addGestureRecognizer:swipeGesture];
+    
+    [footerButton addTarget:self action:@selector(popupClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void) addViewController:(UIViewController*) mViewController animated:(BOOL) animated
@@ -87,6 +92,33 @@
 	if([viewControllers count] == 1)
 		return;
 	[self updateUIFrom:[viewControllers count]-1 to:[viewControllers count]-2 animated:NO];
+}
+
+-(void) popupClicked:(UIButton*) sender
+{
+    if (self.popoverController) {
+		[self.popoverController dismissPopoverAnimated:YES];
+		self.popoverController = nil;
+	} else {
+        
+        UIViewController* currentController = [viewControllers objectAtIndex:[viewControllers count]-1];
+        
+        ICAssert([currentController conformsToProtocol:@protocol(IBreadcrumbMenu)], @"controller must be IBreadcrumbMenu for button to be visible");
+        
+        UIView* popupView = [(id<IBreadcrumbMenu>)currentController menuClicked];
+        
+        ICAssert(popupView != nil, @"popup view should be enabled... or should it?");
+        
+        UIViewController* controller = [[[UIViewController alloc] init] autorelease];
+        controller.view = popupView;
+        controller.contentSizeForViewInPopover = popupView.frame.size;
+        
+		self.popoverController = [[[WEPopoverController alloc] initWithContentViewController:controller] autorelease];
+        [self.popoverController presentPopoverFromRect:sender.frame
+												inView:footerView
+							  permittedArrowDirections:UIPopoverArrowDirectionDown
+											  animated:YES];
+	}
 }
 
 #pragma mark - View lifecycle

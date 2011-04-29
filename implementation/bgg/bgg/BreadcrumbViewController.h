@@ -7,7 +7,7 @@
 //
 
 @class StackSegmentedControl;
-
+@class WEPopoverController;
 
 @interface BreadcrumbViewController : UIViewController {
 	IBOutlet UIScrollView* scrollView;
@@ -19,9 +19,11 @@
 	
 	NSMutableArray* viewControllers;
 	StackSegmentedControl* cSegmentedControl;
+    
+    WEPopoverController* popoverController;
 	
 }
-
+@property (nonatomic, retain) WEPopoverController *popoverController;
 -(void) addViewController:(UIViewController*) mViewController animated:(BOOL) animated;
 
 @end
