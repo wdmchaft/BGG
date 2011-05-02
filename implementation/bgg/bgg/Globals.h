@@ -26,6 +26,8 @@
 @property (readonly) RemoteConnector * remoteConnector;
 
 @property (nonatomic, retain) BreadcrumbViewController* breadcrumb;
+@property (nonatomic, assign) NSString* bggUsername;
+
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back;
 

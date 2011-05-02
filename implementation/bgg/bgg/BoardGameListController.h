@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IBreadcrumbMenu.h"
+#import "IBreadcrumbMenuDelegate.h"
 
-@interface BoardGameListController : UITableViewController<IBreadcrumbMenu> {
+@interface BoardGameListController : UITableViewController<IBreadcrumbMenuDelegate> {
     NSArray* _boardGames;
 }
 

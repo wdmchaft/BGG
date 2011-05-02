@@ -123,6 +123,8 @@
 
 }
 
+#pragma mark IBreadcrumbMenu
+
 -(UIView*) menuClicked
 {
     UIView* result = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 110)] autorelease];
@@ -130,5 +132,17 @@
     
     return result;
 }
+
+-(void) breadcrumbWillAppear:(id<IBreadcrumbController>) breadcrumb
+{
+    [breadcrumb setStatusMessage:@"Top 100"];
+    [breadcrumb setUpdated];
+}
+-(void) breadcrumbWillDisappear:(id<IBreadcrumbController>) breadcrumb
+{
+    
+}
+
+
 
 @end

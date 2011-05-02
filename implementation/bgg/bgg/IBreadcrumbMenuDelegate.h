@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IBreadcrumbController.h"
 
-
-@protocol IBreadcrumbMenu <NSObject>
+@protocol IBreadcrumbMenuDelegate <NSObject>
 
 @required
 
@@ -18,4 +18,7 @@
  MIN UIVIEW HEIGHT: 100px   
  */
 -(UIView*) menuClicked;
+
+-(void) breadcrumbWillAppear:(id<IBreadcrumbController>) breadcrumb;
+-(void) breadcrumbWillDisappear:(id<IBreadcrumbController>) breadcrumb;
 @end

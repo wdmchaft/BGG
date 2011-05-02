@@ -22,6 +22,12 @@
 		5F1F97DC135C7A57007EB84C /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D8135C7A57007EB84C /* menu-icon.png */; };
 		5F1F97DD135C7A57007EB84C /* menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */; };
 		5F1F97E8135C7DF6007EB84C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FDAAABC134CBDBC002C97E0 /* HomeViewController.xib */; };
+		5F2DC4C3136F073100A9E924 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC4C1136F073100A9E924 /* SettingsViewController.m */; };
+		5F2DC4C4136F073100A9E924 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2DC4C2136F073100A9E924 /* SettingsViewController.xib */; };
+		5F2DC4CF136F0CF800A9E924 /* KeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DC4CE136F0CF800A9E924 /* KeychainUtils.m */; };
+		5F2DC4E4136F165200A9E924 /* text-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F2DC4E2136F165200A9E924 /* text-back.png */; };
+		5F2DC4E5136F165200A9E924 /* text-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F2DC4E3136F165200A9E924 /* text-back@2x.png */; };
+		5F2DC4E7136F16B400A9E924 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2DC4E6136F16B400A9E924 /* Security.framework */; };
 		5F32320613672EE90051F624 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F32320213672EE90051F624 /* WEPopoverContainerView.m */; };
 		5F32320713672EE90051F624 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F32320413672EE90051F624 /* WEPopoverController.m */; };
 		5F32320F13672F210051F624 /* popoverArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32320913672F210051F624 /* popoverArrowDown.png */; };
@@ -107,7 +113,7 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5F07A55D13670F2A007336DC /* IBreadcrumbMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenu.h; sourceTree = "<group>"; };
+		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
 		5F1645001360674A001179CA /* DataAccess+BoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+BoardGame.h"; sourceTree = "<group>"; };
 		5F1645011360674A001179CA /* DataAccess+BoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+BoardGame.m"; sourceTree = "<group>"; };
 		5F16451613606948001179CA /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
@@ -121,12 +127,21 @@
 		5F164524136077FA001179CA /* BoardGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameListCell.m; sourceTree = "<group>"; };
 		5F16452613607EE0001179CA /* DBBoardGame+Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBBoardGame+Images.h"; sourceTree = "<group>"; };
 		5F16452713607EE0001179CA /* DBBoardGame+Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBBoardGame+Images.m"; sourceTree = "<group>"; };
+		5F1D64FF136F6084004D76CD /* IBreadcrumbController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbController.h; sourceTree = "<group>"; };
 		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
 		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
 		5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected.png"; path = "../../../../design/png/menu-icon-selected.png"; sourceTree = "<group>"; };
 		5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon-selected@2x.png"; path = "../../../../design/png/menu-icon-selected@2x.png"; sourceTree = "<group>"; };
 		5F1F97D8135C7A57007EB84C /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon.png"; path = "../../../../design/png/menu-icon.png"; sourceTree = "<group>"; };
 		5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-icon@2x.png"; path = "../../../../design/png/menu-icon@2x.png"; sourceTree = "<group>"; };
+		5F2DC4C0136F073100A9E924 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5F2DC4C1136F073100A9E924 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5F2DC4C2136F073100A9E924 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		5F2DC4CD136F0CF800A9E924 /* KeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainUtils.h; sourceTree = "<group>"; };
+		5F2DC4CE136F0CF800A9E924 /* KeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainUtils.m; sourceTree = "<group>"; };
+		5F2DC4E2136F165200A9E924 /* text-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-back.png"; sourceTree = "<group>"; };
+		5F2DC4E3136F165200A9E924 /* text-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-back@2x.png"; sourceTree = "<group>"; };
+		5F2DC4E6136F16B400A9E924 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5F32320113672EE90051F624 /* WEPopoverContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEPopoverContainerView.h; path = ../../libs/wePopover/Classes/WEPopoverContainerView.h; sourceTree = "<group>"; };
 		5F32320213672EE90051F624 /* WEPopoverContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEPopoverContainerView.m; path = ../../libs/wePopover/Classes/WEPopoverContainerView.m; sourceTree = "<group>"; };
 		5F32320313672EE90051F624 /* WEPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEPopoverController.h; path = ../../libs/wePopover/Classes/WEPopoverController.h; sourceTree = "<group>"; };
@@ -223,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2DC4E7136F16B400A9E924 /* Security.framework in Frameworks */,
 				5F43ECD8135F2C29004EA6AB /* libxml2.dylib in Frameworks */,
 				5FDBA75A135DC3EE001C8292 /* CoreData.framework in Frameworks */,
 				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
@@ -274,6 +290,16 @@
 				5F1F97D9135C7A57007EB84C /* menu-icon@2x.png */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		5F2DC4BA136F070A00A9E924 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5F2DC4C2136F073100A9E924 /* SettingsViewController.xib */,
+				5F2DC4C0136F073100A9E924 /* SettingsViewController.h */,
+				5F2DC4C1136F073100A9E924 /* SettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		5F32320013672E430051F624 /* WEPopover */ = {
@@ -343,6 +369,7 @@
 		5F75744913400E1000C82F3B /* bgg */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC4BA136F070A00A9E924 /* Settings */,
 				5FDBA743135DC2AB001C8292 /* Data */,
 				5FDBA742135DC26F001C8292 /* BoardGames */,
 				5FDAAAB9134CBDA7002C97E0 /* Home */,
@@ -401,6 +428,8 @@
 		5F757599134142E200C82F3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC4E2136F165200A9E924 /* text-back.png */,
+				5F2DC4E3136F165200A9E924 /* text-back@2x.png */,
 				5F75759A134142E200C82F3B /* Icon.png */,
 			);
 			path = Images;
@@ -409,6 +438,7 @@
 		5F7575B7134145F400C82F3B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC4E6136F16B400A9E924 /* Security.framework */,
 				5FDBA759135DC3EE001C8292 /* CoreData.framework */,
 				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
 				5F75744313400E1000C82F3B /* UIKit.framework */,
@@ -421,10 +451,13 @@
 		5F7575DC134166CA00C82F3B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F2DC4CD136F0CF800A9E924 /* KeychainUtils.h */,
+				5F2DC4CE136F0CF800A9E924 /* KeychainUtils.m */,
 				5F6C7797135E10AD00891634 /* StorageHelper.h */,
 				5F6C7798135E10AD00891634 /* StorageHelper.m */,
-				5F07A55D13670F2A007336DC /* IBreadcrumbMenu.h */,
 				5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */,
+				5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */,
+				5F1D64FF136F6084004D76CD /* IBreadcrumbController.h */,
 				5F7575DE134166DA00C82F3B /* BreadcrumbViewController.h */,
 				5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */,
 				5F7575E2134166F700C82F3B /* StackSegmentedControl.h */,
@@ -678,6 +711,9 @@
 				5F32321213672F210051F624 /* popoverArrowUp.png in Resources */,
 				5F32321313672F210051F624 /* popoverBg.png in Resources */,
 				5F32321413672F210051F624 /* popoverBgSmall.png in Resources */,
+				5F2DC4C4136F073100A9E924 /* SettingsViewController.xib in Resources */,
+				5F2DC4E4136F165200A9E924 /* text-back.png in Resources */,
+				5F2DC4E5136F165200A9E924 /* text-back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +757,8 @@
 				5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */,
 				5F32320613672EE90051F624 /* WEPopoverContainerView.m in Sources */,
 				5F32320713672EE90051F624 /* WEPopoverController.m in Sources */,
+				5F2DC4C3136F073100A9E924 /* SettingsViewController.m in Sources */,
+				5F2DC4CF136F0CF800A9E924 /* KeychainUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

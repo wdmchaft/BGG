@@ -8,14 +8,17 @@
 
 @class StackSegmentedControl;
 @class WEPopoverController;
+#import "IBreadcrumbController.h"
 
-@interface BreadcrumbViewController : UIViewController {
+@interface BreadcrumbViewController : UIViewController<IBreadcrumbController> {
 	IBOutlet UIScrollView* scrollView;
 	IBOutlet UIView* contentView;
     
-    
 	IBOutlet UIView* footerView;
     IBOutlet UIButton* footerButton;
+    
+    IBOutlet UILabel* leftStatusLabel;
+    IBOutlet UILabel* rightStatusLabel;
 	
 	NSMutableArray* viewControllers;
 	StackSegmentedControl* cSegmentedControl;

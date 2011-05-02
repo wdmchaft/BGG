@@ -13,9 +13,7 @@
 @implementation Globals
 
 static Globals *sharedSingleton = nil;
-@synthesize dataAccess;
-@synthesize remoteConnector;
-@synthesize breadcrumb;
+
 
 #pragma mark -
 #pragma mark Object Life Cycle
@@ -39,6 +37,25 @@ static Globals *sharedSingleton = nil;
 	remoteConnector = [[RemoteConnector alloc] init];
 	return self;
 }
+
+#pragma mark properties
+
+@synthesize dataAccess;
+@synthesize remoteConnector;
+@synthesize breadcrumb;
+
+-(NSString*) bggUsername
+{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"bggUsername"];
+}
+
+-(void) setBggUsername:(NSString *)bggUsername
+{
+    [[NSUserDefaults standardUserDefaults] setObject:bggUsername forKey:@"bggUsername"];
+}
+
+
+#pragma mark methods
 
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back
 {

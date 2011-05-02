@@ -11,10 +11,12 @@
 #import "SSCollectionViewItem.h"
 #import "BoardGameListController.h"
 #import "DataAccess+BoardGame.h"
+#import "SettingsViewController.h"
 
 @interface HomeViewController(Private)
 
 -(void) navigateToBoardGameList;
+-(void) navigateToSettings;
 
 @end
 
@@ -126,16 +128,23 @@
 
 - (void)collectionView:(SSCollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-        switch (indexPath.row) {
+    switch (indexPath.row) {
         case 0:
             [self navigateToBoardGameList];
             
             break;
             
         case 1:
-                default:
             break;
-    }
+                
+        case 5:
+            [self navigateToSettings];
+            break;
+        default:
+        
+            break;
+                
+        }
 }
 
 - (CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSInteger)section
@@ -150,6 +159,13 @@
     NSArray* products = [[[Globals sharedGlobals] dataAccess] getAllBoardGames];
     BoardGameListController* controller = [[[BoardGameListController alloc] init] autorelease];
     [controller setBoardGames:products];
+    
+	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
+}
+
+-(void) navigateToSettings
+{
+    SettingsViewController* controller = [[[SettingsViewController alloc] init] autorelease];
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }

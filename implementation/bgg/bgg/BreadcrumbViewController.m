@@ -8,7 +8,9 @@
 
 #import "BreadcrumbViewController.h"
 #import "StackSegmentedControl.h"
-#import "IBreadcrumbMenu.h"
+#import "IBreadcrumbMenuDelegate.h"
+#import "IBreadcrumbController.h"
+
 #import "WEPopoverController.h"
 
 #define BREADCRUMB_FOOTER_CONTROL_SIZE 60
@@ -103,9 +105,9 @@
         
         UIViewController* currentController = [viewControllers objectAtIndex:[viewControllers count]-1];
         
-        ICAssert([currentController conformsToProtocol:@protocol(IBreadcrumbMenu)], @"controller must be IBreadcrumbMenu for button to be visible");
+        ICAssert([currentController conformsToProtocol:@protocol(IBreadcrumbMenuDelegate)], @"controller must be IBreadcrumbMenu for button to be visible");
         
-        UIView* popupView = [(id<IBreadcrumbMenu>)currentController menuClicked];
+        UIView* popupView = [(id<IBreadcrumbMenuDelegate>)currentController menuClicked];
         
         ICAssert(popupView != nil, @"popup view should be enabled... or should it?");
         
@@ -228,10 +230,19 @@
 		/*End Animation*/
 	}
     
+    if([currentController conformsToProtocol:@protocol(IBreadcrumbMenuDelegate)])
+    {
+        [(id<IBreadcrumbMenuDelegate>)currentController breadcrumbWillDisappear:self];
+    }
+    
+    [self setStatusMessage:@""];
+    [rightStatusLabel setText:@""];
     
 	[[currentController view] removeFromSuperview];
-    if([newController conformsToProtocol:@protocol(IBreadcrumbMenu)])
+    
+    if([newController conformsToProtocol:@protocol(IBreadcrumbMenuDelegate)])
     {
+        [(id<IBreadcrumbMenuDelegate>)newController breadcrumbWillAppear:self];
         [self showFooter];
     }
     else
@@ -291,6 +302,23 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)mscrollView
 {
+}
+
+#pragma mark IBreadcrumbController
+
+-(void) setStatusMessage:(NSString*) message
+{
+    [leftStatusLabel setText:message];
+}
+
+-(void) setLoading
+{
+    [rightStatusLabel setText:@"Loading..."];
+}
+
+-(void) setUpdated
+{
+    [rightStatusLabel setText:@"Updated."];
 }
 
 @end
