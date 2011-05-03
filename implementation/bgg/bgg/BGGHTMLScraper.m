@@ -21,9 +21,6 @@
 
 #import "BGGHTMLScraper.h"
 #import "BBGSearchResult.h"
-#import "BGGForum.h"
-#import "BGGThread.h"
-#import "BGGMessage.h"
 #import "XPathQuery.h"
 
 @implementation BGGHTMLScraper
@@ -53,8 +50,6 @@
     
     ICAssert([imageResult count] == [urlResult count], @"InitialSync: should have same count_1!");
     ICAssert([urlResult count] == [nameResult count], @"InitialSync: should have same count_2!");
-    
-    
     
     for(int i = 0; i < [nameResult count]; i++)
     {

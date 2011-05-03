@@ -69,7 +69,7 @@ static NSString * getGameDetailsKey = @"getGameDetailsKey";
 		return requestIdentifier;
 	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
 	
-    NSString* requestString = @"xmlapi2/thing?type=boardgame&id=%@&versions=1&videos=1&stats=1&historical=0&comments=0&ratingcomments=0";
+    NSString* requestString = @"xmlapi2/thing?type=boardgame&id=%@&versions=0&videos=1&stats=0&historical=0&comments=0&ratingcomments=0";
 	DataLoader* loader = [[DataLoader alloc] init];
 	loader.tag = requestIdentifier;
 	[[NSNotificationCenter defaultCenter] addObserver:self 
