@@ -10,7 +10,6 @@
 #import "Globals.h"
 #import "SSCollectionViewItem.h"
 #import "BoardGameListController.h"
-#import "DataAccess+BoardGame.h"
 #import "SettingsViewController.h"
 
 @interface HomeViewController(Private)
@@ -156,9 +155,8 @@
 
 -(void) navigateToBoardGameList
 {
-    NSArray* products = [[[Globals sharedGlobals] dataAccess] getAllBoardGames];
     BoardGameListController* controller = [[[BoardGameListController alloc] init] autorelease];
-    [controller setBoardGames:products];
+
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }

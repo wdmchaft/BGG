@@ -21,5 +21,12 @@
     return result;
 }
 
+-(void) awakeFromInsert 
+{
+	[super awakeFromInsert];
+	self.updated = [NSDate date];
+}
+
+
 
 @end

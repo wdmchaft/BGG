@@ -318,7 +318,7 @@
 
 -(void) setUpdated
 {
-    [rightStatusLabel setText:@"Updated."];
+    [rightStatusLabel setText:@"Updated"];
 }
 
 @end

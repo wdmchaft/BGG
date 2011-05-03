@@ -35,31 +35,34 @@
 {
     NSMutableArray *results = [NSMutableArray array];
     
-    for(int i = 1; i <= 100; i++)
+    
+    NSString* imageXPath = @"//tr[@id='row_']/td[@class='collection_thumbnail']/a/img/@src";
+    NSArray* imageResult = PerformHTMLXPathQuery(document, imageXPath);
+    
+    ICAssert(imageResult != nil, @"InitialSync: should have images!");
+    
+    NSString* nameXPath = @"//tr[@id='row_']/td[3]/div[2]/a/text()";
+    NSArray* nameResult = PerformHTMLXPathQuery(document, nameXPath);
+    
+    ICAssert(nameResult != nil, @"InitialSync: should have names!");
+    
+    NSString* urlXPath = @"//tr[@id='row_']/td[3]/div[2]/a/@href";
+    NSArray* urlResult = PerformHTMLXPathQuery(document, urlXPath);
+    
+    ICAssert(urlResult != nil, @"InitialSync: should have urls!");    
+    
+    ICAssert([imageResult count] == [urlResult count], @"InitialSync: should have same count_1!");
+    ICAssert([urlResult count] == [nameResult count], @"InitialSync: should have same count_2!");
+    
+    
+    
+    for(int i = 0; i < [nameResult count]; i++)
     {
-        NSString* imageXPath = [NSString stringWithFormat:@"//tr[@id='row_'][%d]/td[@class='collection_thumbnail']/a/img/@src", i];
-        NSArray* imageResult = PerformHTMLXPathQuery(document, imageXPath);
-        
-        if(imageResult == nil || [imageResult count] != 1)
-            continue;
-        
-        NSString* nameXPath = [NSString stringWithFormat:@"//tr[@id='row_'][%d]/td[3]/div[2]/a/text()", i];
-        NSArray* nameResult = PerformHTMLXPathQuery(document, nameXPath);
-        
-        if(nameResult == nil || [nameResult count] != 1)
-            continue;
-
-        NSString* urlXPath = [NSString stringWithFormat:@"//tr[@id='row_'][%d]/td[3]/div[2]/a/@href", i];
-        NSArray* urlResult = PerformHTMLXPathQuery(document, urlXPath);
-        
-        if(urlResult == nil || [urlResult count] != 1)
-            continue;
-   
         BBGSearchResult *result = [[[BBGSearchResult alloc] init] autorelease];
         
-        result.gameId = [[urlResult objectAtIndex:0] objectForKey:@"nodeContent"];
-        result.primaryTitle = [[nameResult objectAtIndex:0] objectForKey:@"nodeContent"];
-        result.imageURL = [[imageResult objectAtIndex:0] objectForKey:@"nodeContent"];;
+        result.gameId = [[urlResult objectAtIndex:i] objectForKey:@"nodeContent"];
+        result.primaryTitle = [[nameResult objectAtIndex:i] objectForKey:@"nodeContent"];
+        result.imageURL = [[imageResult objectAtIndex:i] objectForKey:@"nodeContent"];;
         
         
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/[0-9]+/" options:NSRegularExpressionCaseInsensitive error:nil];

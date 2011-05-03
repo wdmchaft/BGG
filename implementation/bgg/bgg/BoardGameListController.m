@@ -9,6 +9,7 @@
 #import "BoardGameListController.h"
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
+#import "DataAccess+BoardGame.h"
 
 @implementation BoardGameListController
 
@@ -54,6 +55,9 @@
     [self.tableView setRowHeight:76.0];
  
     [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
+    NSArray* products = [[[Globals sharedGlobals] dataAccess] getAllBoardGames];
+    [self setBoardGames:products];
 }
 
 - (void)viewDidUnload
