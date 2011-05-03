@@ -7,7 +7,6 @@
 //
 
 #import "BoardGameListCell.h"
-#import "DBBoardGame+Images.h"
 
 @implementation BoardGameListCell
 

@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DBBoardGame.h"
 
-@interface DBBoardGame (Images)
+@class BGGBoardGame;
+
+@interface DBBoardGame (Extras)
 
 -(UIImage*) previewImage;
+
+-(void) updateFromBGG:(BGGBoardGame*) bggBoardGame;
 
 @end

@@ -6,10 +6,11 @@
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-#import "DBBoardGame+Images.h"
+#import "DBBoardGame+Extras.h"
 #import "StorageHelper.h"
+#import "BGGBoardGame.h"
 
-@implementation DBBoardGame (Images)
+@implementation DBBoardGame (Extras)
 
 
 -(UIImage*) previewImage
@@ -19,6 +20,13 @@
     UIImage* result = [UIImage imageWithContentsOfFile:[[StorageHelper baseStorageDirectory] stringByAppendingPathComponent:filenamePath]];
 
     return result;
+}
+
+-(void) updateFromBGG:(BGGBoardGame*) bggBoardGame
+{
+    self.gameId = bggBoardGame.gameId;
+    self.primaryTitle = bggBoardGame.primaryTitle;
+    self.rank = bggBoardGame.rank;
 }
 
 -(void) awakeFromInsert 

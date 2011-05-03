@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DBBoardGame+Extras.h"
 
 @interface DataAccess : NSObject {
 

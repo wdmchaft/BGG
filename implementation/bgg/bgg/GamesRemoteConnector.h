@@ -14,4 +14,5 @@
 -(NSString*) getTop100;
 
 -(NSString*) getGameDetails:(NSString*) gameId;
+
 @end

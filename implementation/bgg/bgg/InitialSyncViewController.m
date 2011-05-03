@@ -7,7 +7,7 @@
 //
 
 #import "InitialSyncViewController.h"
-#import "BBGSearchResult.h"
+#import "BGGBoardGame.h"
 #import "StorageHelper.h"
 #import "DataAccess+BoardGame.h"
 
@@ -64,7 +64,7 @@
         return;
     }
     
-    BBGSearchResult* currentGame = [results objectAtIndex:currentIndex];
+    BGGBoardGame* currentGame = [results objectAtIndex:currentIndex];
     
     [_hud.textLabel setText:[NSString stringWithFormat:@"Getting %@ details", currentGame.primaryTitle]];
     
@@ -80,7 +80,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
 	
 	NSData* imageData = [[[notification object] objectForKey:@"data"] retain];
-    BBGSearchResult* currentGame = [results objectAtIndex:currentIndex];
+    BGGBoardGame* currentGame = [results objectAtIndex:currentIndex];
     
     NSString* filenamePath = [NSString stringWithFormat:@"/%@/preview.png", currentGame.gameId];
     [StorageHelper createDirectory:currentGame.gameId];
@@ -89,9 +89,7 @@
     
     DBBoardGame* game = [[[Globals sharedGlobals] dataAccess] createBoardGame];
     
-    game.gameId = currentGame.gameId;
-    game.primaryTitle = currentGame.primaryTitle;
-    game.rank = [NSNumber numberWithInt:currentIndex+1];
+    [game updateFromBGG:currentGame];
     
     [[[Globals sharedGlobals] dataAccess] saveChanges];
     

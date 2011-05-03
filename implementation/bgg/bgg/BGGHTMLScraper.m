@@ -20,7 +20,7 @@
 //
 
 #import "BGGHTMLScraper.h"
-#import "BBGSearchResult.h"
+#import "BGGBoardGame.h"
 #import "XPathQuery.h"
 
 @implementation BGGHTMLScraper
@@ -53,12 +53,12 @@
     
     for(int i = 0; i < [nameResult count]; i++)
     {
-        BBGSearchResult *result = [[[BBGSearchResult alloc] init] autorelease];
+        BGGBoardGame *result = [[[BGGBoardGame alloc] init] autorelease];
         
         result.gameId = [[urlResult objectAtIndex:i] objectForKey:@"nodeContent"];
         result.primaryTitle = [[nameResult objectAtIndex:i] objectForKey:@"nodeContent"];
         result.imageURL = [[imageResult objectAtIndex:i] objectForKey:@"nodeContent"];;
-        
+        result.rank = [NSNumber numberWithInt:i+1];
         
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/[0-9]+/" options:NSRegularExpressionCaseInsensitive error:nil];
         NSArray* matches = [regex matchesInString:result.gameId options:0 range:NSMakeRange(0, [result.gameId length])];

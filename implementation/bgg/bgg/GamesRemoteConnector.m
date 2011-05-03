@@ -8,6 +8,7 @@
 
 #import "GamesRemoteConnector.h"
 #import "BGGHTMLScraper.h"
+#import "BGGXMLScraper.h"
 #import "DataLoader.h"
 
 @implementation RemoteConnector (Games)
@@ -100,11 +101,11 @@ static NSString * getGameDetailsKey = @"getGameDetailsKey";
 	NSData* remoteData = [[sender object] getData];
 	[[sender object] autorelease];
 	
-    BGGHTMLScraper* scraper = [[[BGGHTMLScraper alloc] init] autorelease];
+    BGGXMLScraper* scraper = [[[BGGXMLScraper alloc] init] autorelease];
     
-    NSArray * games = [scraper scrapeGamesFromTop100:remoteData];
+    BGGBoardGameDetails * game = [scraper getGameDetails:remoteData];
     
-	[[NSNotificationCenter defaultCenter] postNotificationName:requestIdentifier object:[self generateResult:games :requestIdentifier]];
+	[[NSNotificationCenter defaultCenter] postNotificationName:requestIdentifier object:[self generateResult:game :requestIdentifier]];
 	[flagDictionary removeObjectForKey:requestIdentifier];
 }
 

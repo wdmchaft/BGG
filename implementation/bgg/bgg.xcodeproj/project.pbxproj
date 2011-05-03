@@ -15,13 +15,14 @@
 		5F10D45C1370B45700E0B743 /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D45B1370B45700E0B743 /* DBPerson.m */; };
 		5F10D45F1370B45700E0B743 /* DBPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D45E1370B45700E0B743 /* DBPublisher.m */; };
 		5F10D4621370B45800E0B743 /* DBBoardGameDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4611370B45800E0B743 /* DBBoardGameDetail.m */; };
+		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F1645021360674A001179CA /* DataAccess+BoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1645011360674A001179CA /* DataAccess+BoardGame.m */; };
 		5F16451C13606A8C001179CA /* BoardGameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16451A13606A8B001179CA /* BoardGameListController.m */; };
 		5F16451D13606A8C001179CA /* BoardGameListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F16451B13606A8B001179CA /* BoardGameListController.xib */; };
 		5F1645211360768C001179CA /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F16451F1360768C001179CA /* cell-background.png */; };
 		5F1645221360768C001179CA /* cell-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1645201360768C001179CA /* cell-background@2x.png */; };
 		5F164525136077FB001179CA /* BoardGameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F164524136077FA001179CA /* BoardGameListCell.m */; };
-		5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16452713607EE0001179CA /* DBBoardGame+Images.m */; };
+		5F16452813607EE1001179CA /* DBBoardGame+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16452713607EE0001179CA /* DBBoardGame+Extras.m */; };
 		5F1F9779135C6FC1007EB84C /* SSToolkit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */; };
 		5F1F97DA135C7A57007EB84C /* menu-icon-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D6135C7A57007EB84C /* menu-icon-selected.png */; };
 		5F1F97DB135C7A57007EB84C /* menu-icon-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F97D7135C7A57007EB84C /* menu-icon-selected@2x.png */; };
@@ -84,7 +85,7 @@
 		5FDBA778135DC724001C8292 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA771135DC724001C8292 /* CJSONSerializer.m */; };
 		5FDBA783135DD15B001C8292 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA782135DD15B001C8292 /* DataLoader.m */; };
 		5FDBA787135DD182001C8292 /* BGGHTMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */; };
-		5FDBA790135DD207001C8292 /* BBGSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA789135DD206001C8292 /* BBGSearchResult.m */; };
+		5FDBA790135DD207001C8292 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA789135DD206001C8292 /* BGGBoardGame.m */; };
 		5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */; };
 		5FEFA335135DE58C00D53F28 /* InitialSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */; };
 		5FEFA339135DE66700D53F28 /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEFA338135DE66700D53F28 /* libSSToolkit.a */; };
@@ -131,6 +132,8 @@
 		5F10D45E1370B45700E0B743 /* DBPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPublisher.m; sourceTree = "<group>"; };
 		5F10D4601370B45700E0B743 /* DBBoardGameDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGameDetail.h; sourceTree = "<group>"; };
 		5F10D4611370B45800E0B743 /* DBBoardGameDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGameDetail.m; sourceTree = "<group>"; };
+		5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGXMLScraper.h; sourceTree = "<group>"; };
+		5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGXMLScraper.m; sourceTree = "<group>"; };
 		5F1645001360674A001179CA /* DataAccess+BoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+BoardGame.h"; sourceTree = "<group>"; };
 		5F1645011360674A001179CA /* DataAccess+BoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+BoardGame.m"; sourceTree = "<group>"; };
 		5F16451913606A8B001179CA /* BoardGameListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameListController.h; sourceTree = "<group>"; };
@@ -140,8 +143,8 @@
 		5F1645201360768C001179CA /* cell-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-background@2x.png"; path = "Images/cell-background@2x.png"; sourceTree = "<group>"; };
 		5F164523136077FA001179CA /* BoardGameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameListCell.h; sourceTree = "<group>"; };
 		5F164524136077FA001179CA /* BoardGameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameListCell.m; sourceTree = "<group>"; };
-		5F16452613607EE0001179CA /* DBBoardGame+Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBBoardGame+Images.h"; sourceTree = "<group>"; };
-		5F16452713607EE0001179CA /* DBBoardGame+Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBBoardGame+Images.m"; sourceTree = "<group>"; };
+		5F16452613607EE0001179CA /* DBBoardGame+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBBoardGame+Extras.h"; sourceTree = "<group>"; };
+		5F16452713607EE0001179CA /* DBBoardGame+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBBoardGame+Extras.m"; sourceTree = "<group>"; };
 		5F1D64FF136F6084004D76CD /* IBreadcrumbController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbController.h; sourceTree = "<group>"; };
 		5F1F9778135C6FC0007EB84C /* SSToolkit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SSToolkit.bundle; path = ../../../../libs/sstoolkit/Resources/SSToolkit.bundle; sourceTree = "<group>"; };
 		5F1F97B3135C7090007EB84C /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ../../libs/sstoolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
@@ -233,8 +236,8 @@
 		5FDBA782135DD15B001C8292 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		5FDBA785135DD182001C8292 /* BGGHTMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGHTMLScraper.h; sourceTree = "<group>"; };
 		5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGHTMLScraper.m; sourceTree = "<group>"; };
-		5FDBA788135DD206001C8292 /* BBGSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBGSearchResult.h; sourceTree = "<group>"; };
-		5FDBA789135DD206001C8292 /* BBGSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGSearchResult.m; sourceTree = "<group>"; };
+		5FDBA788135DD206001C8292 /* BGGBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGBoardGame.h; sourceTree = "<group>"; };
+		5FDBA789135DD206001C8292 /* BGGBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGBoardGame.m; sourceTree = "<group>"; };
 		5FDBA795135DD304001C8292 /* GamesRemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesRemoteConnector.h; sourceTree = "<group>"; };
 		5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesRemoteConnector.m; sourceTree = "<group>"; };
 		5FEFA333135DE58C00D53F28 /* InitialSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSyncViewController.h; sourceTree = "<group>"; };
@@ -278,8 +281,8 @@
 				5F10D4521370B45700E0B743 /* DBVideos.m */,
 				5F10D44E1370B45600E0B743 /* DBCategory.h */,
 				5F10D44F1370B45600E0B743 /* DBCategory.m */,
-				5F16452613607EE0001179CA /* DBBoardGame+Images.h */,
-				5F16452713607EE0001179CA /* DBBoardGame+Images.m */,
+				5F16452613607EE0001179CA /* DBBoardGame+Extras.h */,
+				5F16452713607EE0001179CA /* DBBoardGame+Extras.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -607,6 +610,8 @@
 				5FDBA794135DD20C001C8292 /* Objects */,
 				5FDBA785135DD182001C8292 /* BGGHTMLScraper.h */,
 				5FDBA786135DD182001C8292 /* BGGHTMLScraper.m */,
+				5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */,
+				5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -614,8 +619,8 @@
 		5FDBA794135DD20C001C8292 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5FDBA788135DD206001C8292 /* BBGSearchResult.h */,
-				5FDBA789135DD206001C8292 /* BBGSearchResult.m */,
+				5FDBA788135DD206001C8292 /* BGGBoardGame.h */,
+				5FDBA789135DD206001C8292 /* BGGBoardGame.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -757,7 +762,7 @@
 				5FDBA778135DC724001C8292 /* CJSONSerializer.m in Sources */,
 				5FDBA783135DD15B001C8292 /* DataLoader.m in Sources */,
 				5FDBA787135DD182001C8292 /* BGGHTMLScraper.m in Sources */,
-				5FDBA790135DD207001C8292 /* BBGSearchResult.m in Sources */,
+				5FDBA790135DD207001C8292 /* BGGBoardGame.m in Sources */,
 				5FDBA797135DD304001C8292 /* GamesRemoteConnector.m in Sources */,
 				5FEFA335135DE58C00D53F28 /* InitialSyncViewController.m in Sources */,
 				5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */,
@@ -765,7 +770,7 @@
 				5F1645021360674A001179CA /* DataAccess+BoardGame.m in Sources */,
 				5F16451C13606A8C001179CA /* BoardGameListController.m in Sources */,
 				5F164525136077FB001179CA /* BoardGameListCell.m in Sources */,
-				5F16452813607EE1001179CA /* DBBoardGame+Images.m in Sources */,
+				5F16452813607EE1001179CA /* DBBoardGame+Extras.m in Sources */,
 				5F32320613672EE90051F624 /* WEPopoverContainerView.m in Sources */,
 				5F32320713672EE90051F624 /* WEPopoverController.m in Sources */,
 				5F2DC4C3136F073100A9E924 /* SettingsViewController.m in Sources */,
@@ -777,6 +782,7 @@
 				5F10D45C1370B45700E0B743 /* DBPerson.m in Sources */,
 				5F10D45F1370B45700E0B743 /* DBPublisher.m in Sources */,
 				5F10D4621370B45800E0B743 /* DBBoardGameDetail.m in Sources */,
+				5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
