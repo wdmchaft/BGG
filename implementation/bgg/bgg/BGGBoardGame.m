@@ -7,7 +7,7 @@
 
 @synthesize primaryTitle;
 @synthesize gameId;
-@synthesize imageURL = imageURL;
+@synthesize imageURL;
 @synthesize rank;
 
 

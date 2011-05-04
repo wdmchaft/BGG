@@ -15,7 +15,7 @@
 
 /* 
  MAX UIVIEW WIDTH: 230px
- MIN UIVIEW HEIGHT: 100px   
+ MIN UIVIEW HEIGHT: 110px   
  */
 -(UIView*) menuClicked;
 

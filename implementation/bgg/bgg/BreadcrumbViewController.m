@@ -11,8 +11,6 @@
 #import "IBreadcrumbMenuDelegate.h"
 #import "IBreadcrumbController.h"
 
-#import "WEPopoverController.h"
-
 #define BREADCRUMB_FOOTER_CONTROL_SIZE 60
 #define BREADCRUMB_FOOTER_VIEW_SIZE 36
 
@@ -21,6 +19,7 @@
 -(void) updateUIFrom:(int) oldIndex to:(int) newIndex animated:(BOOL) animated;
 -(void) showFooter;
 -(void) hideFooter;
+-(UIView*) getEmptyMenu;
 
 @end
 
@@ -108,6 +107,9 @@
         ICAssert([currentController conformsToProtocol:@protocol(IBreadcrumbMenuDelegate)], @"controller must be IBreadcrumbMenu for button to be visible");
         
         UIView* popupView = [(id<IBreadcrumbMenuDelegate>)currentController menuClicked];
+        
+        if(popupView == nil)
+            popupView = [self getEmptyMenu];
         
         ICAssert(popupView != nil, @"popup view should be enabled... or should it?");
         
@@ -296,6 +298,25 @@
         [footerView setHidden:YES];
     }];
     
+}
+
+-(UIView*)getEmptyMenu
+{
+    UIView* result = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 110)] autorelease];
+    [result setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"popup-back-small.png"]]];
+    
+    UILabel* label = [[[UILabel alloc] init] autorelease];
+    [label setText:@"No options available"];
+    [result addSubview:label];
+    [label setFrame:result.frame];
+    [label setTextAlignment:UITextAlignmentCenter];
+    [label setFont:[UIFont boldSystemFontOfSize:18]];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setShadowColor:[UIColor blackColor]];
+    [label setShadowOffset:CGSizeMake(0, 1)];
+    [label setBackgroundColor:[UIColor clearColor]];
+    
+    return result;
 }
 
 #pragma mark UIScrollViewDelegate

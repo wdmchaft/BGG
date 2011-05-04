@@ -10,11 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BGGBoardGame : NSObject {
-
-	NSString * primaryTitle;
-	NSString * gameId;
-	NSNumber * rank;
-	NSString * imageURL;
 }
 
 @property (nonatomic, retain) NSString * primaryTitle;

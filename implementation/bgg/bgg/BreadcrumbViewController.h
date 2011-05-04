@@ -7,7 +7,7 @@
 //
 
 @class StackSegmentedControl;
-@class WEPopoverController;
+#import "WEPopoverController.h"
 #import "IBreadcrumbController.h"
 
 @interface BreadcrumbViewController : UIViewController<IBreadcrumbController> {
