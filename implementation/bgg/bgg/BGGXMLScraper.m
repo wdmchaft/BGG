@@ -11,7 +11,7 @@
 
 @implementation BGGXMLScraper
 
--(BGGBoardGameDetails*) getGameDetails:(NSData *)document
+-(BGGBoardGame*) getGameDetails:(NSData *)document
 {
     return nil;
 }

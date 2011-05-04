@@ -20,7 +20,7 @@
 //
 
 #import "BGGHTMLScraper.h"
-#import "BGGBoardGame.h"
+#import "BGGBoardGameLookup.h"
 #import "XPathQuery.h"
 
 @implementation BGGHTMLScraper
@@ -53,7 +53,7 @@
     
     for(int i = 0; i < [nameResult count]; i++)
     {
-        BGGBoardGame *result = [[[BGGBoardGame alloc] init] autorelease];
+        BGGBoardGameLookup *result = [[[BGGBoardGameLookup alloc] init] autorelease];
         
         result.gameId = [[urlResult objectAtIndex:i] objectForKey:@"nodeContent"];
         result.primaryTitle = [[nameResult objectAtIndex:i] objectForKey:@"nodeContent"];

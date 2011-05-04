@@ -8,7 +8,7 @@
 
 #import "DBBoardGame+Extras.h"
 #import "StorageHelper.h"
-#import "BGGBoardGame.h"
+#import "BGGBoardGameLookup.h"
 
 @implementation DBBoardGame (Extras)
 
@@ -22,7 +22,7 @@
     return result;
 }
 
--(void) updateFromBGG:(BGGBoardGame*) bggBoardGame
+-(void) updateFromBGG:(BGGBoardGameLookup*) bggBoardGame
 {
     self.gameId = bggBoardGame.gameId;
     self.primaryTitle = bggBoardGame.primaryTitle;

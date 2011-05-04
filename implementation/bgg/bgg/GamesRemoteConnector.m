@@ -103,7 +103,7 @@ static NSString * getGameDetailsKey = @"getGameDetailsKey";
 	
     BGGXMLScraper* scraper = [[[BGGXMLScraper alloc] init] autorelease];
     
-    BGGBoardGameDetails * game = [scraper getGameDetails:remoteData];
+    BGGBoardGame * game = [scraper getGameDetails:remoteData];
     
 	[[NSNotificationCenter defaultCenter] postNotificationName:requestIdentifier object:[self generateResult:game :requestIdentifier]];
 	[flagDictionary removeObjectForKey:requestIdentifier];
