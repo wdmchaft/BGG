@@ -89,7 +89,7 @@
     
     DBBoardGame* game = [[[Globals sharedGlobals] dataAccess] createBoardGame];
     
-    [game updateFromBGG:currentGame];
+    [game updateFromBGGLookup:currentGame];
     
     [[[Globals sharedGlobals] dataAccess] saveChanges];
     

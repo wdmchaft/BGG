@@ -12,6 +12,6 @@
 @interface DataAccess (BoardGame)
 
 -(DBBoardGame*) createBoardGame;
-
+-(DBBoardGame*) getBoardGameById:(NSString*) gameId;
 -(NSArray*) getAllBoardGames;
 @end

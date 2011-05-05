@@ -22,7 +22,13 @@
     return result;
 }
 
--(void) updateFromBGG:(BGGBoardGameLookup*) bggBoardGame
+
+-(void) updateFromBGG:(BGGBoardGame*) bggBoardGame
+{
+
+}
+
+-(void) updateFromBGGLookup:(BGGBoardGameLookup*) bggBoardGame
 {
     self.gameId = bggBoardGame.gameId;
     self.primaryTitle = bggBoardGame.primaryTitle;

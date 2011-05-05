@@ -10,11 +10,13 @@
 #import "DBBoardGame.h"
 
 @class BGGBoardGameLookup;
+@class BGGBoardGame;
 
 @interface DBBoardGame (Extras)
 
 -(UIImage*) previewImage;
 
--(void) updateFromBGG:(BGGBoardGameLookup*) bggBoardGame;
+-(void) updateFromBGG:(BGGBoardGame*) bggBoardGame;
+-(void) updateFromBGGLookup:(BGGBoardGameLookup*) bggBoardGame;
 
 @end

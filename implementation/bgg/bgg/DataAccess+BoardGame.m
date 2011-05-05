@@ -19,6 +19,12 @@ static NSString* _entity = @"DBBoardGame";
              insertIntoManagedObjectContext:[self managedObjectContext]] autorelease];
 }
 
+
+-(DBBoardGame*) getBoardGameById:(NSString*) gameId
+{
+    return nil;
+}
+
 -(NSArray*) getAllBoardGames
 {
     NSError *error = nil;

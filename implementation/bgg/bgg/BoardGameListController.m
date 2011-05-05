@@ -10,6 +10,13 @@
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
 #import "DataAccess+BoardGame.h"
+#import "BGGBoardGame.h"
+
+@interface BoardGameListController (Private)
+
+-(void) showGameDetails:(DBBoardGame*) boardGame;
+
+@end
 
 @implementation BoardGameListController
 
@@ -123,6 +130,48 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DBBoardGame* boardGame = [_boardGames objectAtIndex:[indexPath indexAtPosition:1]];
+    int secondsInDay = 86400;
+    NSDate * today = [NSDate date];
+    NSDate * refDate = [NSDate dateWithTimeInterval:secondsInDay sinceDate:boardGame.updated]; 
+    NSComparisonResult compared = [refDate compare:today];
+    
+    if(compared < 0 || ![boardGame.hasDetails boolValue])
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(gotGameDetails:) 
+                                                     name:[[[Globals sharedGlobals] remoteConnector] getGameDetails:boardGame.gameId]
+                                                   object:nil];
+    }
+    else
+    {
+        [self showGameDetails:boardGame];
+    }
+    
+    
+}
+
+#pragma mark Private
+
+-(void) gotGameDetails:(NSNotification*) notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
+	
+	BGGBoardGame * game = [[[notification object] objectForKey:@"data"] retain];
+    
+    DBBoardGame* dbGame = [[[Globals sharedGlobals] dataAccess] getBoardGameById:game.gameId];
+    if(dbGame == nil)
+    {
+        dbGame = [[[Globals sharedGlobals] dataAccess] createBoardGame];
+    }
+    [dbGame updateFromBGG:game];
+    [[[Globals sharedGlobals] dataAccess] saveChanges];
+    
+    [self showGameDetails:dbGame];
+}
+
+-(void) showGameDetails:(DBBoardGame*) boardGame
 {
 
 }
