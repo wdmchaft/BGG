@@ -8,6 +8,7 @@
 
 #import "DBBoardGame+Extras.h"
 #import "StorageHelper.h"
+#import "BGGBoardGame.h"
 #import "BGGBoardGameLookup.h"
 
 @implementation DBBoardGame (Extras)
@@ -25,7 +26,24 @@
 
 -(void) updateFromBGG:(BGGBoardGame*) bggBoardGame
 {
-
+    self.gameId = bggBoardGame.gameId;
+    self.primaryTitle = bggBoardGame.primaryTitle;
+    self.rank = bggBoardGame.rank;
+    self.gameDescription = bggBoardGame.gameDescription;
+    self.maxPlayers = bggBoardGame.maxPlayers;
+    self.minAge = bggBoardGame.minAge;
+    self.minPlayers = bggBoardGame.minPlayers;
+    self.playingTime = bggBoardGame.playingTime;
+    self.yearPublished = bggBoardGame.yearPublished;
+//   categories;
+//   publishers;
+//   videos;
+//   mechanics;
+//   designers;
+//   artists;
+    
+    self.hasDetails = [NSNumber numberWithBool:YES];
+	self.updated = [NSDate date];
 }
 
 -(void) updateFromBGGLookup:(BGGBoardGameLookup*) bggBoardGame

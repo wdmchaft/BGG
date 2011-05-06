@@ -25,87 +25,25 @@
     
     @try {
         result.gameId = [self executeXPath:@"/items/item/@id" :document];
-        
-        
-        [[idResult objectAtIndex:0] objectForKey:@"nodeContent"];
+        result.primaryTitle = [self executeXPath:@"/items/item/name[@type='primary']/@value" :document];
+        result.imagePreviewURL = [self executeXPath:@"/items/item/thumbnail/text()" :document];
+        result.imageMainURL = [self executeXPath:@"/items/item/image/text()" :document];
+        result.gameDescription = [self executeXPath:@"/items/item/description/text()" :document];
+        result.yearPublished = [self executeXPath:@"/items/item/yearpublished/@value" :document];
+        result.minPlayers = [self executeXPath:@"/items/item/minplayers/@value" :document];
+        result.maxPlayers = [self executeXPath:@"/items/item/maxplayers/@value" :document];
+        result.playingTime = [self executeXPath:@"/items/item/playingtime/@value" :document];
+        result.minAge = [self executeXPath:@"/items/item/minage/@value" :document];
+        result.rank = [self executeXPath:@"/items/item/statistics/ratings/ranks/rank[@type='subtype']/@value" :document];
     }
     @catch (NSException *exception) {
+        ICL([exception reason]);
         return nil;
     }
     @finally {
-        
     }
     
-    
-    
-    NSString* idXPath = ;
-    NSArray* idResult = PerformXMLXPathQuery(document, idXPath);
-    
-    if([idResult count] == 0)
-        return nil;
-    
-    NSString* titleXPath = @"/items/item/name[type='primary']/@value";
-    NSArray* titleResult = PerformXMLXPathQuery(document, titleXPath);
-    
-    if([titleResult count] == 0)
-        return nil;
-    
-    NSString* imagePreviewXPath = @"/items/item/thumbnail";
-    NSArray* imagePreviewResult = PerformXMLXPathQuery(document, imagePreviewXPath);
-    
-    if([imagePreviewResult count] == 0)
-        return nil;
-    
-    NSString* imageMainXPath = @"/items/item/image";
-    NSArray* imageMainResult = PerformXMLXPathQuery(document, imageMainXPath);
-    
-    if([imageMainResult count] == 0)
-        return nil;
-    
-    NSString* descriptionXPath = @"/items/item/description";
-    NSArray* descriptionResult = PerformXMLXPathQuery(document, descriptionXPath);
-    
-    if([descriptionResult count] == 0)
-        return nil;
-    
-    NSString* yearPublishedXPath = @"/items/item/yearpublished/@value";
-    NSArray* yearPublishedResult = PerformXMLXPathQuery(document, yearPublishedXPath);
-    
-    if([yearPublishedResult count] == 0)
-        return nil;
-    
-    NSString* minPlayersXPath = @"/items/item/minplayers/@value";
-    NSArray* minPlayersResult = PerformXMLXPathQuery(document, minPlayersXPath);
-    
-    if([minPlayersResult count] == 0)
-        return nil;
-    
-    NSString* maxPlayersXPath = @"/items/item/maxplayers/@value";
-    NSArray* maxPlayersResult = PerformXMLXPathQuery(document, maxPlayersXPath);
-    
-    if([maxPlayersResult count] == 0)
-        return nil;
-    
-    NSString* playingTimeXPath = @"/items/item/playingtime/@value";
-    NSArray* playingTimeResult = PerformXMLXPathQuery(document, playingTimeXPath);
-    
-    if([playingTimeResult count] == 0)
-        return nil;
-    
-    NSString* minAgeXPath = @"/items/item/minage/@value";
-    NSArray* minAgeResult = PerformXMLXPathQuery(document, minAgeXPath);
-    
-    if([minAgeResult count] == 0)
-        return nil;
-    
-    NSString* rankXPath = @"/items/item/statistics/ranks/rank[type='subtype']/@value";
-    NSArray* rankResult = PerformXMLXPathQuery(document, rankXPath);
-    
-    if([rankResult count] == 0)
-        return nil;
-    
-    
-    
+    return result;
 }
 
 #pragma mark private
@@ -114,9 +52,10 @@
 {
     NSArray* result = PerformXMLXPathQuery(document, path);
     
-    if([result count] == 0)
+    if(result == nil || [result count] == 0)
         @throw [NSException exceptionWithName:@"NSxPathException"
-                                       reason:@"Invalid xpath" 
+                                       reason:[NSString stringWithFormat:@"%@:%@",
+                                               @"Invalid xpath", path]
                                      userInfo:nil];
     
     return [[result objectAtIndex:0] objectForKey:@"nodeContent"];

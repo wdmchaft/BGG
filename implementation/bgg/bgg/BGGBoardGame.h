@@ -11,6 +11,17 @@
 
 @interface BGGBoardGame : NSObject {
 @private
+    NSString * primaryTitle;
+    NSString * gameId;
+    NSNumber * rank;
+    NSString * imagePreviewURL;
+    NSString * imageMainURL;
+    NSString * gameDescription;
+    NSNumber * yearPublished;
+    NSNumber * minPlayers;
+    NSNumber * maxPlayers;
+    NSNumber * playingTime;
+    NSNumber * minAge;
 }
 
 @property (nonatomic, retain) NSString * primaryTitle;

@@ -36,7 +36,6 @@
 	[imageMainURL release];
 	[imagePreviewURL release];
 	[rank release];
-	[gameId release];
 	[gameDescription release];
 	[yearPublished release];
 	[minPlayers release];
