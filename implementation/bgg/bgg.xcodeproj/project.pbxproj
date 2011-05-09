@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAF6461378705D00CC4D43 /* BoardGameController.m */; };
+		49FAF6491378705D00CC4D43 /* BoardGameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FAF6471378705D00CC4D43 /* BoardGameController.xib */; };
 		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4671370D01400E0B743 /* BGGBoardGame.m */; };
 		5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F10D46913718AC100E0B743 /* popup-back-small.png */; };
@@ -119,6 +121,9 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		49FAF6451378705D00CC4D43 /* BoardGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameController.h; sourceTree = "<group>"; };
+		49FAF6461378705D00CC4D43 /* BoardGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameController.m; sourceTree = "<group>"; };
+		49FAF6471378705D00CC4D43 /* BoardGameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameController.xib; sourceTree = "<group>"; };
 		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
 		5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGXMLScraper.h; sourceTree = "<group>"; };
 		5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGXMLScraper.m; sourceTree = "<group>"; };
@@ -531,6 +536,9 @@
 				5F16451A13606A8B001179CA /* BoardGameListController.m */,
 				5F164523136077FA001179CA /* BoardGameListCell.h */,
 				5F164524136077FA001179CA /* BoardGameListCell.m */,
+				49FAF6451378705D00CC4D43 /* BoardGameController.h */,
+				49FAF6461378705D00CC4D43 /* BoardGameController.m */,
+				49FAF6471378705D00CC4D43 /* BoardGameController.xib */,
 			);
 			name = BoardGames;
 			sourceTree = "<group>";
@@ -742,6 +750,7 @@
 				5F2DC4E5136F165200A9E924 /* text-back@2x.png in Resources */,
 				5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */,
 				5F10D46C13718AC200E0B743 /* popup-back-small@2x.png in Resources */,
+				49FAF6491378705D00CC4D43 /* BoardGameController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +800,7 @@
 				5F83B560137191E5003B726E /* DBPublisher.m in Sources */,
 				5F83B563137191E5003B726E /* DBBoardGame.m in Sources */,
 				5F83B566137191E5003B726E /* DBMechanic.m in Sources */,
+				49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "BoardGameListController.h"
+#import "BoardGameController.h"
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
 #import "DataAccess+BoardGame.h"
@@ -173,6 +174,11 @@
 
 -(void) showGameDetails:(DBBoardGame*) boardGame
 {
+    BoardGameController* controller = [[[BoardGameController alloc] init] autorelease];
+    
+    [controller setBoardGame:boardGame];
+    
+	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 
 }
 

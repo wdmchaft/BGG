@@ -34,6 +34,8 @@
         
         imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 13, 50, 50)] autorelease];
         [self.contentView addSubview:imageView];
+        
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
 }

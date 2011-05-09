@@ -29,12 +29,12 @@
         result.imagePreviewURL = [self executeXPath:@"/items/item/thumbnail/text()" :document];
         result.imageMainURL = [self executeXPath:@"/items/item/image/text()" :document];
         result.gameDescription = [self executeXPath:@"/items/item/description/text()" :document];
-        result.yearPublished = [self executeXPath:@"/items/item/yearpublished/@value" :document];
-        result.minPlayers = [self executeXPath:@"/items/item/minplayers/@value" :document];
-        result.maxPlayers = [self executeXPath:@"/items/item/maxplayers/@value" :document];
-        result.playingTime = [self executeXPath:@"/items/item/playingtime/@value" :document];
-        result.minAge = [self executeXPath:@"/items/item/minage/@value" :document];
-        result.rank = [self executeXPath:@"/items/item/statistics/ratings/ranks/rank[@type='subtype']/@value" :document];
+        result.yearPublished = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/yearpublished/@value" :document]intValue] ];
+        result.minPlayers = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/minplayers/@value" :document]intValue] ];
+        result.maxPlayers = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/maxplayers/@value" :document]intValue] ];
+        result.playingTime = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/playingtime/@value" :document]intValue] ];
+        result.minAge = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/minage/@value" :document]intValue] ];
+        result.rank =  [NSNumber numberWithInt:[[self executeXPath:@"/items/item/statistics/ratings/ranks/rank[@type='subtype']/@value" :document]intValue] ];
     }
     @catch (NSException *exception) {
         ICL([exception reason]);
