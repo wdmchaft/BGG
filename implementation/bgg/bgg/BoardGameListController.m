@@ -140,6 +140,8 @@
     
     if(compared < 0 || ![boardGame.hasDetails boolValue])
     {
+        _hud = [[SSHUDView alloc] initWithTitle:@"Loading game..."];
+        [_hud show];
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(gotGameDetails:) 
                                                      name:[[[Globals sharedGlobals] remoteConnector] getGameDetails:boardGame.gameId]
@@ -170,6 +172,10 @@
     [[[Globals sharedGlobals] dataAccess] saveChanges];
     
     [self showGameDetails:dbGame];
+    
+    [_hud dismiss];
+    [_hud release];
+    _hud = nil;
 }
 
 -(void) showGameDetails:(DBBoardGame*) boardGame

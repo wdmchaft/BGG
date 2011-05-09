@@ -11,6 +11,7 @@
 
 @interface BoardGameListController : UITableViewController<IBreadcrumbMenuDelegate> {
     NSArray* _boardGames;
+    SSHUDView* _hud;
 }
 
 @property (nonatomic, retain) NSArray* boardGames;
