@@ -7,6 +7,7 @@
 //
 
 #import "BoardGameListController.h"
+#import "BoardGameController.h"
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
 #import "DataAccess+BoardGame.h"
@@ -124,7 +125,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    BoardGameController* controller = [[[BoardGameController alloc] init] autorelease];
+    
+    DBBoardGame* boardGame = [_boardGames objectAtIndex:[indexPath indexAtPosition:1]];
+    [controller setBoardGame:boardGame];
+    
+	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }
 
 #pragma mark IBreadcrumbMenu
