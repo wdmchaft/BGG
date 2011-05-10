@@ -35,6 +35,9 @@
     self.minPlayers = bggBoardGame.minPlayers;
     self.playingTime = bggBoardGame.playingTime;
     self.yearPublished = bggBoardGame.yearPublished;
+    self.rating = bggBoardGame.rating;
+    self.ratingCount = bggBoardGame.ratingCount;
+    
 //   categories;
 //   publishers;
 //   videos;

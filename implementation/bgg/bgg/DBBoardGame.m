@@ -2,7 +2,7 @@
 //  DBBoardGame.m
 //  bgg
 //
-//  Created by João Caxaria on 5/4/11.
+//  Created by João Caxaria on 5/10/11.
 //  Copyright (c) 2011 Imaginary Factory. All rights reserved.
 //
 
@@ -15,23 +15,54 @@
 
 
 @implementation DBBoardGame
-@dynamic gameId;
-@dynamic primaryTitle;
+@dynamic hasDetails;
 @dynamic updated;
+@dynamic primaryTitle;
+@dynamic gameId;
+@dynamic yearPublished;
+@dynamic minPlayers;
 @dynamic rank;
+@dynamic minAge;
 @dynamic gameDescription;
 @dynamic maxPlayers;
-@dynamic minAge;
-@dynamic minPlayers;
 @dynamic playingTime;
-@dynamic yearPublished;
-@dynamic hasDetails;
+@dynamic rating;
+@dynamic ratingCount;
+@dynamic videos;
 @dynamic categories;
 @dynamic publishers;
-@dynamic videos;
+@dynamic artists;
 @dynamic mechanics;
 @dynamic designers;
-@dynamic artists;
+
+- (void)addVideosObject:(DBVideos *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"videos"] addObject:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeVideosObject:(DBVideos *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"videos"] removeObject:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addVideos:(NSSet *)value {    
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"videos"] unionSet:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeVideos:(NSSet *)value {
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"videos"] minusSet:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
 
 - (void)addCategoriesObject:(DBCategory *)value {    
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
@@ -91,32 +122,32 @@
 }
 
 
-- (void)addVideosObject:(DBVideos *)value {    
+- (void)addArtistsObject:(DBPerson *)value {    
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"videos"] addObject:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"artists"] addObject:value];
+    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
     [changedObjects release];
 }
 
-- (void)removeVideosObject:(DBVideos *)value {
+- (void)removeArtistsObject:(DBPerson *)value {
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"videos"] removeObject:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"artists"] removeObject:value];
+    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
     [changedObjects release];
 }
 
-- (void)addVideos:(NSSet *)value {    
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"videos"] unionSet:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+- (void)addArtists:(NSSet *)value {    
+    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"artists"] unionSet:value];
+    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
 }
 
-- (void)removeVideos:(NSSet *)value {
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"videos"] minusSet:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+- (void)removeArtists:(NSSet *)value {
+    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"artists"] minusSet:value];
+    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 
@@ -175,35 +206,6 @@
     [self willChangeValueForKey:@"designers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
     [[self primitiveValueForKey:@"designers"] minusSet:value];
     [self didChangeValueForKey:@"designers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-}
-
-
-- (void)addArtistsObject:(DBPerson *)value {    
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"artists"] addObject:value];
-    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)removeArtistsObject:(DBPerson *)value {
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"artists"] removeObject:value];
-    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)addArtists:(NSSet *)value {    
-    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"artists"] unionSet:value];
-    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-}
-
-- (void)removeArtists:(NSSet *)value {
-    [self willChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"artists"] minusSet:value];
-    [self didChangeValueForKey:@"artists" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 

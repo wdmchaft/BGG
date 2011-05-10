@@ -22,9 +22,25 @@
 @synthesize imageMainURL;
 @synthesize imagePreviewURL;
 @synthesize rank;
+@synthesize rating;
+@synthesize ratingCount;
+@synthesize categories;
+@synthesize publishers;
+@synthesize mechanics;
+@synthesize designers;
+@synthesize artists;
+@synthesize videos;
+
 
 -(id) init {
     self = [super init];
+    
+    categories = [[NSMutableArray arrayWithCapacity:0] retain];
+    publishers = [[NSMutableArray arrayWithCapacity:0] retain];
+    mechanics = [[NSMutableArray arrayWithCapacity:0] retain];
+    designers = [[NSMutableArray arrayWithCapacity:0] retain];
+    artists = [[NSMutableArray arrayWithCapacity:0] retain];
+    videos = [[NSMutableArray arrayWithCapacity:0] retain];
     
 	return self;
 }
@@ -42,6 +58,14 @@
 	[maxPlayers release];
 	[playingTime release];
 	[minAge release];
+	[rating release];
+	[ratingCount release];
+    [categories release];
+    [publishers release];
+    [mechanics release];
+    [designers release];
+    [artists release];
+    [videos release];
 	[super dealloc];
 }
 

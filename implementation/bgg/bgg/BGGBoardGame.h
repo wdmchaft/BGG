@@ -22,6 +22,14 @@
     NSNumber * maxPlayers;
     NSNumber * playingTime;
     NSNumber * minAge;
+    NSNumber * rating;
+    NSNumber * ratingCount;
+    NSMutableArray * categories;
+    NSMutableArray * publishers;
+    NSMutableArray * mechanics;
+    NSMutableArray * designers;
+    NSMutableArray * artists;
+    NSMutableArray * videos;
 }
 
 @property (nonatomic, retain) NSString * primaryTitle;
@@ -35,5 +43,13 @@
 @property (nonatomic, retain) NSNumber * maxPlayers;
 @property (nonatomic, retain) NSNumber * playingTime;
 @property (nonatomic, retain) NSNumber * minAge;
+@property (nonatomic, retain) NSNumber * rating;
+@property (nonatomic, retain) NSNumber * ratingCount;
+@property (nonatomic, readonly) NSMutableArray * categories;
+@property (nonatomic, readonly) NSMutableArray * publishers;
+@property (nonatomic, readonly) NSMutableArray * mechanics;
+@property (nonatomic, readonly) NSMutableArray * designers;
+@property (nonatomic, readonly) NSMutableArray * artists;
+@property (nonatomic, readonly) NSMutableArray * videos;
 
 @end

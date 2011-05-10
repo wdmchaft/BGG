@@ -22,7 +22,22 @@ static NSString* _entity = @"DBBoardGame";
 
 -(DBBoardGame*) getBoardGameById:(NSString*) gameId
 {
-    return nil;
+    DBBoardGame *boardGame = nil;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[self entityDescription:_entity]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gameId == %@", gameId];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:nil];
+    [fetchRequest release];
+    
+    if([results count] > 0) {
+        boardGame = [results objectAtIndex:0];
+    }
+    
+    return boardGame;
 }
 
 -(NSArray*) getAllBoardGames
