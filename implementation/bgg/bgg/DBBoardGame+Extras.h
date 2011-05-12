@@ -14,7 +14,10 @@
 
 @interface DBBoardGame (Extras)
 
+-(bool) hasPreviewImage;
 -(UIImage*) previewImage;
+-(bool) hasMainImage;
+-(UIImage*) mainImage;
 
 -(void) updateFromBGG:(BGGBoardGame*) bggBoardGame;
 -(void) updateFromBGGLookup:(BGGBoardGameLookup*) bggBoardGame;

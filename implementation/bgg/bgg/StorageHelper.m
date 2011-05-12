@@ -20,6 +20,10 @@
 	return basePath;
 }
 
++(bool) fileExists:(NSString*) name
+{
+    return [[NSFileManager defaultManager] fileExistsAtPath:name];
+}
 
 + (NSString*) createDirectory:(NSString*) name
 {
