@@ -10,11 +10,13 @@
 #import "BGGBoardGame.h"
 #import "XPathQuery.h"
 #import "BGGIdNameLookup.h"
+#import "BGGBoardGameVideo.h"
 
 @interface BGGXMLScraper (Private)
 
 -(id) executeXPath:(NSString*) path :(NSData*) document;
 -(NSArray*) getIdNameCollection:(NSData *)document :(NSString*) idPath :(NSString*) namePath;
+-(NSArray*) getVideos:(NSData *)document;
 
 @end
 
@@ -62,7 +64,7 @@
                                   :@"/items/item/link[@type='boardgameartist']/@value"]];
         
         
-        //TODO: Parse videos
+        [result.videos addObjectsFromArray:[self getVideos:document]];
     }
     @catch (NSException *exception) {
         ICL([exception reason]);
@@ -75,6 +77,46 @@
 }
 
 #pragma mark private
+
+-(NSArray*) getVideos:(NSData *)document
+{
+    NSArray* ids = PerformXMLXPathQuery(document, @"/items/item/videos/video/@id");
+    NSArray* titles = PerformXMLXPathQuery(document, @"/items/item/videos/video/@title");
+    NSArray* categories = PerformXMLXPathQuery(document, @"/items/item/videos/video/@category");
+    NSArray* languages = PerformXMLXPathQuery(document, @"/items/item/videos/video/@language");
+    NSArray* links = PerformXMLXPathQuery(document, @"/items/item/videos/video/@link");
+    NSArray* usernames = PerformXMLXPathQuery(document, @"/items/item/videos/video/@username");
+    NSArray* userids = PerformXMLXPathQuery(document, @"/items/item/videos/video/@userid");
+    NSArray* postDates = PerformXMLXPathQuery(document, @"/items/item/videos/video/@postdate");
+    
+    ICAssert([ids count] == [titles count], @"XmlVideos: should have same count_1!");
+    ICAssert([titles count] == [categories count], @"XmlVideos: should have same count_2!");
+    ICAssert([categories count] == [languages count], @"XmlVideos: should have same count_3!");
+    ICAssert([languages count] == [links count], @"XmlVideos: should have same count_4!");
+    ICAssert([links count] == [usernames count], @"XmlVideos: should have same count_5!");
+    ICAssert([usernames count] == [userids count], @"XmlVideos: should have same count_6!");
+    ICAssert([userids count] == [postDates count], @"XmlVideos: should have same count_7!");
+    
+    
+    NSMutableArray* resultArray = [[[NSMutableArray alloc] initWithCapacity:[ids count]] autorelease];
+    
+    for(int i = 0; i < [ids count]; i++)
+    {
+        BGGBoardGameVideo* gameVideo = [[[BGGBoardGameVideo alloc] init] autorelease];
+        
+        gameVideo.id = [[ids objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.title = [[titles objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.category = [[categories objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.language = [[languages objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.link = [[links objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.userName = [[usernames objectAtIndex:i] objectForKey:@"nodeContent"];
+        gameVideo.userId = [[userids objectAtIndex:i] objectForKey:@"nodeContent"];
+        
+        [resultArray addObject:gameVideo];
+    }
+    
+    return resultArray;
+}
 
 -(NSArray*) getIdNameCollection:(NSData *)document :(NSString*) idPath :(NSString*) namePath
 {

@@ -15,6 +15,7 @@
 #import "DataAccess+Mechanic.h"
 #import "DataAccess+Person.h"
 #import "DataAccess+Publisher.h"
+#import "DataAccess+Videos.h"
 
 #import "RemoteConnector.h"
 #import "GamesRemoteConnector.h"

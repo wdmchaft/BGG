@@ -11,6 +11,7 @@
 #import "BGGBoardGame.h"
 #import "BGGBoardGameLookup.h"
 #import "BGGIdNameLookup.h"
+#import "BGGBoardGameVideo.h"
 
 @implementation DBBoardGame (Extras)
 
@@ -77,6 +78,22 @@
         [dbObj updateFromBGGLookup:bggObj];
         [dbObj addBoardGamesArtistObject:self];
         [self addArtistsObject:dbObj];
+    }
+    
+    for(BGGBoardGameVideo* video in bggBoardGame.videos)
+    {
+        DBVideos* dbvideo = [[[Globals sharedGlobals] dataAccess] getCreateVideo:video.id];
+        [dbvideo updateFromBGGVideo:video];
+        
+        DBPerson* owner = [[[Globals sharedGlobals] dataAccess] getCreatePerson:video.userId];
+        owner.id = video.userId;
+        owner.name = video.userName;
+        
+        dbvideo.user = owner;
+        dbvideo.boardGames = self;
+        
+        [owner addVideosObject:dbvideo];
+        [self addVideosObject:dbvideo];
     }
     
     self.hasDetails = [NSNumber numberWithBool:YES];

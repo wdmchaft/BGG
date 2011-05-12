@@ -12,6 +12,7 @@
 #import "DBMechanic+Extras.h"
 #import "DBPerson+Extras.h"
 #import "DBPublisher+Extras.h"
+#import "DBVideos+Extras.h"
 
 @interface DataAccess : NSObject {
 
