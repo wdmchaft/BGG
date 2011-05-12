@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class DBBoardGame;
 
-@interface BoardGameTableRating : UITableViewCell {
-    
+@interface  BoardGameRatingCell: UITableViewCell {
+    DBBoardGame* _boardGame;
 }
+
+-(void) setBoardGame:(DBBoardGame*) boardGame;
 
 @end

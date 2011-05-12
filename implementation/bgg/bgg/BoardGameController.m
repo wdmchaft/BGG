@@ -7,7 +7,8 @@
 //
 
 #import "BoardGameController.h"
-
+#import "BoardGameHeaderCell.h"
+#import "BoardGameRatingCell.h"
 
 @implementation BoardGameController
 
@@ -65,5 +66,88 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    CGFloat rowSize;
+    switch (indexPath.row) {
+        case 0:
+            //headerCell size
+            rowSize = 152;
+            return rowSize;
+            break;
+        case 1:
+            //ratingCell size
+            rowSize = 61;
+            return rowSize;
+            break;
+        default:
+            rowSize = 61;
+            return rowSize;
+            break;
+            break;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     
+    static NSString *CellIdentifier;
+    switch (indexPath.row) {
+        case 0:
+            CellIdentifier = @"TableHeader";
+            BoardGameHeaderCell *cell = (BoardGameHeaderCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGameHeaderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            [cell setBoardGame:_boardGame];
+            
+            return cell;
+            break;
+        case 1:
+            CellIdentifier = @"TableRating";
+            BoardGameRatingCell *cellNew = (BoardGameRatingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cellNew == nil) 
+            {
+                cellNew = [[[BoardGameRatingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            [cellNew setBoardGame:_boardGame];
+            
+            return cellNew;
+            break;
+        default:
+            CellIdentifier = @"TableRating";
+            cellNew = (BoardGameRatingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cellNew == nil) 
+            {
+                cellNew = [[[BoardGameRatingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            [cellNew setBoardGame:_boardGame];
+            
+            return cellNew;
+
+            break;
+    }
+}
+
 
 @end

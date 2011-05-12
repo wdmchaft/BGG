@@ -6,9 +6,15 @@
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+@class DBBoardGame;
 
-@protocol BoardGameTableHeader <NSObject>
+@interface BoardGameHeaderCell : UITableViewCell {
+    DBBoardGame* _boardGame;
+    UIImageView* imageView;
+}
+
+-(void) setBoardGame:(DBBoardGame*) boardGame;
 
 @end
