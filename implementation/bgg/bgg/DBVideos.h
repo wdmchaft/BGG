@@ -2,7 +2,7 @@
 //  DBVideos.h
 //  bgg
 //
-//  Created by João Caxaria on 5/4/11.
+//  Created by João Caxaria on 5/10/11.
 //  Copyright (c) 2011 Imaginary Factory. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface DBVideos : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSString * userid;
+@property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * language;

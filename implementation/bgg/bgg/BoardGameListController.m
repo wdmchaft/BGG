@@ -163,12 +163,9 @@
 	
 	BGGBoardGame * game = [[[notification object] objectForKey:@"data"] retain];
     
-    DBBoardGame* dbGame = [[[Globals sharedGlobals] dataAccess] getBoardGameById:game.gameId];
-    if(dbGame == nil)
-    {
-        dbGame = [[[Globals sharedGlobals] dataAccess] createBoardGame];
-    }
+    DBBoardGame* dbGame = [[[Globals sharedGlobals] dataAccess] getCreateBoardGame:game.gameId];
     [dbGame updateFromBGG:game];
+    
     [[[Globals sharedGlobals] dataAccess] saveChanges];
     
     [self showGameDetails:dbGame];

@@ -14,10 +14,12 @@
 @interface DBBoardGame : NSManagedObject {
 @private
 }
+@property (nonatomic, retain) NSNumber * rating;
 @property (nonatomic, retain) NSNumber * hasDetails;
 @property (nonatomic, retain) NSDate * updated;
 @property (nonatomic, retain) NSString * primaryTitle;
 @property (nonatomic, retain) NSString * gameId;
+@property (nonatomic, retain) NSNumber * ratingCount;
 @property (nonatomic, retain) NSNumber * yearPublished;
 @property (nonatomic, retain) NSNumber * minPlayers;
 @property (nonatomic, retain) NSNumber * rank;
@@ -25,10 +27,8 @@
 @property (nonatomic, retain) NSString * gameDescription;
 @property (nonatomic, retain) NSNumber * maxPlayers;
 @property (nonatomic, retain) NSNumber * playingTime;
-@property (nonatomic, retain) NSNumber * rating;
-@property (nonatomic, retain) NSNumber * ratingCount;
-@property (nonatomic, retain) NSSet* videos;
 @property (nonatomic, retain) NSSet* categories;
+@property (nonatomic, retain) NSSet* videos;
 @property (nonatomic, retain) NSSet* publishers;
 @property (nonatomic, retain) NSSet* artists;
 @property (nonatomic, retain) NSSet* mechanics;

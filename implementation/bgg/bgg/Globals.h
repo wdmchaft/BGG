@@ -10,6 +10,11 @@
 
 #import "BreadcrumbViewController.h"
 #import "DataAccess.h"
+#import "DataAccess+BoardGame.h"
+#import "DataAccess+Category.h"
+#import "DataAccess+Mechanic.h"
+#import "DataAccess+Person.h"
+#import "DataAccess+Publisher.h"
 
 #import "RemoteConnector.h"
 #import "GamesRemoteConnector.h"

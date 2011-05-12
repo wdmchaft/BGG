@@ -43,6 +43,20 @@
 		5F32321413672F210051F624 /* popoverBgSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32320E13672F210051F624 /* popoverBgSmall.png */; };
 		5F43ECD6135F2BC4004EA6AB /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */; };
 		5F43ECD8135F2C29004EA6AB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43ECD7135F2C29004EA6AB /* libxml2.dylib */; };
+		5F5EDF8013792B080074F4EB /* DBCategory+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EDF7F13792B080074F4EB /* DBCategory+Extras.m */; };
+		5F5EDF8913792D530074F4EB /* DataAccess+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EDF8213792D4E0074F4EB /* DataAccess+Category.m */; };
+		5F5EDF8A13792D530074F4EB /* DataAccess+Mechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EDF8413792D4F0074F4EB /* DataAccess+Mechanic.m */; };
+		5F5EDF8B13792D530074F4EB /* DataAccess+Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EDF8613792D500074F4EB /* DataAccess+Person.m */; };
+		5F5EDF8C13792D530074F4EB /* DataAccess+Publisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EDF8813792D520074F4EB /* DataAccess+Publisher.m */; };
+		5F5EE1FA1379468E0074F4EB /* DBMechanic+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE1F5137946860074F4EB /* DBMechanic+Extras.m */; };
+		5F5EE1FB1379468E0074F4EB /* DBPerson+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE1F7137946880074F4EB /* DBPerson+Extras.m */; };
+		5F5EE1FC1379468E0074F4EB /* DBPublisher+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE1F91379468D0074F4EB /* DBPublisher+Extras.m */; };
+		5F5EE4BE1379E3BF0074F4EB /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4BD1379E3BC0074F4EB /* DBCategory.m */; };
+		5F5EE4C11379E3C30074F4EB /* DBMechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4C01379E3C20074F4EB /* DBMechanic.m */; };
+		5F5EE4C41379E3C80074F4EB /* DBVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4C31379E3C60074F4EB /* DBVideos.m */; };
+		5F5EE4C71379E3CD0074F4EB /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4C61379E3CC0074F4EB /* DBPerson.m */; };
+		5F5EE4CA1379E3D20074F4EB /* DBPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4C91379E3D10074F4EB /* DBPublisher.m */; };
+		5F5EE4CD1379E3D50074F4EB /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE4CC1379E3D40074F4EB /* DBBoardGame.m */; };
 		5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7798135E10AD00891634 /* StorageHelper.m */; };
 		5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
 		5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
@@ -59,12 +73,6 @@
 		5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */; };
 		5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* StackSegmentedControl.m */; };
 		5F7ED8031378AE070016A032 /* BGGIdNameLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7ED8021378AE060016A032 /* BGGIdNameLookup.m */; };
-		5F7ED8091378BB680016A032 /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7ED8081378BB680016A032 /* DBBoardGame.m */; };
-		5F83B557137191E4003B726E /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B556137191E4003B726E /* DBCategory.m */; };
-		5F83B55A137191E4003B726E /* DBVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B559137191E4003B726E /* DBVideos.m */; };
-		5F83B55D137191E5003B726E /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B55C137191E5003B726E /* DBPerson.m */; };
-		5F83B560137191E5003B726E /* DBPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B55F137191E5003B726E /* DBPublisher.m */; };
-		5F83B566137191E5003B726E /* DBMechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B565137191E5003B726E /* DBMechanic.m */; };
 		5FCF6054135C45C300D9696E /* breadcrumb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604A135C45C200D9696E /* breadcrumb-back.png */; };
 		5FCF6055135C45C300D9696E /* breadcrumb-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604B135C45C200D9696E /* breadcrumb-back@2x.png */; };
 		5FCF6056135C45C300D9696E /* breadcrumb-home-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604C135C45C200D9696E /* breadcrumb-home-selected.png */; };
@@ -172,6 +180,34 @@
 		5F43ECD4135F2BC4004EA6AB /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		5F43ECD5135F2BC4004EA6AB /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		5F43ECD7135F2C29004EA6AB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5F5EDF7E13792B080074F4EB /* DBCategory+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBCategory+Extras.h"; sourceTree = "<group>"; };
+		5F5EDF7F13792B080074F4EB /* DBCategory+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBCategory+Extras.m"; sourceTree = "<group>"; };
+		5F5EDF8113792D4D0074F4EB /* DataAccess+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Category.h"; sourceTree = "<group>"; };
+		5F5EDF8213792D4E0074F4EB /* DataAccess+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+Category.m"; sourceTree = "<group>"; };
+		5F5EDF8313792D4E0074F4EB /* DataAccess+Mechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Mechanic.h"; sourceTree = "<group>"; };
+		5F5EDF8413792D4F0074F4EB /* DataAccess+Mechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+Mechanic.m"; sourceTree = "<group>"; };
+		5F5EDF8513792D4F0074F4EB /* DataAccess+Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Person.h"; sourceTree = "<group>"; };
+		5F5EDF8613792D500074F4EB /* DataAccess+Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+Person.m"; sourceTree = "<group>"; };
+		5F5EDF8713792D510074F4EB /* DataAccess+Publisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Publisher.h"; sourceTree = "<group>"; };
+		5F5EDF8813792D520074F4EB /* DataAccess+Publisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+Publisher.m"; sourceTree = "<group>"; };
+		5F5EE1F4137946850074F4EB /* DBMechanic+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBMechanic+Extras.h"; sourceTree = "<group>"; };
+		5F5EE1F5137946860074F4EB /* DBMechanic+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBMechanic+Extras.m"; sourceTree = "<group>"; };
+		5F5EE1F6137946870074F4EB /* DBPerson+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBPerson+Extras.h"; sourceTree = "<group>"; };
+		5F5EE1F7137946880074F4EB /* DBPerson+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBPerson+Extras.m"; sourceTree = "<group>"; };
+		5F5EE1F81379468C0074F4EB /* DBPublisher+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBPublisher+Extras.h"; sourceTree = "<group>"; };
+		5F5EE1F91379468D0074F4EB /* DBPublisher+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBPublisher+Extras.m"; sourceTree = "<group>"; };
+		5F5EE4BC1379E3BA0074F4EB /* DBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCategory.h; sourceTree = "<group>"; };
+		5F5EE4BD1379E3BC0074F4EB /* DBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCategory.m; sourceTree = "<group>"; };
+		5F5EE4BF1379E3C10074F4EB /* DBMechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMechanic.h; sourceTree = "<group>"; };
+		5F5EE4C01379E3C20074F4EB /* DBMechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMechanic.m; sourceTree = "<group>"; };
+		5F5EE4C21379E3C50074F4EB /* DBVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBVideos.h; sourceTree = "<group>"; };
+		5F5EE4C31379E3C60074F4EB /* DBVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBVideos.m; sourceTree = "<group>"; };
+		5F5EE4C51379E3CB0074F4EB /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
+		5F5EE4C61379E3CC0074F4EB /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
+		5F5EE4C81379E3CF0074F4EB /* DBPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPublisher.h; sourceTree = "<group>"; };
+		5F5EE4C91379E3D10074F4EB /* DBPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPublisher.m; sourceTree = "<group>"; };
+		5F5EE4CB1379E3D30074F4EB /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
+		5F5EE4CC1379E3D40074F4EB /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
 		5F6C7797135E10AD00891634 /* StorageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageHelper.h; sourceTree = "<group>"; };
 		5F6C7798135E10AD00891634 /* StorageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageHelper.m; sourceTree = "<group>"; };
 		5F75743F13400E1000C82F3B /* BGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,18 +234,6 @@
 		5F7575E3134166F700C82F3B /* StackSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackSegmentedControl.m; sourceTree = "<group>"; };
 		5F7ED8011378AE060016A032 /* BGGIdNameLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGIdNameLookup.h; sourceTree = "<group>"; };
 		5F7ED8021378AE060016A032 /* BGGIdNameLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGIdNameLookup.m; sourceTree = "<group>"; };
-		5F7ED8071378BB670016A032 /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
-		5F7ED8081378BB680016A032 /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
-		5F83B555137191E4003B726E /* DBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCategory.h; sourceTree = "<group>"; };
-		5F83B556137191E4003B726E /* DBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCategory.m; sourceTree = "<group>"; };
-		5F83B558137191E4003B726E /* DBVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBVideos.h; sourceTree = "<group>"; };
-		5F83B559137191E4003B726E /* DBVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBVideos.m; sourceTree = "<group>"; };
-		5F83B55B137191E5003B726E /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
-		5F83B55C137191E5003B726E /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
-		5F83B55E137191E5003B726E /* DBPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPublisher.h; sourceTree = "<group>"; };
-		5F83B55F137191E5003B726E /* DBPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPublisher.m; sourceTree = "<group>"; };
-		5F83B564137191E5003B726E /* DBMechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMechanic.h; sourceTree = "<group>"; };
-		5F83B565137191E5003B726E /* DBMechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMechanic.m; sourceTree = "<group>"; };
 		5FCF604A135C45C200D9696E /* breadcrumb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back.png"; path = "Images/breadcrumb-back.png"; sourceTree = "<group>"; };
 		5FCF604B135C45C200D9696E /* breadcrumb-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back@2x.png"; path = "Images/breadcrumb-back@2x.png"; sourceTree = "<group>"; };
 		5FCF604C135C45C200D9696E /* breadcrumb-home-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-home-selected.png"; path = "Images/breadcrumb-home-selected.png"; sourceTree = "<group>"; };
@@ -279,20 +303,28 @@
 		5F164515136068B8001179CA /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5F7ED8071378BB670016A032 /* DBBoardGame.h */,
-				5F7ED8081378BB680016A032 /* DBBoardGame.m */,
-				5F83B564137191E5003B726E /* DBMechanic.h */,
-				5F83B565137191E5003B726E /* DBMechanic.m */,
-				5F83B55E137191E5003B726E /* DBPublisher.h */,
-				5F83B55F137191E5003B726E /* DBPublisher.m */,
-				5F83B55B137191E5003B726E /* DBPerson.h */,
-				5F83B55C137191E5003B726E /* DBPerson.m */,
-				5F83B558137191E4003B726E /* DBVideos.h */,
-				5F83B559137191E4003B726E /* DBVideos.m */,
-				5F83B555137191E4003B726E /* DBCategory.h */,
-				5F83B556137191E4003B726E /* DBCategory.m */,
+				5F5EE4CB1379E3D30074F4EB /* DBBoardGame.h */,
+				5F5EE4CC1379E3D40074F4EB /* DBBoardGame.m */,
+				5F5EE4C81379E3CF0074F4EB /* DBPublisher.h */,
+				5F5EE4C91379E3D10074F4EB /* DBPublisher.m */,
+				5F5EE4C51379E3CB0074F4EB /* DBPerson.h */,
+				5F5EE4C61379E3CC0074F4EB /* DBPerson.m */,
+				5F5EE4C21379E3C50074F4EB /* DBVideos.h */,
+				5F5EE4C31379E3C60074F4EB /* DBVideos.m */,
+				5F5EE4BF1379E3C10074F4EB /* DBMechanic.h */,
+				5F5EE4C01379E3C20074F4EB /* DBMechanic.m */,
+				5F5EE4BC1379E3BA0074F4EB /* DBCategory.h */,
+				5F5EE4BD1379E3BC0074F4EB /* DBCategory.m */,
 				5F16452613607EE0001179CA /* DBBoardGame+Extras.h */,
 				5F16452713607EE0001179CA /* DBBoardGame+Extras.m */,
+				5F5EDF7E13792B080074F4EB /* DBCategory+Extras.h */,
+				5F5EDF7F13792B080074F4EB /* DBCategory+Extras.m */,
+				5F5EE1F4137946850074F4EB /* DBMechanic+Extras.h */,
+				5F5EE1F5137946860074F4EB /* DBMechanic+Extras.m */,
+				5F5EE1F6137946870074F4EB /* DBPerson+Extras.h */,
+				5F5EE1F7137946880074F4EB /* DBPerson+Extras.m */,
+				5F5EE1F81379468C0074F4EB /* DBPublisher+Extras.h */,
+				5F5EE1F91379468D0074F4EB /* DBPublisher+Extras.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -565,6 +597,14 @@
 				5FDBA75C135DC5EA001C8292 /* DataAccess.m */,
 				5F1645001360674A001179CA /* DataAccess+BoardGame.h */,
 				5F1645011360674A001179CA /* DataAccess+BoardGame.m */,
+				5F5EDF8113792D4D0074F4EB /* DataAccess+Category.h */,
+				5F5EDF8213792D4E0074F4EB /* DataAccess+Category.m */,
+				5F5EDF8313792D4E0074F4EB /* DataAccess+Mechanic.h */,
+				5F5EDF8413792D4F0074F4EB /* DataAccess+Mechanic.m */,
+				5F5EDF8513792D4F0074F4EB /* DataAccess+Person.h */,
+				5F5EDF8613792D500074F4EB /* DataAccess+Person.m */,
+				5F5EDF8713792D510074F4EB /* DataAccess+Publisher.h */,
+				5F5EDF8813792D520074F4EB /* DataAccess+Publisher.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -799,14 +839,22 @@
 				5F2DC4CF136F0CF800A9E924 /* KeychainUtils.m in Sources */,
 				5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */,
 				5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */,
-				5F83B557137191E4003B726E /* DBCategory.m in Sources */,
-				5F83B55A137191E4003B726E /* DBVideos.m in Sources */,
-				5F83B55D137191E5003B726E /* DBPerson.m in Sources */,
-				5F83B560137191E5003B726E /* DBPublisher.m in Sources */,
-				5F83B566137191E5003B726E /* DBMechanic.m in Sources */,
 				49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */,
 				5F7ED8031378AE070016A032 /* BGGIdNameLookup.m in Sources */,
-				5F7ED8091378BB680016A032 /* DBBoardGame.m in Sources */,
+				5F5EDF8013792B080074F4EB /* DBCategory+Extras.m in Sources */,
+				5F5EDF8913792D530074F4EB /* DataAccess+Category.m in Sources */,
+				5F5EDF8A13792D530074F4EB /* DataAccess+Mechanic.m in Sources */,
+				5F5EDF8B13792D530074F4EB /* DataAccess+Person.m in Sources */,
+				5F5EDF8C13792D530074F4EB /* DataAccess+Publisher.m in Sources */,
+				5F5EE1FA1379468E0074F4EB /* DBMechanic+Extras.m in Sources */,
+				5F5EE1FB1379468E0074F4EB /* DBPerson+Extras.m in Sources */,
+				5F5EE1FC1379468E0074F4EB /* DBPublisher+Extras.m in Sources */,
+				5F5EE4BE1379E3BF0074F4EB /* DBCategory.m in Sources */,
+				5F5EE4C11379E3C30074F4EB /* DBMechanic.m in Sources */,
+				5F5EE4C41379E3C80074F4EB /* DBVideos.m in Sources */,
+				5F5EE4C71379E3CD0074F4EB /* DBPerson.m in Sources */,
+				5F5EE4CA1379E3D20074F4EB /* DBPublisher.m in Sources */,
+				5F5EE4CD1379E3D50074F4EB /* DBBoardGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

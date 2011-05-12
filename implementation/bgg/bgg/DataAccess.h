@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DBBoardGame+Extras.h"
+#import "DBCategory+Extras.h"
+#import "DBMechanic+Extras.h"
+#import "DBPerson+Extras.h"
+#import "DBPublisher+Extras.h"
 
 @interface DataAccess : NSObject {
 

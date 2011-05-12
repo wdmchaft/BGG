@@ -10,6 +10,7 @@
 #import "StorageHelper.h"
 #import "BGGBoardGame.h"
 #import "BGGBoardGameLookup.h"
+#import "BGGIdNameLookup.h"
 
 @implementation DBBoardGame (Extras)
 
@@ -37,13 +38,46 @@
     self.yearPublished = bggBoardGame.yearPublished;
     self.rating = bggBoardGame.rating;
     self.ratingCount = bggBoardGame.ratingCount;
+
+    for(BGGIdNameLookup* bggObj in bggBoardGame.categories)
+    {
+        DBCategory* dbObj = [[[Globals sharedGlobals] dataAccess] getCreateCategory:bggObj.id];
+        [dbObj updateFromBGGLookup:bggObj];
+        [dbObj addBoardGamesObject:self];
+        [self addCategoriesObject:dbObj];
+    }
     
-//   categories;
-//   publishers;
-//   videos;
-//   mechanics;
-//   designers;
-//   artists;
+    for(BGGIdNameLookup* bggObj in bggBoardGame.publishers)
+    {
+        DBPublisher* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePublisher:bggObj.id];
+        [dbObj updateFromBGGLookup:bggObj];
+        [dbObj addBoardGamesObject:self];
+        [self addPublishersObject:dbObj];
+    }
+    
+    for(BGGIdNameLookup* bggObj in bggBoardGame.mechanics)
+    {
+        DBMechanic* dbObj = [[[Globals sharedGlobals] dataAccess] getCreateMechanic:bggObj.id];
+        [dbObj updateFromBGGLookup:bggObj];
+        [dbObj addBoardGamesObject:self];
+        [self addMechanicsObject:dbObj];
+    }
+    
+    for(BGGIdNameLookup* bggObj in bggBoardGame.designers)
+    {
+        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePerson:bggObj.id];
+        [dbObj updateFromBGGLookup:bggObj];
+        [dbObj addBoardGamesDesignerObject:self];
+        [self addDesignersObject:dbObj];
+    }
+    
+    for(BGGIdNameLookup* bggObj in bggBoardGame.artists)
+    {
+        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePerson:bggObj.id];
+        [dbObj updateFromBGGLookup:bggObj];
+        [dbObj addBoardGamesArtistObject:self];
+        [self addArtistsObject:dbObj];
+    }
     
     self.hasDetails = [NSNumber numberWithBool:YES];
 	self.updated = [NSDate date];

@@ -13,6 +13,17 @@
 
 static NSString* _entity = @"DBBoardGame";
 
+-(DBBoardGame*) getCreateBoardGame:(NSString*) gameId
+{
+    DBBoardGame* dbGame = [self getBoardGameById:gameId];
+    if(dbGame == nil)
+    {
+        dbGame = [self createBoardGame];
+        dbGame.gameId = gameId;
+    }
+    return dbGame;
+}
+
 -(DBBoardGame*) createBoardGame
 {
     return [[[DBBoardGame alloc] initWithEntity:[self entityDescription:_entity] 
