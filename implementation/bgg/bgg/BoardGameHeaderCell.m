@@ -35,7 +35,7 @@
                                boardGame.primaryTitle,
                                [boardGame.yearPublished stringValue]]];
     
-    [[self detailTextLabel] setText:[NSString stringWithFormat:@"Players: %@-%@\nTime: %@\nIdade: %@+", 
+    [[self detailTextLabel] setText:[NSString stringWithFormat:@"Players: %@-%@\nTime: %@\nAge: %@+", 
                                      boardGame.minPlayers,
                                      boardGame.maxPlayers ,
                                      boardGame.playingTime,
@@ -73,7 +73,7 @@
     //TitleLabel 
     CGFloat titlePosX = 120 + 5;
     CGFloat titlePosY = 20;
-    CGFloat titleWidth = 185;//como ver o resto?
+    CGFloat titleWidth = 185;//TODO: como ver o espaço que falta?
     CGFloat titleHeight = self.textLabel.frame.size.height;
     
     self.textLabel.numberOfLines = 2;

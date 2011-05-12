@@ -85,16 +85,16 @@
     switch (indexPath.row) {
         case 0:
             //headerCell size
-            rowSize = 152;
+            rowSize = 151;
             return rowSize;
             break;
         case 1:
             //ratingCell size
-            rowSize = 61;
+            rowSize = 60;
             return rowSize;
             break;
         default:
-            rowSize = 61;
+            rowSize = 60;
             return rowSize;
             break;
             break;

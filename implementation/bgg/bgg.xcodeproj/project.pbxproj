@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		493834B3137C313F00906C94 /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B2137C313F00906C94 /* star-full.png */; };
+		493834B5137C318700906C94 /* star-halffull.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B4137C318700906C94 /* star-halffull.png */; };
+		493834B7137C4BF100906C94 /* star-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B6137C4BF100906C94 /* star-empty.png */; };
 		49A2F2DC137991090021466C /* BoardGameHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2DB137991090021466C /* BoardGameHeaderCell.m */; };
 		49A2F2FD137B09CE0021466C /* BoardGameRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */; };
 		49A2F2FF137B2EB80021466C /* table-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F2FE137B2EB70021466C /* table-cell.png */; };
@@ -134,6 +137,9 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		493834B2137C313F00906C94 /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-full.png"; path = "../../../../design/png/star-full.png"; sourceTree = "<group>"; };
+		493834B4137C318700906C94 /* star-halffull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-halffull.png"; path = "../../../../design/png/star-halffull.png"; sourceTree = "<group>"; };
+		493834B6137C4BF100906C94 /* star-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-empty.png"; path = "../../../../design/png/star-empty.png"; sourceTree = "<group>"; };
 		49A2F2DA137990980021466C /* BoardGameHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameHeaderCell.h; sourceTree = "<group>"; };
 		49A2F2DB137991090021466C /* BoardGameHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameHeaderCell.m; sourceTree = "<group>"; };
 		49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameRatingCell.h; sourceTree = "<group>"; };
@@ -490,6 +496,9 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				493834B6137C4BF100906C94 /* star-empty.png */,
+				493834B4137C318700906C94 /* star-halffull.png */,
+				493834B2137C313F00906C94 /* star-full.png */,
 				49A2F300137B2ED40021466C /* table-header.png */,
 				49A2F2FE137B2EB70021466C /* table-cell.png */,
 				5F32320813672EF40051F624 /* WEPopover */,
@@ -814,6 +823,9 @@
 				49FAF6491378705D00CC4D43 /* BoardGameController.xib in Resources */,
 				49A2F2FF137B2EB80021466C /* table-cell.png in Resources */,
 				49A2F301137B2ED40021466C /* table-header.png in Resources */,
+				493834B3137C313F00906C94 /* star-full.png in Resources */,
+				493834B5137C318700906C94 /* star-halffull.png in Resources */,
+				493834B7137C4BF100906C94 /* star-empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,8 @@
         // Initialization code
         
         UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-cell.png"]] autorelease];
-        
         [self.contentView addSubview:cellView];
+        
     }
     return self;
 }
@@ -28,8 +28,32 @@
 {
     _boardGame = [boardGame retain];
     
-    [[self textLabel] setText:[NSString stringWithFormat:@"%@/10 (x num votes)", 
-                               [boardGame.rank stringValue]]];
+    //TODO: half stars. value type of rating should be corrected?
+    int i;
+    UIImageView *star;
+    for (i=0; i< [boardGame.rating intValue]; i++) {
+         
+        star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-full.png"]] autorelease];        
+        star.frame = CGRectMake(20 + (22*i), 15, 20, 20);
+
+        [self.contentView addSubview:star];
+    }
+    for( ; i<10 ; i++){
+        
+        star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-empty.png"]] autorelease];        
+        star.frame = CGRectMake(20 + (22*i), 15, 20, 20);
+        
+        [self.contentView addSubview:star];
+    }
+     
+    //TODO: change DBBoardGame rating to double??
+   /*NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setPositiveFormat:@"#0.##"];
+    NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:boardGame.rating]];
+    */
+    [[self textLabel] setText:[NSString stringWithFormat:@"%@/10 (%@ votes)", 
+                               boardGame.rating,
+                               [boardGame.ratingCount stringValue]]];
 }
 
 - (void) layoutSubviews {
@@ -42,7 +66,7 @@
     CGFloat textRankHeight = self.textLabel.frame.size.height;
     
     self.textLabel.numberOfLines = 1;
-    self.textLabel.font = [UIFont systemFontOfSize:12.0];
+    self.textLabel.font = [UIFont systemFontOfSize:13.0];
     self.textLabel.textColor = [UIColor darkGrayColor];
     
     self.textLabel.frame = CGRectMake(textRankPosX, textRankPosY, textRankWidth, textRankHeight);
