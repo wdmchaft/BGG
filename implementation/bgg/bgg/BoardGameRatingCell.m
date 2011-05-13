@@ -17,8 +17,11 @@
     if (self) {
         // Initialization code
         
-        UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-cell.png"]] autorelease];
-        [self.contentView addSubview:cellView];
+        //Cell background image - Design
+        //UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-cell.png"]] autorelease];
+        //[self.contentView addSubview:cellView];
+                
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     return self;
@@ -34,25 +37,20 @@
     for (i=0; i< [boardGame.rating intValue]; i++) {
          
         star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-full.png"]] autorelease];        
-        star.frame = CGRectMake(20 + (22*i), 15, 20, 20);
+        star.frame = CGRectMake(10 + (22*i), 10, 20, 20);
 
         [self.contentView addSubview:star];
     }
     for( ; i<10 ; i++){
         
         star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-empty.png"]] autorelease];        
-        star.frame = CGRectMake(20 + (22*i), 15, 20, 20);
+        star.frame = CGRectMake(10 + (22*i), 10, 20, 20);
         
         [self.contentView addSubview:star];
     }
-     
-    //TODO: change DBBoardGame rating to double??
-   /*NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setPositiveFormat:@"#0.##"];
-    NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:boardGame.rating]];
-    */
-    [[self textLabel] setText:[NSString stringWithFormat:@"%@/10 (%@ votes)", 
-                               boardGame.rating,
+
+    [[self textLabel] setText:[NSString stringWithFormat:@"%.2f/10 (%@ votes)", 
+                               [boardGame.rating doubleValue],
                                [boardGame.ratingCount stringValue]]];
 }
 
@@ -60,8 +58,8 @@
     [super layoutSubviews];
     
     //TextRank label
-    CGFloat textRankPosX = 20;
-    CGFloat textRankPosY = 40;
+    CGFloat textRankPosX = 10;
+    CGFloat textRankPosY = 35;
     CGFloat textRankWidth = self.textLabel.frame.size.width;
     CGFloat textRankHeight = self.textLabel.frame.size.height;
     

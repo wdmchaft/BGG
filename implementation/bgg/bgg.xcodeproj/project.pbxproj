@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		492B3A48137D81C3000207DE /* BoardGameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492B3A46137D81C3000207DE /* BoardGameController.xib */; };
+		492B3A4C137D8AE3000207DE /* BoardGameCommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492B3A4A137D8AE3000207DE /* BoardGameCommentsController.m */; };
+		492B3A4D137D8AE3000207DE /* BoardGameCommentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */; };
 		493834B3137C313F00906C94 /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B2137C313F00906C94 /* star-full.png */; };
 		493834B5137C318700906C94 /* star-halffull.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B4137C318700906C94 /* star-halffull.png */; };
 		493834B7137C4BF100906C94 /* star-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 493834B6137C4BF100906C94 /* star-empty.png */; };
@@ -19,7 +22,6 @@
 		49A2F2FF137B2EB80021466C /* table-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F2FE137B2EB70021466C /* table-cell.png */; };
 		49A2F301137B2ED40021466C /* table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F300137B2ED40021466C /* table-header.png */; };
 		49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAF6461378705D00CC4D43 /* BoardGameController.m */; };
-		49FAF6491378705D00CC4D43 /* BoardGameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FAF6471378705D00CC4D43 /* BoardGameController.xib */; };
 		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4671370D01400E0B743 /* BGGBoardGame.m */; };
 		5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F10D46913718AC100E0B743 /* popup-back-small.png */; };
@@ -144,6 +146,10 @@
 
 /* Begin PBXFileReference section */
 		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		492B3A46137D81C3000207DE /* BoardGameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameController.xib; sourceTree = "<group>"; };
+		492B3A49137D8AE3000207DE /* BoardGameCommentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameCommentsController.h; sourceTree = "<group>"; };
+		492B3A4A137D8AE3000207DE /* BoardGameCommentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameCommentsController.m; sourceTree = "<group>"; };
+		492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameCommentsController.xib; sourceTree = "<group>"; };
 		493834B2137C313F00906C94 /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-full.png"; path = "../../../../design/png/star-full.png"; sourceTree = "<group>"; };
 		493834B4137C318700906C94 /* star-halffull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-halffull.png"; path = "../../../../design/png/star-halffull.png"; sourceTree = "<group>"; };
 		493834B6137C4BF100906C94 /* star-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-empty.png"; path = "../../../../design/png/star-empty.png"; sourceTree = "<group>"; };
@@ -160,7 +166,6 @@
 		49A2F300137B2ED40021466C /* table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "table-header.png"; path = "../../../../design/png/table-header.png"; sourceTree = "<group>"; };
 		49FAF6451378705D00CC4D43 /* BoardGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameController.h; sourceTree = "<group>"; };
 		49FAF6461378705D00CC4D43 /* BoardGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameController.m; sourceTree = "<group>"; };
-		49FAF6471378705D00CC4D43 /* BoardGameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameController.xib; sourceTree = "<group>"; };
 		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
 		5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGXMLScraper.h; sourceTree = "<group>"; };
 		5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGXMLScraper.m; sourceTree = "<group>"; };
@@ -336,6 +341,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492B3A4E137D8CDD000207DE /* Forums */ = {
+			isa = PBXGroup;
+			children = (
+				493834BB137D7A4900906C94 /* BoardGameForumsController.h */,
+				493834BC137D7A4900906C94 /* BoardGameForumsController.m */,
+				493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */,
+			);
+			name = Forums;
+			sourceTree = "<group>";
+		};
+		492B3A4F137D8CF7000207DE /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				492B3A49137D8AE3000207DE /* BoardGameCommentsController.h */,
+				492B3A4A137D8AE3000207DE /* BoardGameCommentsController.m */,
+				492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		492B3A50137D8D28000207DE /* BoardGame Details */ = {
+			isa = PBXGroup;
+			children = (
+				492B3A46137D81C3000207DE /* BoardGameController.xib */,
+				49FAF6451378705D00CC4D43 /* BoardGameController.h */,
+				49FAF6461378705D00CC4D43 /* BoardGameController.m */,
+				49A2F2DA137990980021466C /* BoardGameHeaderCell.h */,
+				49A2F2DB137991090021466C /* BoardGameHeaderCell.m */,
+				49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */,
+				49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */,
+				493834B8137C570800906C94 /* BoardGameGenericCell.h */,
+				493834B9137C570900906C94 /* BoardGameGenericCell.m */,
+			);
+			name = "BoardGame Details";
+			sourceTree = "<group>";
+		};
 		5F164515136068B8001179CA /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +648,9 @@
 		5FDBA742135DC26F001C8292 /* BoardGames */ = {
 			isa = PBXGroup;
 			children = (
+				492B3A50137D8D28000207DE /* BoardGame Details */,
+				492B3A4F137D8CF7000207DE /* Comments */,
+				492B3A4E137D8CDD000207DE /* Forums */,
 				5FEFA333135DE58C00D53F28 /* InitialSyncViewController.h */,
 				5FEFA334135DE58C00D53F28 /* InitialSyncViewController.m */,
 				5F16451B13606A8B001179CA /* BoardGameListController.xib */,
@@ -614,18 +658,6 @@
 				5F16451A13606A8B001179CA /* BoardGameListController.m */,
 				5F164523136077FA001179CA /* BoardGameListCell.h */,
 				5F164524136077FA001179CA /* BoardGameListCell.m */,
-				49FAF6451378705D00CC4D43 /* BoardGameController.h */,
-				49FAF6461378705D00CC4D43 /* BoardGameController.m */,
-				49FAF6471378705D00CC4D43 /* BoardGameController.xib */,
-				49A2F2DA137990980021466C /* BoardGameHeaderCell.h */,
-				49A2F2DB137991090021466C /* BoardGameHeaderCell.m */,
-				49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */,
-				49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */,
-				493834B8137C570800906C94 /* BoardGameGenericCell.h */,
-				493834B9137C570900906C94 /* BoardGameGenericCell.m */,
-				493834BB137D7A4900906C94 /* BoardGameForumsController.h */,
-				493834BC137D7A4900906C94 /* BoardGameForumsController.m */,
-				493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */,
 			);
 			name = BoardGames;
 			sourceTree = "<group>";
@@ -853,13 +885,14 @@
 				5F2DC4E5136F165200A9E924 /* text-back@2x.png in Resources */,
 				5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */,
 				5F10D46C13718AC200E0B743 /* popup-back-small@2x.png in Resources */,
-				49FAF6491378705D00CC4D43 /* BoardGameController.xib in Resources */,
 				49A2F2FF137B2EB80021466C /* table-cell.png in Resources */,
 				49A2F301137B2ED40021466C /* table-header.png in Resources */,
 				493834B3137C313F00906C94 /* star-full.png in Resources */,
 				493834B5137C318700906C94 /* star-halffull.png in Resources */,
 				493834B7137C4BF100906C94 /* star-empty.png in Resources */,
 				493834BF137D7A4A00906C94 /* BoardGameForumsController.xib in Resources */,
+				492B3A48137D81C3000207DE /* BoardGameController.xib in Resources */,
+				492B3A4D137D8AE3000207DE /* BoardGameCommentsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +959,7 @@
 				5FB10EDE137C59CF00EFFD6E /* DBMechanic.m in Sources */,
 				5FB10EE1137C59D000EFFD6E /* DBVideos.m in Sources */,
 				5FB10EE4137C59D000EFFD6E /* DBBoardGame.m in Sources */,
+				492B3A4C137D8AE3000207DE /* BoardGameCommentsController.m in Sources */,
 				5FB10F3C137D9E7200EFFD6E /* BGGBoardGameRating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

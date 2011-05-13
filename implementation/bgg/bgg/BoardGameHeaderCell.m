@@ -16,10 +16,11 @@
     if (self) {
         // Initialization code
         
-		UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-header.png"]] autorelease];
-        [self.contentView addSubview:cellView];
+        //Cell background image - Design
+        //UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-header.png"]] autorelease];
+        //[self.contentView addSubview:cellView];
         
-        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 100, 120)] autorelease];
+        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 120)] autorelease];
         [self.contentView addSubview:imageView];
         
     }
@@ -35,7 +36,9 @@
                                boardGame.primaryTitle,
                                [boardGame.yearPublished stringValue]]];
     
-    [[self detailTextLabel] setText:[NSString stringWithFormat:@"Players: %@-%@\nTime: %@\nAge: %@+", 
+    [[self detailTextLabel] setText:[NSString stringWithFormat:
+                                     @"Rank: %@\nPlayers: %@-%@\nTime: %@ minutes\nAge: %@+", 
+                                     [boardGame.rank stringValue],
                                      boardGame.minPlayers,
                                      boardGame.maxPlayers ,
                                      boardGame.playingTime,
@@ -71,8 +74,8 @@
     [super layoutSubviews];
     
     //TitleLabel 
-    CGFloat titlePosX = 120 + 5;
-    CGFloat titlePosY = 20;
+    CGFloat titlePosX = 110 + 5;
+    CGFloat titlePosY = 10;
     CGFloat titleWidth = 185;//TODO: como ver o espaço que falta?
     CGFloat titleHeight = self.textLabel.frame.size.height;
     

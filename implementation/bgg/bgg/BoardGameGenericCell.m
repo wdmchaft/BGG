@@ -16,8 +16,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-cell.png"]] autorelease];
-        [self.contentView addSubview:cellView];
+        //Cell background image - Design
+        //UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-cell.png"]] autorelease];
+        //[self.contentView addSubview:cellView];
         
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
@@ -38,13 +39,12 @@
     [super layoutSubviews];
     
     //MenuOption label
-    CGFloat menuOptionPosX = 20;
+    CGFloat menuOptionPosX = 10;
     CGFloat menuOptionPosY = 0;
-    CGFloat menuOptionWitdh = 320;
-    CGFloat menuOptionHeight = 60;
-    
+    CGFloat menuOptionWitdh = self.textLabel.frame.size.width;
+    CGFloat menuOptionHeight = 59;
+        
     self.textLabel.frame = CGRectMake(menuOptionPosX, menuOptionPosY, menuOptionWitdh, menuOptionHeight);  
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

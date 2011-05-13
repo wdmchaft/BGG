@@ -40,7 +40,7 @@
         result.playingTime = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/playingtime/@value" :document]intValue] ];
         result.minAge = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/minage/@value" :document]intValue] ];
         result.rank = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/statistics/ratings/ranks/rank[@type='subtype']/@value" :document]intValue] ];
-        result.rating = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/statistics/ratings/average/@value" :document] doubleValue] ];
+        result.rating = [NSNumber numberWithDouble:[[self executeXPath:@"/items/item/statistics/ratings/average/@value" :document] doubleValue] ];
         result.ratingCount = [NSNumber numberWithInt:[[self executeXPath:@"/items/item/statistics/ratings/usersrated/@value" :document]intValue] ];
     
         [result.categories addObjectsFromArray:

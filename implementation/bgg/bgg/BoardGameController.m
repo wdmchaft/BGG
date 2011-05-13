@@ -11,12 +11,14 @@
 #import "BoardGameRatingCell.h"
 #import "BoardGameGenericCell.h"
 #import "BoardGameForumsController.h"
+#import "BoardGameCommentsController.h"
 
 @implementation BoardGameController
 
 @synthesize boardGame = _boardGame;
 
-@synthesize menuOptions = _menuOptions;
+@synthesize menuBasics = _menuBasics;
+@synthesize menuDetails = _menuDetails;
 
 - (id)init
 {
@@ -32,7 +34,8 @@
     if (self) {
         // Custom initialization
         
-        self.menuOptions = [NSArray arrayWithObjects: @"Forums", @"Comments", @"Videos", nil];
+        self.menuBasics = [NSArray arrayWithObjects: @"Description", @"Videos", @"Users Collections", nil];
+        self.menuDetails = [NSArray arrayWithObjects: @"Designers", @"Artists", @"Publishers",@"Mechanics", @"Categories", nil];
     }
     return self;
 }
@@ -72,18 +75,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    if(section == 0)
+    {
+        return 2 + [_menuBasics count];
+    }
+    else if(section == 1)
+    {
+        return [_menuDetails count];
+    }
+    return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView boardGameBasics:(NSNumber *)row
 {
     static NSString *CellIdentifier;
-    switch (indexPath.row) {
+    switch ([row integerValue]) {
         case 0:
             
             CellIdentifier = @"HeaderCell";
@@ -124,14 +135,51 @@
                 genericCell = [[[BoardGameGenericCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
             }
             
-            NSString* option = [_menuOptions objectAtIndex:([indexPath indexAtPosition:1])-2];
+            NSString* option = [_menuBasics objectAtIndex:([row intValue]-2)];
             
             [genericCell setMenuOption:option setBoardGame:_boardGame];
             
             return genericCell;
-
+            
             break;
     }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView boardGameInDetail:(NSNumber *)row
+{
+    static NSString *CellIdentifier;
+    switch ([row integerValue]) {
+            
+        default:
+            CellIdentifier = @"GenericCell";
+            BoardGameGenericCell *genericCell = (BoardGameGenericCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (genericCell == nil) 
+            {
+                genericCell = [[[BoardGameGenericCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            NSString* option = [_menuDetails objectAtIndex:[row intValue]];
+            
+            [genericCell setMenuOption:option setBoardGame:_boardGame];
+            
+            return genericCell;
+            break;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) 
+    {
+        return [self tableView:tableView boardGameBasics:[NSNumber numberWithInt:indexPath.row]];
+         
+    }else if(indexPath.section == 1){
+        
+        return [self tableView:tableView boardGameInDetail:[NSNumber numberWithInt:indexPath.row]];
+    }
+    
+    return NULL;
 }
 
 #pragma mark - Table view delegate
@@ -139,30 +187,45 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CGFloat rowSize;
-    switch (indexPath.row) {
-        case 0:
-            //headerCell size
-            rowSize = 151;
-            return rowSize;
-            break;
-        case 1:
-            //ratingCell size
-            rowSize = 60;
-            return rowSize;
-            break;
-        default:
-            //genericCell size
-            rowSize = 60;
-            return rowSize;
-            break;
+    if(indexPath.section == 0){
+        
+        switch (indexPath.row) {
+            case 0:
+                //headerCell size
+                rowSize = 140;
+                return rowSize;
+                break;
+            case 1:
+                //ratingCell size
+                rowSize = 60;
+                return rowSize;
+                break;
+            default:
+                //genericCell size
+                rowSize = 60;
+                return rowSize;
+                break;
+        } 
+    } else {
+        return 60;
     }
+        return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController* controller;
     switch (indexPath.row) {
-        case 3:     
+        case 1:     //Ratings/Comments
+            
+            controller = [[[BoardGameCommentsController alloc] init] autorelease];
+            
+            //TODO: should be rating and comment information. Not in DB yet.
+            [(BoardGameCommentsController*)controller setBoardGame:_boardGame];
+            
+            [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
+            
+        case 2:     //Forums
             
             controller = [[[BoardGameForumsController alloc] init] autorelease];
             
@@ -171,7 +234,15 @@
             [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 
             break;
+        case 3:     //Videos
             
+            controller = [[[BoardGameForumsController alloc] init] autorelease];
+            
+            [(BoardGameForumsController*)controller setBoardGame:_boardGame];
+            
+            [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
+            break;
+
         default:
             break;
     }
