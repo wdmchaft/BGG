@@ -63,7 +63,7 @@ static NSString * top100Key = @"top100Key";
 //
 static NSString * getGameRatings = @"getGameRatingsKey";
 
--(NSString*) getGameDetails:(NSString*) gameId :(int) pageNumber
+-(NSString*) getGameRatings:(NSString*) gameId :(int) pageNumber
 {
     NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@_%d", getGameRatings, gameId, pageNumber];
 	
