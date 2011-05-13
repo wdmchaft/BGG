@@ -177,9 +177,11 @@
 
 -(void) showGameDetails:(DBBoardGame*) boardGame
 {
+    DBBoardGame* gameWithConnections = [[[Globals sharedGlobals] dataAccess] getBoardGameById:boardGame.gameId];
+    
     BoardGameController* controller = [[[BoardGameController alloc] init] autorelease];
     
-    [controller setBoardGame:boardGame];
+    [controller setBoardGame:gameWithConnections];
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 

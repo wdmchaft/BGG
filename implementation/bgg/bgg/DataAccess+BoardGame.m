@@ -41,6 +41,10 @@ static NSString* _entity = @"DBBoardGame";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gameId == %@", gameId];
     [fetchRequest setPredicate:predicate];
     
+    [fetchRequest setRelationshipKeyPathsForPrefetching: 
+     [NSArray arrayWithObjects:@"artists", @"categories", @"designers",
+      @"mechanics", @"publishers", @"videos", nil]];
+    
     NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:nil];
     [fetchRequest release];
     
