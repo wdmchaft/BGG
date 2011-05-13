@@ -13,6 +13,7 @@
 }
 
 + (NSString*) baseStorageDirectory;
++(bool) fileExists:(NSString*) name;
 + (NSString*) filenameComponent:(NSString*) url;
 + (NSString*) filenameInStorage:(NSString*) filename;
 + (NSString*) createDirectory:(NSString*) name;

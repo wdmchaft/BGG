@@ -62,6 +62,7 @@
 		5F5EE5A5137C1B9E0074F4EB /* DBMechanic+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE59B137C1B9B0074F4EB /* DBMechanic+Extras.m */; };
 		5F5EE5A6137C1B9E0074F4EB /* DBPerson+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE59D137C1B9D0074F4EB /* DBPerson+Extras.m */; };
 		5F5EE5A7137C1B9E0074F4EB /* DBPublisher+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE59F137C1B9E0074F4EB /* DBPublisher+Extras.m */; };
+		5F5EE5C0137C4B460074F4EB /* BGGBoardGameVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EE5BF137C4B460074F4EB /* BGGBoardGameVideo.m */; };
 		5F6C7799135E10AD00891634 /* StorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7798135E10AD00891634 /* StorageHelper.m */; };
 		5F75744413400E1000C82F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744313400E1000C82F3B /* UIKit.framework */; };
 		5F75744613400E1000C82F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F75744513400E1000C82F3B /* Foundation.framework */; };
@@ -77,12 +78,14 @@
 		5F7575E0134166DA00C82F3B /* BreadcrumbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */; };
 		5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */; };
 		5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* StackSegmentedControl.m */; };
-		5F83B557137191E4003B726E /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B556137191E4003B726E /* DBCategory.m */; };
-		5F83B55A137191E4003B726E /* DBVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B559137191E4003B726E /* DBVideos.m */; };
-		5F83B55D137191E5003B726E /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B55C137191E5003B726E /* DBPerson.m */; };
-		5F83B560137191E5003B726E /* DBPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B55F137191E5003B726E /* DBPublisher.m */; };
-		5F83B563137191E5003B726E /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B562137191E5003B726E /* DBBoardGame.m */; };
-		5F83B566137191E5003B726E /* DBMechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F83B565137191E5003B726E /* DBMechanic.m */; };
+		5FB10ECF137C56D200EFFD6E /* DBVideos+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */; };
+		5FB10ED2137C57F700EFFD6E /* DataAccess+Videos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */; };
+		5FB10ED5137C59CC00EFFD6E /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED4137C59CC00EFFD6E /* DBCategory.m */; };
+		5FB10ED8137C59CD00EFFD6E /* DBPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED7137C59CD00EFFD6E /* DBPublisher.m */; };
+		5FB10EDB137C59CE00EFFD6E /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10EDA137C59CE00EFFD6E /* DBPerson.m */; };
+		5FB10EDE137C59CF00EFFD6E /* DBMechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10EDD137C59CF00EFFD6E /* DBMechanic.m */; };
+		5FB10EE1137C59D000EFFD6E /* DBVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10EE0137C59D000EFFD6E /* DBVideos.m */; };
+		5FB10EE4137C59D000EFFD6E /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10EE3137C59D000EFFD6E /* DBBoardGame.m */; };
 		5FCF6054135C45C300D9696E /* breadcrumb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604A135C45C200D9696E /* breadcrumb-back.png */; };
 		5FCF6055135C45C300D9696E /* breadcrumb-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604B135C45C200D9696E /* breadcrumb-back@2x.png */; };
 		5FCF6056135C45C300D9696E /* breadcrumb-home-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCF604C135C45C200D9696E /* breadcrumb-home-selected.png */; };
@@ -222,6 +225,8 @@
 		5F5EE59D137C1B9D0074F4EB /* DBPerson+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBPerson+Extras.m"; sourceTree = "<group>"; };
 		5F5EE59E137C1B9E0074F4EB /* DBPublisher+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBPublisher+Extras.h"; sourceTree = "<group>"; };
 		5F5EE59F137C1B9E0074F4EB /* DBPublisher+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBPublisher+Extras.m"; sourceTree = "<group>"; };
+		5F5EE5BE137C4B450074F4EB /* BGGBoardGameVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGBoardGameVideo.h; sourceTree = "<group>"; };
+		5F5EE5BF137C4B460074F4EB /* BGGBoardGameVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGBoardGameVideo.m; sourceTree = "<group>"; };
 		5F6C7797135E10AD00891634 /* StorageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageHelper.h; sourceTree = "<group>"; };
 		5F6C7798135E10AD00891634 /* StorageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageHelper.m; sourceTree = "<group>"; };
 		5F75743F13400E1000C82F3B /* BGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,18 +251,22 @@
 		5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreadcrumbViewController.m; sourceTree = "<group>"; };
 		5F7575E2134166F700C82F3B /* StackSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackSegmentedControl.h; sourceTree = "<group>"; };
 		5F7575E3134166F700C82F3B /* StackSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackSegmentedControl.m; sourceTree = "<group>"; };
-		5F83B555137191E4003B726E /* DBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCategory.h; sourceTree = "<group>"; };
-		5F83B556137191E4003B726E /* DBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCategory.m; sourceTree = "<group>"; };
-		5F83B558137191E4003B726E /* DBVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBVideos.h; sourceTree = "<group>"; };
-		5F83B559137191E4003B726E /* DBVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBVideos.m; sourceTree = "<group>"; };
-		5F83B55B137191E5003B726E /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
-		5F83B55C137191E5003B726E /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
-		5F83B55E137191E5003B726E /* DBPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPublisher.h; sourceTree = "<group>"; };
-		5F83B55F137191E5003B726E /* DBPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPublisher.m; sourceTree = "<group>"; };
-		5F83B561137191E5003B726E /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
-		5F83B562137191E5003B726E /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
-		5F83B564137191E5003B726E /* DBMechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMechanic.h; sourceTree = "<group>"; };
-		5F83B565137191E5003B726E /* DBMechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMechanic.m; sourceTree = "<group>"; };
+		5FB10ECD137C56D200EFFD6E /* DBVideos+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBVideos+Extras.h"; sourceTree = "<group>"; };
+		5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBVideos+Extras.m"; sourceTree = "<group>"; };
+		5FB10ED0137C57F700EFFD6E /* DataAccess+Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Videos.h"; sourceTree = "<group>"; };
+		5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccess+Videos.m"; sourceTree = "<group>"; };
+		5FB10ED3137C59CB00EFFD6E /* DBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCategory.h; sourceTree = "<group>"; };
+		5FB10ED4137C59CC00EFFD6E /* DBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCategory.m; sourceTree = "<group>"; };
+		5FB10ED6137C59CD00EFFD6E /* DBPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPublisher.h; sourceTree = "<group>"; };
+		5FB10ED7137C59CD00EFFD6E /* DBPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPublisher.m; sourceTree = "<group>"; };
+		5FB10ED9137C59CE00EFFD6E /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
+		5FB10EDA137C59CE00EFFD6E /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
+		5FB10EDC137C59CE00EFFD6E /* DBMechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMechanic.h; sourceTree = "<group>"; };
+		5FB10EDD137C59CF00EFFD6E /* DBMechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMechanic.m; sourceTree = "<group>"; };
+		5FB10EDF137C59CF00EFFD6E /* DBVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBVideos.h; sourceTree = "<group>"; };
+		5FB10EE0137C59D000EFFD6E /* DBVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBVideos.m; sourceTree = "<group>"; };
+		5FB10EE2137C59D000EFFD6E /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
+		5FB10EE3137C59D000EFFD6E /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
 		5FCF604A135C45C200D9696E /* breadcrumb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back.png"; path = "Images/breadcrumb-back.png"; sourceTree = "<group>"; };
 		5FCF604B135C45C200D9696E /* breadcrumb-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back@2x.png"; path = "Images/breadcrumb-back@2x.png"; sourceTree = "<group>"; };
 		5FCF604C135C45C200D9696E /* breadcrumb-home-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-home-selected.png"; path = "Images/breadcrumb-home-selected.png"; sourceTree = "<group>"; };
@@ -327,18 +336,18 @@
 		5F164515136068B8001179CA /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				5F83B564137191E5003B726E /* DBMechanic.h */,
-				5F83B565137191E5003B726E /* DBMechanic.m */,
-				5F83B561137191E5003B726E /* DBBoardGame.h */,
-				5F83B562137191E5003B726E /* DBBoardGame.m */,
-				5F83B55E137191E5003B726E /* DBPublisher.h */,
-				5F83B55F137191E5003B726E /* DBPublisher.m */,
-				5F83B55B137191E5003B726E /* DBPerson.h */,
-				5F83B55C137191E5003B726E /* DBPerson.m */,
-				5F83B558137191E4003B726E /* DBVideos.h */,
-				5F83B559137191E4003B726E /* DBVideos.m */,
-				5F83B555137191E4003B726E /* DBCategory.h */,
-				5F83B556137191E4003B726E /* DBCategory.m */,
+				5FB10EE2137C59D000EFFD6E /* DBBoardGame.h */,
+				5FB10EE3137C59D000EFFD6E /* DBBoardGame.m */,
+				5FB10EDF137C59CF00EFFD6E /* DBVideos.h */,
+				5FB10EE0137C59D000EFFD6E /* DBVideos.m */,
+				5FB10EDC137C59CE00EFFD6E /* DBMechanic.h */,
+				5FB10EDD137C59CF00EFFD6E /* DBMechanic.m */,
+				5FB10ED9137C59CE00EFFD6E /* DBPerson.h */,
+				5FB10EDA137C59CE00EFFD6E /* DBPerson.m */,
+				5FB10ED6137C59CD00EFFD6E /* DBPublisher.h */,
+				5FB10ED7137C59CD00EFFD6E /* DBPublisher.m */,
+				5FB10ED3137C59CB00EFFD6E /* DBCategory.h */,
+				5FB10ED4137C59CC00EFFD6E /* DBCategory.m */,
 				5F16452613607EE0001179CA /* DBBoardGame+Extras.h */,
 				5F16452713607EE0001179CA /* DBBoardGame+Extras.m */,
 				5F5EE549137C1A850074F4EB /* DBCategory+Extras.h */,
@@ -349,6 +358,8 @@
 				5F5EE59D137C1B9D0074F4EB /* DBPerson+Extras.m */,
 				5F5EE59E137C1B9E0074F4EB /* DBPublisher+Extras.h */,
 				5F5EE59F137C1B9E0074F4EB /* DBPublisher+Extras.m */,
+				5FB10ECD137C56D200EFFD6E /* DBVideos+Extras.h */,
+				5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -643,6 +654,8 @@
 				5F5EE597137C1B9A0074F4EB /* DataAccess+Person.m */,
 				5F5EE598137C1B9B0074F4EB /* DataAccess+Publisher.h */,
 				5F5EE599137C1B9B0074F4EB /* DataAccess+Publisher.m */,
+				5FB10ED0137C57F700EFFD6E /* DataAccess+Videos.h */,
+				5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -718,6 +731,8 @@
 				5FDBA789135DD206001C8292 /* BGGBoardGameLookup.m */,
 				5F5EE590137C1B940074F4EB /* BGGIdNameLookup.h */,
 				5F5EE591137C1B940074F4EB /* BGGIdNameLookup.m */,
+				5F5EE5BE137C4B450074F4EB /* BGGBoardGameVideo.h */,
+				5F5EE5BF137C4B460074F4EB /* BGGBoardGameVideo.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -883,12 +898,6 @@
 				5F2DC4CF136F0CF800A9E924 /* KeychainUtils.m in Sources */,
 				5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */,
 				5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */,
-				5F83B557137191E4003B726E /* DBCategory.m in Sources */,
-				5F83B55A137191E4003B726E /* DBVideos.m in Sources */,
-				5F83B55D137191E5003B726E /* DBPerson.m in Sources */,
-				5F83B560137191E5003B726E /* DBPublisher.m in Sources */,
-				5F83B563137191E5003B726E /* DBBoardGame.m in Sources */,
-				5F83B566137191E5003B726E /* DBMechanic.m in Sources */,
 				49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */,
 				49A2F2DC137991090021466C /* BoardGameHeaderCell.m in Sources */,
 				49A2F2FD137B09CE0021466C /* BoardGameRatingCell.m in Sources */,
@@ -903,6 +912,15 @@
 				5F5EE5A7137C1B9E0074F4EB /* DBPublisher+Extras.m in Sources */,
 				493834BA137C570900906C94 /* BoardGameGenericCell.m in Sources */,
 				493834BE137D7A4A00906C94 /* BoardGameForumsController.m in Sources */,
+				5F5EE5C0137C4B460074F4EB /* BGGBoardGameVideo.m in Sources */,
+				5FB10ECF137C56D200EFFD6E /* DBVideos+Extras.m in Sources */,
+				5FB10ED2137C57F700EFFD6E /* DataAccess+Videos.m in Sources */,
+				5FB10ED5137C59CC00EFFD6E /* DBCategory.m in Sources */,
+				5FB10ED8137C59CD00EFFD6E /* DBPublisher.m in Sources */,
+				5FB10EDB137C59CE00EFFD6E /* DBPerson.m in Sources */,
+				5FB10EDE137C59CF00EFFD6E /* DBMechanic.m in Sources */,
+				5FB10EE1137C59D000EFFD6E /* DBVideos.m in Sources */,
+				5FB10EE4137C59D000EFFD6E /* DBBoardGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

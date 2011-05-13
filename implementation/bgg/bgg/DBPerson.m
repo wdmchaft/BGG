@@ -2,7 +2,7 @@
 //  DBPerson.m
 //  bgg
 //
-//  Created by João Caxaria on 5/10/11.
+//  Created by João Caxaria on 5/12/11.
 //  Copyright (c) 2011 Imaginary Factory. All rights reserved.
 //
 
