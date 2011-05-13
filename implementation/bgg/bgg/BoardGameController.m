@@ -13,6 +13,12 @@
 #import "BoardGameForumsController.h"
 #import "BoardGameCommentsController.h"
 
+@interface BoardGameController (Private)
+
+-(void) loadGameRatings;
+
+@end
+
 @implementation BoardGameController
 
 @synthesize boardGame = _boardGame;
@@ -218,13 +224,9 @@
     switch (indexPath.row) {
         case 1:     //Ratings/Comments
             
-            controller = [[[BoardGameCommentsController alloc] init] autorelease];
+            [self loadGameRatings];
             
-            //TODO: should be rating and comment information. Not in DB yet.
-            [(BoardGameCommentsController*)controller setBoardGame:_boardGame];
-            
-            [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
-            
+            break;
         case 2:     //Forums
             
             controller = [[[BoardGameForumsController alloc] init] autorelease];
@@ -247,6 +249,38 @@
             break;
     }
     
+}
+
+#pragma mark Private
+
+-(void) loadGameRatings
+{
+    _hud = [[SSHUDView alloc] initWithTitle:@"Loading ratings..."];
+    [_hud show];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(gotRatingsForGame:) 
+                                                 name:[[[Globals sharedGlobals] remoteConnector] getGameRatings:_boardGame.gameId :1]
+                                               object:nil];
+}
+
+#pragma mark Private
+
+-(void) gotRatingsForGame:(NSNotification*) notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
+	
+	NSArray * ratings = [[notification object] objectForKey:@"data"];
+    
+    BoardGameCommentsController* controller = [[[BoardGameCommentsController alloc] init] autorelease];
+    
+    [controller setRatings:ratings];
+    
+    [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
+    
+    [_hud dismiss];
+    [_hud release];
+    _hud = nil;
+
 }
 
 @end

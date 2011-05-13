@@ -33,9 +33,10 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame
+-(void) setRatings:(NSArray*) ratings
 {
-    _boardGame = [boardGame retain];
+    _ratings = [ratings retain];
+    [self.tableView reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -43,19 +44,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setTitle:@"Ratings"];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,8 +88,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 1;
+    if(_ratings != nil)
+        return [_ratings count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

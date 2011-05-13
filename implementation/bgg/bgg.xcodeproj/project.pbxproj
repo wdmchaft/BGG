@@ -354,9 +354,9 @@
 		492B3A4F137D8CF7000207DE /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */,
 				492B3A49137D8AE3000207DE /* BoardGameCommentsController.h */,
 				492B3A4A137D8AE3000207DE /* BoardGameCommentsController.m */,
-				492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */,
 			);
 			name = Comments;
 			sourceTree = "<group>";

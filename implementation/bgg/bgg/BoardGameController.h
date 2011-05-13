@@ -12,6 +12,8 @@
 @interface BoardGameController : UITableViewController {
     NSArray* _menuBasics;
     NSArray* _menuDetails;
+    
+    SSHUDView* _hud;
 }
 
 @property (nonatomic, retain) DBBoardGame* boardGame;

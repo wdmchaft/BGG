@@ -10,9 +10,9 @@
 
 
 @interface BoardGameCommentsController : UITableViewController {
-    DBBoardGame* _boardGame;//TODO: should be rating/comment information
+    NSArray* _ratings;
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame;
+-(void) setRatings:(NSArray*) ratings;
 
 @end

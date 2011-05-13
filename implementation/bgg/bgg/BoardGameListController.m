@@ -161,7 +161,7 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
 	
-	BGGBoardGame * game = [[[notification object] objectForKey:@"data"] retain];
+	BGGBoardGame * game = [[notification object] objectForKey:@"data"];
     
     DBBoardGame* dbGame = [[[Globals sharedGlobals] dataAccess] getCreateBoardGame:game.gameId];
     [dbGame updateFromBGG:game];
