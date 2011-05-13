@@ -15,5 +15,5 @@
 
 -(NSString*) getGameDetails:(NSString*) gameId;
 
--(NSString*) getGameDetails:(NSString*) gameId :(int) pageNumber;
+-(NSString*) getGameRatings:(NSString*) gameId :(int) pageNumber;
 @end

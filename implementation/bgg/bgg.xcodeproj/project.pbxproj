@@ -273,7 +273,7 @@
 		5FB10EE0137C59D000EFFD6E /* DBVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBVideos.m; sourceTree = "<group>"; };
 		5FB10EE2137C59D000EFFD6E /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
 		5FB10EE3137C59D000EFFD6E /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
-		5FB10F3A137D9E7200EFFD6E /* BGGBoardGameRating.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BGGBoardGameRating.h; sourceTree = "<group>"; };
+		5FB10F3A137D9E7200EFFD6E /* BGGBoardGameRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGBoardGameRating.h; sourceTree = "<group>"; };
 		5FB10F3B137D9E7200EFFD6E /* BGGBoardGameRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGBoardGameRating.m; sourceTree = "<group>"; };
 		5FCF604A135C45C200D9696E /* breadcrumb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back.png"; path = "Images/breadcrumb-back.png"; sourceTree = "<group>"; };
 		5FCF604B135C45C200D9696E /* breadcrumb-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breadcrumb-back@2x.png"; path = "Images/breadcrumb-back@2x.png"; sourceTree = "<group>"; };
