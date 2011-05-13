@@ -9,10 +9,14 @@
 #import "BoardGameController.h"
 #import "BoardGameHeaderCell.h"
 #import "BoardGameRatingCell.h"
+#import "BoardGameGenericCell.h"
+#import "BoardGameForumsController.h"
 
 @implementation BoardGameController
 
 @synthesize boardGame = _boardGame;
+
+@synthesize menuOptions = _menuOptions;
 
 - (id)init
 {
@@ -27,6 +31,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.menuOptions = [NSArray arrayWithObjects: @"Forums", @"Comments", @"Videos", nil];
     }
     return self;
 }
@@ -49,21 +55,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     [self setTitle:_boardGame.primaryTitle];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -79,8 +80,64 @@
     return 5;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier;
+    switch (indexPath.row) {
+        case 0:
+            
+            CellIdentifier = @"HeaderCell";
+            BoardGameHeaderCell *headerCell = (BoardGameHeaderCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (headerCell == nil) 
+            {
+                headerCell = [[[BoardGameHeaderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            [headerCell setBoardGame:_boardGame];
+            
+            return headerCell;
+            break;
+            
+        case 1:
+            
+            CellIdentifier = @"RatingCell";
+            BoardGameRatingCell *ratingCell = (BoardGameRatingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (ratingCell == nil) 
+            {
+                ratingCell = [[[BoardGameRatingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            [ratingCell setBoardGame:_boardGame];
+            
+            return ratingCell;
+            break;
+            
+        default:
+            
+            CellIdentifier = @"GenericCell";
+            BoardGameGenericCell *genericCell = (BoardGameGenericCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (genericCell == nil) 
+            {
+                genericCell = [[[BoardGameGenericCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            
+            NSString* option = [_menuOptions objectAtIndex:([indexPath indexAtPosition:1])-2];
+            
+            [genericCell setMenuOption:option setBoardGame:_boardGame];
+            
+            return genericCell;
+
+            break;
+    }
+}
+
+#pragma mark - Table view delegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     CGFloat rowSize;
     switch (indexPath.row) {
         case 0:
@@ -94,60 +151,31 @@
             return rowSize;
             break;
         default:
+            //genericCell size
             rowSize = 60;
             return rowSize;
             break;
-            break;
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     
-    static NSString *CellIdentifier;
+    UIViewController* controller;
     switch (indexPath.row) {
-        case 0:
-            CellIdentifier = @"TableHeader";
-            BoardGameHeaderCell *cell = (BoardGameHeaderCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        case 3:     
             
-            if (cell == nil) 
-            {
-                cell = [[[BoardGameHeaderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-            }
+            controller = [[[BoardGameForumsController alloc] init] autorelease];
             
-            [cell setBoardGame:_boardGame];
+            [(BoardGameForumsController*)controller setBoardGame:_boardGame];
             
-            return cell;
-            break;
-        case 1:
-            CellIdentifier = @"TableRating";
-            BoardGameRatingCell *cellNew = (BoardGameRatingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            
-            if (cellNew == nil) 
-            {
-                cellNew = [[[BoardGameRatingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-            }
-            
-            [cellNew setBoardGame:_boardGame];
-            
-            return cellNew;
-            break;
-        default:
-            CellIdentifier = @"TableRating";
-            cellNew = (BoardGameRatingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            
-            if (cellNew == nil) 
-            {
-                cellNew = [[[BoardGameRatingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-            }
-            
-            [cellNew setBoardGame:_boardGame];
-            
-            return cellNew;
+            [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 
+            break;
+            
+        default:
             break;
     }
+    
 }
-
 
 @end

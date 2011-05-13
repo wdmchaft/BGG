@@ -10,9 +10,11 @@
 
 
 @interface BoardGameController : UITableViewController {
-    
+    NSArray* _menuOptions;
 }
 
 @property (nonatomic, retain) DBBoardGame* boardGame;
+
+@property (nonatomic, retain) NSArray* menuOptions;
 
 @end

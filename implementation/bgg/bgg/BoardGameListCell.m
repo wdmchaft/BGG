@@ -28,7 +28,6 @@
         // Initialization code
         [self setSelectionStyle:UITableViewCellSelectionStyleGray];
         
-        
 		UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell-background.png"]] autorelease];
         [self.contentView addSubview:cellView];
         

@@ -82,6 +82,7 @@
 
 - (void)dealloc
 {
+    [_boardGame release];
     [super dealloc];
 }
 
