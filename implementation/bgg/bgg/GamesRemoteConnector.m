@@ -58,13 +58,66 @@ static NSString * top100Key = @"top100Key";
 	[flagDictionary removeObjectForKey:requestIdentifier];
 }
 
+#pragma mark Game Ratings
+
+//
+static NSString * getGameRatings = @"getGameRatingsKey";
+
+-(NSString*) getGameDetails:(NSString*) gameId :(int) pageNumber
+{
+    NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@_%d", getGameRatings, gameId, pageNumber];
+	
+	if([flagDictionary valueForKey:requestIdentifier] != nil)
+		return requestIdentifier;
+	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
+	
+    NSString* requestString = @"xmlapi2/thing?type=boardgame&id=%@&versions=0&videos=0&stats=0&historical=0&page=%d&pagesize=100&ratingcomments=1";
+	DataLoader* loader = [[DataLoader alloc] init];
+	loader.tag = requestIdentifier;
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(loadedGameRatings:) 
+												 name:Notifications_DataLoader 
+											   object:loader];
+	
+	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:
+                                    [NSURL URLWithString: 
+                                     [NSString stringWithFormat:
+                                      [RemoteConnector server], 
+                                      [NSString stringWithFormat:requestString, gameId, pageNumber]]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+													   timeoutInterval:timeout];
+	
+	[loader performRequest:request];
+	
+	return requestIdentifier;
+    
+}
+
+
+
+-(void) loadedGameRatings:(NSNotification*) sender
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:Notifications_DataLoader object:[sender object]];
+	NSString* requestIdentifier = [(DataLoader*)[sender object] tag];
+	NSData* remoteData = [[sender object] getData];
+	[[sender object] autorelease];
+	
+    BGGXMLScraper* scraper = [[[BGGXMLScraper alloc] init] autorelease];
+    
+    NSArray* ratings = [scraper getGameRatings:remoteData];
+    
+	[[NSNotificationCenter defaultCenter] postNotificationName:requestIdentifier object:[self generateResult:ratings :requestIdentifier]];
+	[flagDictionary removeObjectForKey:requestIdentifier];
+}
+
+
 #pragma mark GameDetails
 
 static NSString * getGameDetailsKey = @"getGameDetailsKey";
 
 -(NSString*) getGameDetails:(NSString*) gameId
 {
-    NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@", getGameDetailsKey, gameId];;
+    NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@", getGameDetailsKey, gameId];
 	
 	if([flagDictionary valueForKey:requestIdentifier] != nil)
 		return requestIdentifier;

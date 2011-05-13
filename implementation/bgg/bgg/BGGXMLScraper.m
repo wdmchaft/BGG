@@ -11,6 +11,7 @@
 #import "XPathQuery.h"
 #import "BGGIdNameLookup.h"
 #import "BGGBoardGameVideo.h"
+#import "BGGBoardGameRating.h"
 
 @interface BGGXMLScraper (Private)
 
@@ -74,6 +75,31 @@
     }
     
     return result;
+}
+
+-(NSArray*) getGameRatings:(NSData *)document
+{
+    NSArray* usernames = PerformXMLXPathQuery(document, @"/items/item/comment/@username");
+    NSArray* ratings = PerformXMLXPathQuery(document, @"/items/item/comment/@rating");
+    NSArray* comments = PerformXMLXPathQuery(document, @"/items/item/comment/@value");
+    
+    ICAssert([usernames count] == [ratings count], @"XmlGameRatings: should have same count_1!");
+    ICAssert([ratings count] == [comments count], @"XmlGameRatings: should have same count_2!");
+    
+    NSMutableArray* resultArray = [[[NSMutableArray alloc] initWithCapacity:[usernames count]] autorelease];
+    
+    for(int i = 0; i < [usernames count]; i++)
+    {
+        BGGBoardGameRating* rating = [[[BGGBoardGameRating alloc] init] autorelease];
+        
+        rating.username = [[usernames objectAtIndex:i] objectForKey:@"nodeContent"];
+        rating.comment = [[comments objectAtIndex:i] objectForKey:@"nodeContent"]; 
+        rating.rating = [NSNumber numberWithDouble:[[[ratings objectAtIndex:i] objectForKey:@"nodeContent"] doubleValue]];
+        
+        [resultArray addObject:rating];
+    }
+    
+    return resultArray;
 }
 
 #pragma mark private

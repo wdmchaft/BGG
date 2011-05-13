@@ -15,4 +15,6 @@
 
 -(BGGBoardGame*) getGameDetails:(NSData *)document;
 
+-(NSArray*) getGameRatings:(NSData *)document;
+
 @end
