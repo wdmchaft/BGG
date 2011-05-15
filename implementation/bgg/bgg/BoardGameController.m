@@ -111,6 +111,15 @@
     return 0;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 1)
+    {
+        return @"In Detail";
+    }
+    return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView boardGameBasics:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier;
@@ -188,6 +197,15 @@
                 cell = [[[BoardGameCategoriesCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
             }
             break;
+        case 2:
+            CellIdentifier = @"MechanicsCell";
+            cell = (BoardGameMechanicsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGameMechanicsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            break;
         default:
             CellIdentifier = @"MechanicsCell";
             cell = (BoardGameMechanicsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -223,8 +241,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell<IBoardGameVariableHeightCell> *cell;
-    
     if(indexPath.section == 0){
         switch (indexPath.row) {
             case 0:
@@ -239,11 +255,14 @@
             case 0:
                 return HEADER_CELL_HEIGHT; //descriptionCell
                 break;
+            case 1:
+                return [BoardGameCategoriesCell calculateCellHeight:_boardGame];
+                break;
+            case 2:
+                return [BoardGameMechanicsCell calculateCellHeight:_boardGame];
+                break;
             default:
-                //variableHeightCell
-                cell = (UITableViewCell<IBoardGameVariableHeightCell> *)[self.tableView 
-                                           viewWithTag:((100*indexPath.section) + indexPath.row)];
-                return cell.cellHeight;
+                return [BoardGameMechanicsCell calculateCellHeight:_boardGame];
                 break;
         }
     }
@@ -252,10 +271,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  [self.tableView beginUpdates];
-  [self.tableView endUpdates];
-  return;
-  
     UIViewController* controller;
     switch (indexPath.row) {
         case 1:     //Ratings/Comments

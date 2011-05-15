@@ -10,6 +10,7 @@
 
 //Layout
 #define ELEMENTS_SEPARATION 5.0f
+#define SCREEN_WIDTH 320
 
 //Cell Layout
 #define CELL_MARGIN 10.0f

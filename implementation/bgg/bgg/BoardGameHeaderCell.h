@@ -16,6 +16,4 @@
     UIImageView* imageView;
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame;
-
 @end

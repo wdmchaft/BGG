@@ -15,6 +15,4 @@
     DBBoardGame* _boardGame;
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame;
-
 @end
