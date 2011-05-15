@@ -9,26 +9,13 @@
 #import "BoardGameMechanicsCell.h"
 #import "DBMechanic.h"
 
-
 @implementation BoardGameMechanicsCell
 
-@synthesize cellHeight = _cellHeight;
-@synthesize detailsLabelHeight = _detailsLabelHeight;
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
--(NSString *) detailsLabelBuilder
++ (NSString *) detailsLabelBuilder:(DBBoardGame *)boardGame
 {
     NSString* result = nil;
     
-    for(DBMechanic *mechanic in _boardGame.mechanics) {
+    for(DBMechanic *mechanic in boardGame.mechanics) {
         if(result == nil)
             result = mechanic.name;
         else
@@ -39,19 +26,45 @@
     return result;
 }
 
--(void) calculateCellHeight:(NSString *) title adicionalLabel:(NSString*)label
+
++ (CGFloat) calculateTitleHeight:(DBBoardGame *)boardGame
 {
-    CGSize constraint = CGSizeMake(self.frame.size.width - (CELL_MARGIN * 2), 20000.0f);
+    CGSize constraint = CGSizeMake(SCREEN_WIDTH - (CELL_MARGIN * 2), 20000.0f);
     
     //titleSize
-    CGSize titleLabelSize = [title sizeWithFont:[UIFont systemFontOfSize:TITLE_FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    CGFloat titleLabelHeight = titleLabelSize.height;
+    CGSize titleLabelSize = [@"Mechanics" sizeWithFont:[UIFont systemFontOfSize:TITLE_FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+
+    return titleLabelSize.height;
+}
+
+
++ (CGFloat) calculateDetailsHeight:(DBBoardGame *)boardGame
+{
+    CGSize constraint = CGSizeMake(SCREEN_WIDTH - (CELL_MARGIN * 2), 20000.0f);
     
     //detailsSize
-    CGSize adicionalLabelSize = [label sizeWithFont:[UIFont systemFontOfSize:DETAILS_FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    _detailsLabelHeight = adicionalLabelSize.height;
+    CGSize detailsLabelSize = [[BoardGameMechanicsCell detailsLabelBuilder:boardGame] sizeWithFont:[UIFont systemFontOfSize:DETAILS_FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     
-    _cellHeight = titleLabelHeight + _detailsLabelHeight + (CELL_MARGIN * 2) + ELEMENTS_SEPARATION;
+    return detailsLabelSize.height;
+}
+
+
++ (CGFloat) calculateCellHeight:(DBBoardGame *)boardGame
+{
+    CGFloat titleHeight = [BoardGameMechanicsCell calculateTitleHeight:boardGame];
+    
+    CGFloat detailsHeight = [BoardGameMechanicsCell calculateDetailsHeight:boardGame];
+
+    return titleHeight + detailsHeight + (CELL_MARGIN * 2) + ELEMENTS_SEPARATION;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
 }
 
 -(void) setBoardGame:(DBBoardGame *)boardGame
@@ -60,11 +73,8 @@
     
     [[self textLabel] setText:@"Mechanics"];
     
-    NSString* result = [self detailsLabelBuilder];
+    NSString* result = [BoardGameMechanicsCell detailsLabelBuilder:boardGame];
     [[self detailTextLabel] setText:result];
-    
-    [self calculateCellHeight:self.textLabel.text adicionalLabel:result];
-     
 }
 
 - (void) layoutSubviews {
@@ -74,7 +84,7 @@
     CGFloat titlePosX = CELL_MARGIN;
     CGFloat titlePosY = CELL_MARGIN;
     CGFloat titleWidth = self.textLabel.frame.size.width;
-    CGFloat titleHeight = self.textLabel.frame.size.height;
+    CGFloat titleHeight = [BoardGameMechanicsCell calculateTitleHeight:_boardGame];
     
     self.textLabel.font = [UIFont boldSystemFontOfSize:TITLE_FONT_SIZE];
     
@@ -84,7 +94,7 @@
     CGFloat mechanicsPosX = titlePosX;
     CGFloat mechanicsPosY = titlePosY + titleHeight + ELEMENTS_SEPARATION;
     CGFloat mechanicsWidth = self.detailTextLabel.frame.size.width;
-    CGFloat mechanicsHeight = _detailsLabelHeight;
+    CGFloat mechanicsHeight = [BoardGameMechanicsCell calculateDetailsHeight:_boardGame];
     
     self.detailTextLabel.font = [UIFont systemFontOfSize:DETAILS_FONT_SIZE];
     self.detailTextLabel.textColor = [UIColor blackColor];

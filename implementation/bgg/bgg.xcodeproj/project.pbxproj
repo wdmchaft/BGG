@@ -168,7 +168,6 @@
 		49823375137DCB6400AC63C6 /* BoardGameCategoriesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameCategoriesCell.h; sourceTree = "<group>"; };
 		49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameCategoriesCell.m; sourceTree = "<group>"; };
 		49823378137FE53100AC63C6 /* MagicNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNumbers.h; sourceTree = "<group>"; };
-		49823379137FFD9500AC63C6 /* IBoardGameVariableHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoardGameVariableHeightCell.h; sourceTree = "<group>"; };
 		498233981380372600AC63C6 /* IBoardGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoardGameCell.h; sourceTree = "<group>"; };
 		49A2F2DA137990980021466C /* BoardGameHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameHeaderCell.h; sourceTree = "<group>"; };
 		49A2F2DB137991090021466C /* BoardGameHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameHeaderCell.m; sourceTree = "<group>"; };
@@ -388,7 +387,6 @@
 				493834B9137C570900906C94 /* BoardGameGenericCell.m */,
 				4982336C137DA9DA00AC63C6 /* BoardGameDescriptionCell.h */,
 				4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */,
-				49823379137FFD9500AC63C6 /* IBoardGameVariableHeightCell.h */,
 				4982336F137DB46700AC63C6 /* BoardGameMechanicsCell.h */,
 				49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */,
 				49823375137DCB6400AC63C6 /* BoardGameCategoriesCell.h */,

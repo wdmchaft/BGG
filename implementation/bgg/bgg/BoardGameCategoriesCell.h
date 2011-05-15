@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "IBoardGameCell.h"
-#import "IBoardGameVariableHeightCell.h"
 
-@interface BoardGameCategoriesCell : UITableViewCell<IBoardGameVariableHeightCell, IBoardGameCell> {
+@interface BoardGameCategoriesCell : UITableViewCell<IBoardGameCell> {
     DBBoardGame* _boardGame;
-    CGFloat _cellHeight;
-    CGFloat _detailsLabelHeight;
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame;
++ (NSString *) detailsLabelBuilder:(DBBoardGame *)boardGame;
+
++ (CGFloat) calculateTitleHeight:(DBBoardGame *)boardGame;
+
++ (CGFloat) calculateDetailsHeight:(DBBoardGame *)boardGame;
+
++ (CGFloat) calculateCellHeight:(DBBoardGame *)boardGame;
 
 @end
