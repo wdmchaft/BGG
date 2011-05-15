@@ -24,6 +24,9 @@
 		49A2F2FD137B09CE0021466C /* BoardGameRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */; };
 		49A2F2FF137B2EB80021466C /* table-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F2FE137B2EB70021466C /* table-cell.png */; };
 		49A2F301137B2ED40021466C /* table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F300137B2ED40021466C /* table-header.png */; };
+		49F861BE138060DD00216AFF /* BoardGameDesignersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F861BD138060DD00216AFF /* BoardGameDesignersCell.m */; };
+		49F861C1138062C000216AFF /* BoardGameArtistsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F861C0138062C000216AFF /* BoardGameArtistsCell.m */; };
+		49F861C41380639900216AFF /* BoardGamePublishersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F861C31380639900216AFF /* BoardGamePublishersCell.m */; };
 		49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAF6461378705D00CC4D43 /* BoardGameController.m */; };
 		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4671370D01400E0B743 /* BGGBoardGame.m */; };
@@ -177,6 +180,12 @@
 		49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameRatingCell.m; sourceTree = "<group>"; };
 		49A2F2FE137B2EB70021466C /* table-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "table-cell.png"; path = "../../../../design/png/table-cell.png"; sourceTree = "<group>"; };
 		49A2F300137B2ED40021466C /* table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "table-header.png"; path = "../../../../design/png/table-header.png"; sourceTree = "<group>"; };
+		49F861BC138060DD00216AFF /* BoardGameDesignersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameDesignersCell.h; sourceTree = "<group>"; };
+		49F861BD138060DD00216AFF /* BoardGameDesignersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameDesignersCell.m; sourceTree = "<group>"; };
+		49F861BF138062C000216AFF /* BoardGameArtistsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameArtistsCell.h; sourceTree = "<group>"; };
+		49F861C0138062C000216AFF /* BoardGameArtistsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameArtistsCell.m; sourceTree = "<group>"; };
+		49F861C21380639900216AFF /* BoardGamePublishersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGamePublishersCell.h; sourceTree = "<group>"; };
+		49F861C31380639900216AFF /* BoardGamePublishersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGamePublishersCell.m; sourceTree = "<group>"; };
 		49FAF6451378705D00CC4D43 /* BoardGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameController.h; sourceTree = "<group>"; };
 		49FAF6461378705D00CC4D43 /* BoardGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameController.m; sourceTree = "<group>"; };
 		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
@@ -396,6 +405,12 @@
 				49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */,
 				49823375137DCB6400AC63C6 /* BoardGameCategoriesCell.h */,
 				49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */,
+				49F861BC138060DD00216AFF /* BoardGameDesignersCell.h */,
+				49F861BD138060DD00216AFF /* BoardGameDesignersCell.m */,
+				49F861BF138062C000216AFF /* BoardGameArtistsCell.h */,
+				49F861C0138062C000216AFF /* BoardGameArtistsCell.m */,
+				49F861C21380639900216AFF /* BoardGamePublishersCell.h */,
+				49F861C31380639900216AFF /* BoardGamePublishersCell.m */,
 			);
 			name = "BoardGame Details";
 			sourceTree = "<group>";
@@ -1000,6 +1015,9 @@
 				4982336E137DA9DA00AC63C6 /* BoardGameDescriptionCell.m in Sources */,
 				49823371137DB46700AC63C6 /* BoardGameMechanicsCell.m in Sources */,
 				49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */,
+				49F861BE138060DD00216AFF /* BoardGameDesignersCell.m in Sources */,
+				49F861C1138062C000216AFF /* BoardGameArtistsCell.m in Sources */,
+				49F861C41380639900216AFF /* BoardGamePublishersCell.m in Sources */,
 				5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

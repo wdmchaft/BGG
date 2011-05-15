@@ -21,7 +21,7 @@
 #define STAR_SIZE 20
 
 //TableView
-#define TABLE_SECTIONS 2
+#define BG_TABLE_SECTIONS 3
 #define FIXED_NUM_ROWS 2
 
 //Font
