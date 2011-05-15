@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IBoardGameCell.h"
 
 @class DBBoardGame;
 
-@interface BoardGameHeaderCell : UITableViewCell {
+@interface BoardGameHeaderCell : UITableViewCell<IBoardGameCell> {
     DBBoardGame* _boardGame;
     UIImageView* imageView;
 }

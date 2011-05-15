@@ -20,7 +20,7 @@
         //UIImageView* cellView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table-header.png"]] autorelease];
         //[self.contentView addSubview:cellView];
         
-        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 120)] autorelease];
+        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(CELL_MARGIN, CELL_MARGIN, 100, 120)] autorelease];
         [self.contentView addSubview:imageView];
         
     }
@@ -74,8 +74,8 @@
     [super layoutSubviews];
     
     //TitleLabel 
-    CGFloat titlePosX = 110 + 5;
-    CGFloat titlePosY = 10;
+    CGFloat titlePosX = 110 + ELEMENTS_SEPARATION;
+    CGFloat titlePosY = CELL_MARGIN;
     CGFloat titleWidth = 185;//TODO: como ver o espaço que falta?
     CGFloat titleHeight = self.textLabel.frame.size.height;
     
@@ -90,12 +90,12 @@
 
     //DetailsLabel
     CGFloat detailsPosX = titlePosX;
-    CGFloat detailsPosY = titlePosY + titleHeight + 5;
+    CGFloat detailsPosY = titlePosY + titleHeight + ELEMENTS_SEPARATION;
     CGFloat detailsWidth = 185;
     CGFloat detailsHeight = self.detailTextLabel.frame.size.height;
     
     self.detailTextLabel.numberOfLines = 0;
-    self.detailTextLabel.font = [UIFont systemFontOfSize:14.0];
+    self.detailTextLabel.font = [UIFont systemFontOfSize:DETAILS_FONT_SIZE];
     self.detailTextLabel.textColor = [UIColor darkGrayColor];
     
     self.detailTextLabel.frame = CGRectMake(detailsPosX, detailsPosY, detailsWidth, detailsHeight);

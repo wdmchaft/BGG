@@ -17,6 +17,9 @@
 		493834BA137C570900906C94 /* BoardGameGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493834B9137C570900906C94 /* BoardGameGenericCell.m */; };
 		493834BE137D7A4A00906C94 /* BoardGameForumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493834BC137D7A4900906C94 /* BoardGameForumsController.m */; };
 		493834BF137D7A4A00906C94 /* BoardGameForumsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */; };
+		4982336E137DA9DA00AC63C6 /* BoardGameDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */; };
+		49823371137DB46700AC63C6 /* BoardGameMechanicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */; };
+		49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */; };
 		49A2F2DC137991090021466C /* BoardGameHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2DB137991090021466C /* BoardGameHeaderCell.m */; };
 		49A2F2FD137B09CE0021466C /* BoardGameRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */; };
 		49A2F2FF137B2EB80021466C /* table-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F2FE137B2EB70021466C /* table-cell.png */; };
@@ -158,6 +161,15 @@
 		493834BB137D7A4900906C94 /* BoardGameForumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameForumsController.h; sourceTree = "<group>"; };
 		493834BC137D7A4900906C94 /* BoardGameForumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameForumsController.m; sourceTree = "<group>"; };
 		493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameForumsController.xib; sourceTree = "<group>"; };
+		4982336C137DA9DA00AC63C6 /* BoardGameDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameDescriptionCell.h; sourceTree = "<group>"; };
+		4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameDescriptionCell.m; sourceTree = "<group>"; };
+		4982336F137DB46700AC63C6 /* BoardGameMechanicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameMechanicsCell.h; sourceTree = "<group>"; };
+		49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameMechanicsCell.m; sourceTree = "<group>"; };
+		49823375137DCB6400AC63C6 /* BoardGameCategoriesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameCategoriesCell.h; sourceTree = "<group>"; };
+		49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameCategoriesCell.m; sourceTree = "<group>"; };
+		49823378137FE53100AC63C6 /* MagicNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNumbers.h; sourceTree = "<group>"; };
+		49823379137FFD9500AC63C6 /* IBoardGameVariableHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoardGameVariableHeightCell.h; sourceTree = "<group>"; };
+		498233981380372600AC63C6 /* IBoardGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoardGameCell.h; sourceTree = "<group>"; };
 		49A2F2DA137990980021466C /* BoardGameHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameHeaderCell.h; sourceTree = "<group>"; };
 		49A2F2DB137991090021466C /* BoardGameHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameHeaderCell.m; sourceTree = "<group>"; };
 		49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameRatingCell.h; sourceTree = "<group>"; };
@@ -367,12 +379,20 @@
 				492B3A46137D81C3000207DE /* BoardGameController.xib */,
 				49FAF6451378705D00CC4D43 /* BoardGameController.h */,
 				49FAF6461378705D00CC4D43 /* BoardGameController.m */,
+				498233981380372600AC63C6 /* IBoardGameCell.h */,
 				49A2F2DA137990980021466C /* BoardGameHeaderCell.h */,
 				49A2F2DB137991090021466C /* BoardGameHeaderCell.m */,
 				49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */,
 				49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */,
 				493834B8137C570800906C94 /* BoardGameGenericCell.h */,
 				493834B9137C570900906C94 /* BoardGameGenericCell.m */,
+				4982336C137DA9DA00AC63C6 /* BoardGameDescriptionCell.h */,
+				4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */,
+				49823379137FFD9500AC63C6 /* IBoardGameVariableHeightCell.h */,
+				4982336F137DB46700AC63C6 /* BoardGameMechanicsCell.h */,
+				49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */,
+				49823375137DCB6400AC63C6 /* BoardGameCategoriesCell.h */,
+				49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */,
 			);
 			name = "BoardGame Details";
 			sourceTree = "<group>";
@@ -541,6 +561,7 @@
 				5F75744C13400E1000C82F3B /* InfoPlist.strings */,
 				5F75744F13400E1000C82F3B /* bgg-Prefix.pch */,
 				5F75745013400E1000C82F3B /* main.m */,
+				49823378137FE53100AC63C6 /* MagicNumbers.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -961,6 +982,9 @@
 				5FB10EE4137C59D000EFFD6E /* DBBoardGame.m in Sources */,
 				492B3A4C137D8AE3000207DE /* BoardGameCommentsController.m in Sources */,
 				5FB10F3C137D9E7200EFFD6E /* BGGBoardGameRating.m in Sources */,
+				4982336E137DA9DA00AC63C6 /* BoardGameDescriptionCell.m in Sources */,
+				49823371137DB46700AC63C6 /* BoardGameMechanicsCell.m in Sources */,
+				49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

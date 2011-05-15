@@ -28,10 +28,13 @@
 
 }
 
--(void) setMenuOption:(NSString *)menuOption setBoardGame:(DBBoardGame *)boardGame
+-(void) setBoardGame:(DBBoardGame*)boardGame
 {
     _boardGame = [boardGame retain];
-    
+}
+
+-(void) setMenuOption:(NSString*)menuOption
+{
     [[self textLabel] setText:menuOption];
 }
 
@@ -39,12 +42,12 @@
     [super layoutSubviews];
     
     //MenuOption label
-    CGFloat menuOptionPosX = 10;
+    CGFloat menuOptionPosX = CELL_MARGIN;
     CGFloat menuOptionPosY = 0;
-    CGFloat menuOptionWitdh = self.textLabel.frame.size.width;
+    CGFloat menuOptionWidth = self.textLabel.frame.size.width;
     CGFloat menuOptionHeight = 59;
         
-    self.textLabel.frame = CGRectMake(menuOptionPosX, menuOptionPosY, menuOptionWitdh, menuOptionHeight);  
+    self.textLabel.frame = CGRectMake(menuOptionPosX, menuOptionPosY, menuOptionWidth, menuOptionHeight);  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

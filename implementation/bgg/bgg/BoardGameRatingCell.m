@@ -37,14 +37,14 @@
     for (i=0; i< [boardGame.rating intValue]; i++) {
          
         star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-full.png"]] autorelease];        
-        star.frame = CGRectMake(10 + (22*i), 10, 20, 20);
+        star.frame = CGRectMake(CELL_MARGIN + (22*i), CELL_MARGIN, STAR_SIZE, STAR_SIZE);
 
         [self.contentView addSubview:star];
     }
     for( ; i<10 ; i++){
         
         star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-empty.png"]] autorelease];        
-        star.frame = CGRectMake(10 + (22*i), 10, 20, 20);
+        star.frame = CGRectMake(CELL_MARGIN + (22*i), CELL_MARGIN, STAR_SIZE, STAR_SIZE);
         
         [self.contentView addSubview:star];
     }
@@ -58,7 +58,7 @@
     [super layoutSubviews];
     
     //TextRank label
-    CGFloat textRankPosX = 10;
+    CGFloat textRankPosX = CELL_MARGIN;
     CGFloat textRankPosY = 35;
     CGFloat textRankWidth = self.textLabel.frame.size.width;
     CGFloat textRankHeight = self.textLabel.frame.size.height;

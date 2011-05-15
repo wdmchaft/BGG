@@ -1,17 +1,16 @@
 //
-//  BoardGameTableRating.h
+//  BoardGameDescriptionCell.h
 //  bgg
 //
-//  Created by Ana Oliveira on 5/11/11.
+//  Created by Ana Oliveira on 5/13/11.
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "IBoardGameCell.h"
 
-@class DBBoardGame;
 
-@interface  BoardGameRatingCell: UITableViewCell<IBoardGameCell> {
+@interface BoardGameDescriptionCell : UITableViewCell<IBoardGameCell> {
     DBBoardGame* _boardGame;
 }
 

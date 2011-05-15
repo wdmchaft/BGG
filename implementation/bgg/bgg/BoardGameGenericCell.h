@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IBoardGameCell.h"
 
 @class DBBoardGame;
 
-@interface BoardGameGenericCell : UITableViewCell {
+@interface BoardGameGenericCell : UITableViewCell<IBoardGameCell> {
     DBBoardGame* _boardGame;
     NSString* _menuOption;
 }
 
--(void) setMenuOption:(NSString*)menuOption setBoardGame:(DBBoardGame*)boardGame;
+-(void) setMenuOption:(NSString*)menuOption;
 
 @end
