@@ -55,13 +55,14 @@ static NSString* _entity = @"DBBoardGame";
     return boardGame;
 }
 
--(NSArray*) getAllBoardGames
+-(NSArray*) getTop100
 {
     NSError *error = nil;
-	NSFetchRequest *fetchRequest = [[self managedObjectModel] fetchRequestTemplateForName:@"GetAllBoardGames"];
-	NSArray *fetchedObjects = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+	NSFetchRequest *fetchRequest = [[self managedObjectModel] fetchRequestTemplateForName:@"getTop100"];
+    NSArray *fetchedObjects = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
 
-	return fetchedObjects;
+    NSSortDescriptor *descriptor = [[[NSSortDescriptor alloc] initWithKey:@"rank" ascending:YES] autorelease];
+    return [fetchedObjects sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
 }
 
 

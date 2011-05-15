@@ -57,7 +57,7 @@
 	
 	[self.view addSubview:breadcrumb.view];
 
-	if([[[[Globals sharedGlobals] dataAccess] getAllBoardGames] count] == 0)
+	if([[[[Globals sharedGlobals] dataAccess] getTop100] count] == 0)
     {
         InitialSyncViewController* sync = [[InitialSyncViewController alloc] init];
         [sync start];

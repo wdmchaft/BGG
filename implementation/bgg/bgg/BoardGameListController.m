@@ -64,7 +64,7 @@
  
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     
-    NSArray* products = [[[Globals sharedGlobals] dataAccess] getAllBoardGames];
+    NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
     [self setBoardGames:products];
 }
 

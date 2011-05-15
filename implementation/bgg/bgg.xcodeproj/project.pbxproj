@@ -536,6 +536,7 @@
 		5F75744913400E1000C82F3B /* bgg */ = {
 			isa = PBXGroup;
 			children = (
+				5F78E19D13805AD500C85AD4 /* My Profile */,
 				5F2DC4BA136F070A00A9E924 /* Settings */,
 				5FDBA743135DC2AB001C8292 /* Data */,
 				5FDBA742135DC26F001C8292 /* BoardGames */,
@@ -637,6 +638,13 @@
 				5F7575E3134166F700C82F3B /* StackSegmentedControl.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5F78E19D13805AD500C85AD4 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "My Profile";
 			sourceTree = "<group>";
 		};
 		5FB4245D134B2244001E538A /* Breadcrumb */ = {

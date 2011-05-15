@@ -14,6 +14,6 @@
 -(DBBoardGame*) getCreateBoardGame:(NSString*) gameId;
 -(DBBoardGame*) createBoardGame;
 -(DBBoardGame*) getBoardGameById:(NSString*) gameId;
--(NSArray*) getAllBoardGames;
+-(NSArray*) getTop100;
 
 @end
