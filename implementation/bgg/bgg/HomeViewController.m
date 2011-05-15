@@ -159,7 +159,6 @@
 -(void) navigateToBoardGameList
 {
     BoardGameListController* controller = [[[BoardGameListController alloc] init] autorelease];
-
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }

@@ -17,6 +17,7 @@
 	#import <QuartzCore/QuartzCore.h>
 	#import <CoreGraphics/CoreGraphics.h>
     #import "SSToolkit.h"
+    #import "UIDevice+Hardware.h"
 #endif
 
 #if !defined(DEBUG) || DEBUG == 0

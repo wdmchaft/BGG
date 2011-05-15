@@ -373,8 +373,7 @@
 
 -(void) loadGameRatings
 {
-    _hud = [[SSHUDView alloc] initWithTitle:@"Loading ratings..."];
-    [_hud show];
+    [[Globals sharedGlobals] showHUDWithMessage:@"Loading ratings..."];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(gotRatingsForGame:) 
                                                  name:[[[Globals sharedGlobals] remoteConnector] getGameRatings:_boardGame.gameId :1]
@@ -395,10 +394,7 @@
     
     [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
     
-    [_hud dismiss];
-    [_hud release];
-    _hud = nil;
-
+    [[Globals sharedGlobals] closeHUD];
 }
 
 @end

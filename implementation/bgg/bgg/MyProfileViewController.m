@@ -64,8 +64,8 @@
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     
-    NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
-    [self setBoardGames:products];
+//    NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
+//    [self setBoardGames:products];
 }
 
 - (void)viewDidUnload
@@ -76,6 +76,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

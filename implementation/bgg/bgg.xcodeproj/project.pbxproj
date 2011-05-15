@@ -88,6 +88,7 @@
 		5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* StackSegmentedControl.m */; };
 		5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */; };
 		5F78E1AD13805F3A00C85AD4 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */; };
+		5F78E1D813806AFE00C85AD4 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E1D713806AFE00C85AD4 /* UIDevice+Hardware.m */; };
 		5FB10ECF137C56D200EFFD6E /* DBVideos+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */; };
 		5FB10ED2137C57F700EFFD6E /* DataAccess+Videos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */; };
 		5FB10ED5137C59CC00EFFD6E /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED4137C59CC00EFFD6E /* DBCategory.m */; };
@@ -282,6 +283,8 @@
 		5F78E1A913805F3A00C85AD4 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
+		5F78E1D613806AFE00C85AD4 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		5F78E1D713806AFE00C85AD4 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		5FB10ECD137C56D200EFFD6E /* DBVideos+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBVideos+Extras.h"; sourceTree = "<group>"; };
 		5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBVideos+Extras.m"; sourceTree = "<group>"; };
 		5FB10ED0137C57F700EFFD6E /* DataAccess+Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Videos.h"; sourceTree = "<group>"; };
@@ -643,6 +646,8 @@
 		5F7575DC134166CA00C82F3B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F78E1D613806AFE00C85AD4 /* UIDevice+Hardware.h */,
+				5F78E1D713806AFE00C85AD4 /* UIDevice+Hardware.m */,
 				5F2DC4CD136F0CF800A9E924 /* KeychainUtils.h */,
 				5F2DC4CE136F0CF800A9E924 /* KeychainUtils.m */,
 				5F6C7797135E10AD00891634 /* StorageHelper.h */,
@@ -1019,6 +1024,7 @@
 				49F861C1138062C000216AFF /* BoardGameArtistsCell.m in Sources */,
 				49F861C41380639900216AFF /* BoardGamePublishersCell.m in Sources */,
 				5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */,
+				5F78E1D813806AFE00C85AD4 /* UIDevice+Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,10 @@
 -(void) setBoardGame:(DBBoardGame*) boardGame
 {
     _boardGame = [boardGame retain];
-    [imageView setImage:[boardGame previewImage]];
+    if([[UIDevice currentDevice] hasRetinaDisplay] && [boardGame hasMainImage])
+        [imageView setImage:[boardGame mainImage]];
+    else
+        [imageView setImage:[boardGame previewImage]];
     
     [[self textLabel] setText:[NSString stringWithFormat:@"%@ (%@)", 
                                boardGame.primaryTitle,
