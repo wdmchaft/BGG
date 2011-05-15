@@ -9,6 +9,7 @@
 #import "Globals.h"
 #import "BGGAppDelegate.h"
 #import "BreadcrumbViewController.h"
+#import "SSHUDView.h"
 
 @implementation Globals
 
@@ -85,6 +86,32 @@ static Globals *sharedSingleton = nil;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView
 {
 	return [self pushFrom:currentView toView:destinationView :NO];
+}
+
+#pragma mark HUD
+
+-(void) showHUDWithMessage:(NSString*) message
+{
+    if(_hud == nil)
+    {
+        _hud = [[SSHUDView alloc] initWithTitle:@"Loading game..."];
+    }
+    else
+    {
+        _hud.textLabel.text = message;
+    }
+    
+    [_hud show];
+}
+
+-(void) closeHUD
+{
+    if(_hud == nil) 
+        return;
+    
+    [_hud dismiss];
+    [_hud release];
+    _hud = nil;
 }
 
 @end

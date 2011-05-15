@@ -83,6 +83,8 @@
 		5F7575E0134166DA00C82F3B /* BreadcrumbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7575DD134166DA00C82F3B /* BreadcrumbView.xib */; };
 		5F7575E1134166DA00C82F3B /* BreadcrumbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */; };
 		5F7575E4134166F700C82F3B /* StackSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7575E3134166F700C82F3B /* StackSegmentedControl.m */; };
+		5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */; };
+		5F78E1AD13805F3A00C85AD4 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */; };
 		5FB10ECF137C56D200EFFD6E /* DBVideos+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */; };
 		5FB10ED2137C57F700EFFD6E /* DataAccess+Videos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */; };
 		5FB10ED5137C59CC00EFFD6E /* DBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED4137C59CC00EFFD6E /* DBCategory.m */; };
@@ -268,6 +270,9 @@
 		5F7575DF134166DA00C82F3B /* BreadcrumbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreadcrumbViewController.m; sourceTree = "<group>"; };
 		5F7575E2134166F700C82F3B /* StackSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackSegmentedControl.h; sourceTree = "<group>"; };
 		5F7575E3134166F700C82F3B /* StackSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackSegmentedControl.m; sourceTree = "<group>"; };
+		5F78E1A913805F3A00C85AD4 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
 		5FB10ECD137C56D200EFFD6E /* DBVideos+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBVideos+Extras.h"; sourceTree = "<group>"; };
 		5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBVideos+Extras.m"; sourceTree = "<group>"; };
 		5FB10ED0137C57F700EFFD6E /* DataAccess+Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccess+Videos.h"; sourceTree = "<group>"; };
@@ -641,6 +646,9 @@
 		5F78E19D13805AD500C85AD4 /* My Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */,
+				5F78E1A913805F3A00C85AD4 /* MyProfileViewController.h */,
+				5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */,
 			);
 			name = "My Profile";
 			sourceTree = "<group>";
@@ -920,6 +928,7 @@
 				493834BF137D7A4A00906C94 /* BoardGameForumsController.xib in Resources */,
 				492B3A48137D81C3000207DE /* BoardGameController.xib in Resources */,
 				492B3A4D137D8AE3000207DE /* BoardGameCommentsController.xib in Resources */,
+				5F78E1AD13805F3A00C85AD4 /* MyProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +1000,7 @@
 				4982336E137DA9DA00AC63C6 /* BoardGameDescriptionCell.m in Sources */,
 				49823371137DB46700AC63C6 /* BoardGameMechanicsCell.m in Sources */,
 				49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */,
+				5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

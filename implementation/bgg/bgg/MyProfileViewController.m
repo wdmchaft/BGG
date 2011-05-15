@@ -1,25 +1,25 @@
 //
-//  BoardGameListController.m
+//  MyProfileViewController.m
 //  bgg
 //
-//  Created by João Caxaria on 4/21/11.
+//  Created by João Caxaria on 5/15/11.
 //  Copyright 2011 Imaginary Factory. All rights reserved.
 //
 
-#import "BoardGameListController.h"
+#import "MyProfileViewController.h"
 #import "BoardGameController.h"
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
 #import "DataAccess+BoardGame.h"
 #import "BGGBoardGame.h"
 
-@interface BoardGameListController (Private)
+@interface MyProfileViewController (Private)
 
 -(void) showGameDetails:(DBBoardGame*) boardGame;
 
 @end
 
-@implementation BoardGameListController
+@implementation MyProfileViewController
 
 @synthesize boardGames = _boardGames;
 
@@ -59,9 +59,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self.tableView setRowHeight:76.0];
- 
+    
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     
     NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
@@ -107,7 +107,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     return [_boardGames count];
 }
 
@@ -168,7 +168,7 @@
     [[[Globals sharedGlobals] dataAccess] saveChanges];
     
     [self showGameDetails:dbGame];
-
+    
     [[Globals sharedGlobals] closeHUD];
 }
 
@@ -181,7 +181,7 @@
     [controller setBoardGame:gameWithConnections];
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
-
+    
 }
 
 #pragma mark IBreadcrumbMenu

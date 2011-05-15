@@ -21,10 +21,13 @@
 #import "RemoteConnector.h"
 #import "GamesRemoteConnector.h"
 
+@class SSHUDView;
+
 @interface Globals : NSObject {
 	DataAccess* dataAccess;
 	RemoteConnector * remoteConnector;
 	BreadcrumbViewController* breadcrumb;
+    SSHUDView* _hud;
 }
 
 +(Globals *)sharedGlobals;
@@ -38,5 +41,8 @@
 
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView;
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back;
+
+-(void) showHUDWithMessage:(NSString*) message;
+-(void) closeHUD;
 
 @end

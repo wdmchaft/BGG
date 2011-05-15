@@ -11,11 +11,13 @@
 #import "SSCollectionViewItem.h"
 #import "BoardGameListController.h"
 #import "SettingsViewController.h"
+#import "MyProfileViewController.h"
 
 @interface HomeViewController(Private)
 
 -(void) navigateToBoardGameList;
 -(void) navigateToSettings;
+-(void) navigatToMyProfile;
 
 @end
 
@@ -134,6 +136,7 @@
             break;
             
         case 1:
+            [self navigatToMyProfile];
             break;
                 
         case 5:
@@ -168,4 +171,11 @@
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }
 
+
+-(void) navigatToMyProfile
+{
+    MyProfileViewController* controller = [[[MyProfileViewController alloc] init] autorelease];
+    
+	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
+}
 @end
