@@ -66,18 +66,20 @@
 	CGRect frame = contentView.frame;
 	frame.origin.x = 0;
 	frame.origin.y = 0;
-	[mViewController.view setFrame:frame];
+	//[mViewController.view setFrame:frame];
 	[viewControllers insertObject:mViewController atIndex:[viewControllers count]];
-	[cSegmentedControl generateButtons];
-	[cSegmentedControl selectButton:[[cSegmentedControl buttons] count] -1];
 	
-	CGSize size = [scrollView frame].size;
-	
+    
+    [self updateUIFrom:[viewControllers count]-2 to:[viewControllers count]-1 animated:animated];
+    
+    
+    [cSegmentedControl generateButtons];
+    [cSegmentedControl selectButton:[[cSegmentedControl buttons] count] -1];
+    CGSize size = [scrollView frame].size;
 	size.width = [cSegmentedControl frame].size.width;
-	
 	[scrollView setContentSize:size];
 	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:[[cSegmentedControl buttons] count]-1] frame]  animated:YES];
-	[self updateUIFrom:[viewControllers count]-2 to:[viewControllers count]-1 animated:animated];
+	
 }
 
 
@@ -92,7 +94,14 @@
 {
 	if([viewControllers count] == 1)
 		return;
-	[self updateUIFrom:[viewControllers count]-1 to:[viewControllers count]-2 animated:NO];
+    
+    [self updateUIFrom:[viewControllers count]-1 to:[viewControllers count]-2 animated:YES];
+    
+    [viewControllers removeLastObject];
+    [cSegmentedControl generateButtons];
+	
+    [cSegmentedControl selectButton:[viewControllers count]-1];
+	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:[viewControllers count]-1] frame] animated:YES];
 }
 
 -(void) popupClicked:(UIButton*) sender
@@ -187,6 +196,7 @@
     if([viewControllers count]-1 == segmentIndex)
         return;
 	[self updateUIFrom:[viewControllers count]-1 to:segmentIndex animated:YES];
+
 	while([viewControllers count] > segmentIndex + 1)
 	{
 		[viewControllers removeLastObject];
@@ -258,9 +268,9 @@
     
 	[currentController viewDidDisappear:NO];
 	[newController viewDidAppear:NO];
+
+    
 	
-	[cSegmentedControl selectButton:newIndex];
-	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:newIndex] frame]  animated:YES];
 }
 
 -(void) showFooter

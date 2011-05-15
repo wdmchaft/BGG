@@ -66,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     [self setTitle:_boardGame.primaryTitle];
 }
 
