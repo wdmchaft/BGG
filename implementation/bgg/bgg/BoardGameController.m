@@ -15,6 +15,9 @@
 #import "BoardGameDescriptionCell.h"
 #import "BoardGameMechanicsCell.h"
 #import "BoardGameCategoriesCell.h"
+#import "BoardGameDesignersCell.h"
+#import "BoardGameArtistsCell.h"
+#import "BoardGamePublishersCell.h"
 
 @interface BoardGameController (Private)
 
@@ -75,15 +78,6 @@
     [super viewDidUnload];
 }
 
-//
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    [self.tableView beginUpdates];
-//    [self.tableView endUpdates];
-//}
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -93,7 +87,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return TABLE_SECTIONS;
+    return BG_TABLE_SECTIONS;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -102,7 +96,7 @@
     {
         return FIXED_NUM_ROWS + [_menuBasics count];
     }
-    else if(section == 1)
+    else if(section == 1 || section == 2)
     {
         return 3;
         //return [_menuDetails count];
@@ -116,6 +110,9 @@
     if(section == 1)
     {
         return @"In Detail";
+    }else if(section == 2)
+    {
+        return @"Credits";
     }
     return nil;
 }
@@ -223,6 +220,59 @@
     return cell;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView boardGameCredits:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier;
+    UITableViewCell<IBoardGameCell> *cell;
+    
+    switch (indexPath.row) {
+        case 0:
+            
+            CellIdentifier = @"Designers";
+            cell = (BoardGameDesignersCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGameDesignersCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            break;
+        case 1:
+            
+            CellIdentifier = @"Artists";
+            cell = (BoardGameArtistsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGameArtistsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            break;
+        case 2:
+            CellIdentifier = @"Publishers";
+            cell = (BoardGamePublishersCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGamePublishersCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            break;
+        default:
+            CellIdentifier = @"Designers";
+            cell = (BoardGameDesignersCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) 
+            {
+                cell = [[[BoardGameDesignersCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            }
+            break;
+    }
+    
+    [cell setBoardGame:_boardGame];
+    [cell setTag: (100*indexPath.section) + indexPath.row];
+    
+    return cell;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -233,6 +283,8 @@
     }else if(indexPath.section == 1){
         
         return [self tableView:tableView boardGameInDetail:indexPath];
+    }else if(indexPath.section == 2){
+        return [self tableView:tableView boardGameCredits:indexPath];
     }
     return NULL;
 }
@@ -250,7 +302,7 @@
                 return GENERIC_CELL_HEIGHT;
                 break;
         } 
-    } else {
+    } else if(indexPath.section == 1){
         switch (indexPath.row) {
             case 0:
                 return HEADER_CELL_HEIGHT; //descriptionCell
@@ -263,6 +315,21 @@
                 break;
             default:
                 return [BoardGameMechanicsCell calculateCellHeight:_boardGame];
+                break;
+        }
+    }else if(indexPath.section == 2){
+        switch (indexPath.row) {
+            case 0:
+                return [BoardGameDesignersCell calculateCellHeight:_boardGame];
+                break;
+            case 1:
+                return [BoardGameArtistsCell calculateCellHeight:_boardGame];
+                break;
+            case 2:
+                return [BoardGamePublishersCell calculateCellHeight:_boardGame];
+                break;
+            default:
+                return [BoardGameDesignersCell calculateCellHeight:_boardGame];
                 break;
         }
     }
