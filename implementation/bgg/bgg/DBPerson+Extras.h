@@ -33,4 +33,19 @@
 - (void)addVideos:(NSSet *)value;
 - (void)removeVideos:(NSSet *)value;
 
+- (void)addOwnedGamesObject:(DBBoardGame *)value;
+- (void)removeOwnedGamesObject:(DBBoardGame *)value;
+- (void)addOwnedGames:(NSSet *)value;
+- (void)removeOwnedGames:(NSSet *)value;
+
+- (void)addPlayedGamesObject:(DBBoardGame *)value;
+- (void)removePlayedGamesObject:(DBBoardGame *)value;
+- (void)addPlayedGames:(NSSet *)value;
+- (void)removePlayedGames:(NSSet *)value;
+
+- (void)addWishedGamesObject:(DBBoardGame *)value;
+- (void)removeWishedGamesObject:(DBBoardGame *)value;
+- (void)addWishedGames:(NSSet *)value;
+- (void)removeWishedGames:(NSSet *)value;
+
 @end

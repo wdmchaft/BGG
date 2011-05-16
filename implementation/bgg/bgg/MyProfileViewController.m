@@ -27,6 +27,9 @@
 {
 	self = [self initWithNibName:@"BoardGameListController" bundle:nil];
 	[self setTitle:@"Board Games"];
+    
+    ICAssert([[Globals sharedGlobals] bggUsername] != nil, @"Need a profile name");
+    
     return self;
 }
 
@@ -76,7 +79,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated

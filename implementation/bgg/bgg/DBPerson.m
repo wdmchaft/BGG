@@ -2,7 +2,7 @@
 //  DBPerson.m
 //  bgg
 //
-//  Created by João Caxaria on 5/12/11.
+//  Created by João Caxaria on 5/16/11.
 //  Copyright (c) 2011 Imaginary Factory. All rights reserved.
 //
 
@@ -14,9 +14,13 @@
 @implementation DBPerson
 @dynamic id;
 @dynamic name;
+@dynamic username;
 @dynamic boardGamesDesigner;
 @dynamic boardGamesArtist;
 @dynamic videos;
+@dynamic ownedGames;
+@dynamic playedGames;
+@dynamic wishedGames;
 
 - (void)addBoardGamesDesignerObject:(DBBoardGame *)value {    
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
@@ -102,6 +106,93 @@
     [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
     [[self primitiveValueForKey:@"videos"] minusSet:value];
     [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addOwnedGamesObject:(DBBoardGame *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"ownedGames"] addObject:value];
+    [self didChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeOwnedGamesObject:(DBBoardGame *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"ownedGames"] removeObject:value];
+    [self didChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addOwnedGames:(NSSet *)value {    
+    [self willChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"ownedGames"] unionSet:value];
+    [self didChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeOwnedGames:(NSSet *)value {
+    [self willChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"ownedGames"] minusSet:value];
+    [self didChangeValueForKey:@"ownedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addPlayedGamesObject:(DBBoardGame *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"playedGames"] addObject:value];
+    [self didChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removePlayedGamesObject:(DBBoardGame *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"playedGames"] removeObject:value];
+    [self didChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addPlayedGames:(NSSet *)value {    
+    [self willChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"playedGames"] unionSet:value];
+    [self didChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removePlayedGames:(NSSet *)value {
+    [self willChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"playedGames"] minusSet:value];
+    [self didChangeValueForKey:@"playedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addWishedGamesObject:(DBBoardGame *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"wishedGames"] addObject:value];
+    [self didChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeWishedGamesObject:(DBBoardGame *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"wishedGames"] removeObject:value];
+    [self didChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addWishedGames:(NSSet *)value {    
+    [self willChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"wishedGames"] unionSet:value];
+    [self didChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeWishedGames:(NSSet *)value {
+    [self willChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"wishedGames"] minusSet:value];
+    [self didChangeValueForKey:@"wishedGames" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 

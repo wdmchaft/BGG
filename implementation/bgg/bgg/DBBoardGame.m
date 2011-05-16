@@ -2,7 +2,7 @@
 //  DBBoardGame.m
 //  bgg
 //
-//  Created by João Caxaria on 5/12/11.
+//  Created by João Caxaria on 5/16/11.
 //  Copyright (c) 2011 Imaginary Factory. All rights reserved.
 //
 
@@ -15,25 +15,57 @@
 
 
 @implementation DBBoardGame
-@dynamic rating;
-@dynamic hasDetails;
-@dynamic updated;
-@dynamic primaryTitle;
-@dynamic gameId;
-@dynamic ratingCount;
-@dynamic yearPublished;
-@dynamic minPlayers;
 @dynamic rank;
-@dynamic minAge;
-@dynamic gameDescription;
 @dynamic maxPlayers;
+@dynamic gameDescription;
+@dynamic ratingCount;
 @dynamic playingTime;
-@dynamic categories;
-@dynamic videos;
-@dynamic publishers;
-@dynamic artists;
+@dynamic primaryTitle;
+@dynamic minPlayers;
+@dynamic updated;
+@dynamic gameId;
+@dynamic yearPublished;
+@dynamic hasDetails;
+@dynamic minAge;
+@dynamic rating;
 @dynamic mechanics;
+@dynamic categories;
+@dynamic artists;
+@dynamic wishedBy;
+@dynamic playedBy;
+@dynamic videos;
+@dynamic ownedBy;
 @dynamic designers;
+@dynamic publishers;
+
+- (void)addMechanicsObject:(DBMechanic *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"mechanics"] addObject:value];
+    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeMechanicsObject:(DBMechanic *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"mechanics"] removeObject:value];
+    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addMechanics:(NSSet *)value {    
+    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"mechanics"] unionSet:value];
+    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeMechanics:(NSSet *)value {
+    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"mechanics"] minusSet:value];
+    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
 
 - (void)addCategoriesObject:(DBCategory *)value {    
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
@@ -61,64 +93,6 @@
     [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
     [[self primitiveValueForKey:@"categories"] minusSet:value];
     [self didChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-}
-
-
-- (void)addVideosObject:(DBVideos *)value {    
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"videos"] addObject:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)removeVideosObject:(DBVideos *)value {
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"videos"] removeObject:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)addVideos:(NSSet *)value {    
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"videos"] unionSet:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-}
-
-- (void)removeVideos:(NSSet *)value {
-    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"videos"] minusSet:value];
-    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-}
-
-
-- (void)addPublishersObject:(DBPublisher *)value {    
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"publishers"] addObject:value];
-    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)removePublishersObject:(DBPublisher *)value {
-    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"publishers"] removeObject:value];
-    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [changedObjects release];
-}
-
-- (void)addPublishers:(NSSet *)value {    
-    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"publishers"] unionSet:value];
-    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-}
-
-- (void)removePublishers:(NSSet *)value {
-    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"publishers"] minusSet:value];
-    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 
@@ -151,32 +125,119 @@
 }
 
 
-- (void)addMechanicsObject:(DBMechanic *)value {    
+- (void)addWishedByObject:(DBPerson *)value {    
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"mechanics"] addObject:value];
-    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [self willChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"wishedBy"] addObject:value];
+    [self didChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
     [changedObjects release];
 }
 
-- (void)removeMechanicsObject:(DBMechanic *)value {
+- (void)removeWishedByObject:(DBPerson *)value {
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [[self primitiveValueForKey:@"mechanics"] removeObject:value];
-    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [self willChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"wishedBy"] removeObject:value];
+    [self didChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
     [changedObjects release];
 }
 
-- (void)addMechanics:(NSSet *)value {    
-    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"mechanics"] unionSet:value];
-    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+- (void)addWishedBy:(NSSet *)value {    
+    [self willChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"wishedBy"] unionSet:value];
+    [self didChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
 }
 
-- (void)removeMechanics:(NSSet *)value {
-    [self willChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
-    [[self primitiveValueForKey:@"mechanics"] minusSet:value];
-    [self didChangeValueForKey:@"mechanics" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+- (void)removeWishedBy:(NSSet *)value {
+    [self willChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"wishedBy"] minusSet:value];
+    [self didChangeValueForKey:@"wishedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addPlayedByObject:(DBPerson *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"playedBy"] addObject:value];
+    [self didChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removePlayedByObject:(DBPerson *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"playedBy"] removeObject:value];
+    [self didChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addPlayedBy:(NSSet *)value {    
+    [self willChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"playedBy"] unionSet:value];
+    [self didChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removePlayedBy:(NSSet *)value {
+    [self willChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"playedBy"] minusSet:value];
+    [self didChangeValueForKey:@"playedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addVideosObject:(DBVideos *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"videos"] addObject:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeVideosObject:(DBVideos *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"videos"] removeObject:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addVideos:(NSSet *)value {    
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"videos"] unionSet:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeVideos:(NSSet *)value {
+    [self willChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"videos"] minusSet:value];
+    [self didChangeValueForKey:@"videos" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addOwnedByObject:(DBPerson *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"ownedBy"] addObject:value];
+    [self didChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removeOwnedByObject:(DBPerson *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"ownedBy"] removeObject:value];
+    [self didChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addOwnedBy:(NSSet *)value {    
+    [self willChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"ownedBy"] unionSet:value];
+    [self didChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removeOwnedBy:(NSSet *)value {
+    [self willChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"ownedBy"] minusSet:value];
+    [self didChangeValueForKey:@"ownedBy" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 
@@ -206,6 +267,35 @@
     [self willChangeValueForKey:@"designers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
     [[self primitiveValueForKey:@"designers"] minusSet:value];
     [self didChangeValueForKey:@"designers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+}
+
+
+- (void)addPublishersObject:(DBPublisher *)value {    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"publishers"] addObject:value];
+    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)removePublishersObject:(DBPublisher *)value {
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveValueForKey:@"publishers"] removeObject:value];
+    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [changedObjects release];
+}
+
+- (void)addPublishers:(NSSet *)value {    
+    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"publishers"] unionSet:value];
+    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueUnionSetMutation usingObjects:value];
+}
+
+- (void)removePublishers:(NSSet *)value {
+    [self willChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
+    [[self primitiveValueForKey:@"publishers"] minusSet:value];
+    [self didChangeValueForKey:@"publishers" withSetMutation:NSKeyValueMinusSetMutation usingObjects:value];
 }
 
 

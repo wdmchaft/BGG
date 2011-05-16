@@ -55,4 +55,19 @@
 - (void)addDesigners:(NSSet *)value;
 - (void)removeDesigners:(NSSet *)value;
 
+- (void)addWishedByObject:(DBPerson *)value ;
+- (void)removeWishedByObject:(DBPerson *)value;
+- (void)addWishedBy:(NSSet *)value;
+- (void)removeWishedBy:(NSSet *)value;
+
+- (void)addPlayedByObject:(DBPerson *)value;
+- (void)removePlayedByObject:(DBPerson *)value;
+- (void)addPlayedBy:(NSSet *)value;
+- (void)removePlayedBy:(NSSet *)value;
+
+- (void)addOwnedByObject:(DBPerson *)value;
+- (void)removeOwnedByObject:(DBPerson *)value;
+- (void)addOwnedBy:(NSSet *)value;
+- (void)removeOwnedBy:(NSSet *)value;
+
 @end
