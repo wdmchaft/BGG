@@ -18,6 +18,7 @@
 #import "BoardGameDesignersCell.h"
 #import "BoardGameArtistsCell.h"
 #import "BoardGamePublishersCell.h"
+#import "BoardGameUsersStatisticsController.h"
 
 @interface BoardGameController (Private)
 
@@ -45,7 +46,7 @@
     if (self) {
         // Custom initialization
         
-        self.menuBasics = [NSArray arrayWithObjects: @"Videos", @"Users Collections", nil];
+        self.menuBasics = [NSArray arrayWithObjects: @"Videos", @"Users Statistics", nil];
         //self.menuDetails = [NSArray arrayWithObjects: @"Designers", @"Artists", @"Publishers",@"Mechanics", @"Categories", nil];
     }
     return self;
@@ -344,7 +345,7 @@
             [self loadGameRatings];
             
             break;
-        case 2:     //Forums
+        case 2:     //Videos
             
             controller = [[[BoardGameForumsController alloc] init] autorelease];
             
@@ -353,11 +354,11 @@
             [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 
             break;
-        case 3:     //Videos
+        case 3:     //UsersStatistics
             
-            controller = [[[BoardGameForumsController alloc] init] autorelease];
+            controller = [[[BoardGameUsersStatisticsController alloc] init] autorelease];
             
-            [(BoardGameForumsController*)controller setBoardGame:_boardGame];
+            [(BoardGameUsersStatisticsController*)controller setBoardGame:_boardGame];
             
             [[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
             break;
