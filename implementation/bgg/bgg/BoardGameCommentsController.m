@@ -94,26 +94,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 1;
+    if(_ratings != nil)
+        return [_ratings count];
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section == 0){
-        if(_ratings != nil)
-            return [_ratings count];
-        return 0;
-    }else{
-        return 0;
-    }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier;
     
-    if(indexPath.section == 0){
+    //if(indexPath.section == 0){
         CellIdentifier = @"CommentCell";
         
         BoardGameCommentCell *cell = (BoardGameCommentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -121,21 +116,21 @@
             cell = [[[BoardGameCommentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         }
         
-        BGGBoardGameRating* rating = [_ratings objectAtIndex:[indexPath indexAtPosition:1]];
+    BGGBoardGameRating* rating = [_ratings objectAtIndex:indexPath.section];
         
-        [cell setRating:rating];
+    [cell setRating:rating];
         
         return cell;
-    }else {
-        return NULL;
-    }
+   // }else {
+   //     return NULL;
+   // }
 }
 
 #pragma mark - Table Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    BGGBoardGameRating* rating = [_ratings objectAtIndex:[indexPath indexAtPosition:1]];
+    BGGBoardGameRating* rating = [_ratings objectAtIndex:indexPath.section];
 
     CGFloat cellHeight = [BoardGameCommentCell calculateCellHeight:rating]; 
     
