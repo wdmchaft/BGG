@@ -10,15 +10,27 @@
 
 @implementation BoardGameListCell
 
+-(void) showRank:(BOOL) showRank
+{
+    _showRank = showRank;
+}
+
+
 -(void) setBoardGame:(DBBoardGame*) boardGame
 {
     _boardGame = [boardGame retain];
     [imageView setImage:[boardGame previewImage]];
     
-    
-    [[self textLabel] setText:[NSString stringWithFormat:@"%@ . %@", 
-                               boardGame.rank, 
-                               boardGame.primaryTitle]];
+    if(_showRank)
+    {
+        [[self textLabel] setText:[NSString stringWithFormat:@"%@ . %@", 
+                                   boardGame.rank, 
+                                   boardGame.primaryTitle]];}
+    else
+    {
+        [[self textLabel] setText:[NSString stringWithFormat:@"%@",
+                                   boardGame.primaryTitle]];
+    }
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

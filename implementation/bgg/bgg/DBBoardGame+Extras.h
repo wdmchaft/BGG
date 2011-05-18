@@ -24,6 +24,8 @@
 
 -(bool) needsUpdate;
 
+- (NSComparisonResult) titleComparison:(DBBoardGame *)other;
+
 @end
 
 @interface DBBoardGame (CoreData)

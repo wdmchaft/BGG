@@ -171,6 +171,11 @@
 	self.updated = [NSDate date];
 }
 
+- (NSComparisonResult) titleComparison:(DBBoardGame *)other
+{
+    return [self.primaryTitle compare:other.primaryTitle];
+}
+
 #pragma mark notifications
 
 -(void) gotPreviewImage:(NSNotification*) notification

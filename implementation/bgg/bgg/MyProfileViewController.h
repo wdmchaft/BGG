@@ -18,13 +18,13 @@ typedef enum
 } MyProfileStatus;
 
 @interface MyProfileViewController : UITableViewController<IBreadcrumbMenuDelegate> {
-    NSArray* _boardGames;
+    NSMutableArray* _boardGames;
     
     DBPerson* currentProfile;
     
     MyProfileStatus currentStatus;
 }
 
-@property (nonatomic, retain) NSArray* boardGames;
+@property (nonatomic, retain) NSMutableArray* boardGames;
 
 @end

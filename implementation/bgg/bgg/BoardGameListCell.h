@@ -13,8 +13,10 @@
 @interface BoardGameListCell : UITableViewCell {
     DBBoardGame* _boardGame;
     UIImageView* imageView;
+    BOOL _showRank;
 }
 
 -(void) setBoardGame:(DBBoardGame*) boardGame;
+-(void) showRank:(BOOL) showRank;
 
 @end

@@ -132,7 +132,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MyCollectionCell";
     
     BoardGameListCell *cell = (BoardGameListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -141,7 +141,9 @@
     
     DBBoardGame* boardGame = [_boardGames objectAtIndex:[indexPath indexAtPosition:1]];
     
+    [cell showRank:NO];
     [cell setBoardGame:boardGame];
+    
     
     return cell;
 }
@@ -269,23 +271,24 @@
 {
     switch (currentStatus) {
         case MyProfileOwnedGames:
-            [self setBoardGames:[[currentProfile ownedGames] allObjects]];
+            [self setBoardGames:[NSMutableArray arrayWithArray:[[currentProfile ownedGames] allObjects]]];
             
             break;
         case MyProfilePlayedGames:
             
-            [self setBoardGames:[[currentProfile playedGames] allObjects]];
+            [self setBoardGames:[NSMutableArray arrayWithArray:[[currentProfile playedGames] allObjects]]];
             
             break;
         case MyProfileWishedGames:
             
-            [self setBoardGames:[[currentProfile wishedGames] allObjects]];
+            [self setBoardGames:[NSMutableArray arrayWithArray:[[currentProfile wishedGames] allObjects]]];
             
             break;
         default:
             ICAssert(NO, @"Invalid status");
             break;
     }
+    [_boardGames sortUsingSelector:@selector(titleComparison:)];
     [self.tableView reloadData]; 
     [self updateStatusMessage];
     [[[Globals sharedGlobals] breadcrumb] setUpdated];
