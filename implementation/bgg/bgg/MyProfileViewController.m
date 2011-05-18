@@ -22,6 +22,7 @@
 -(void) showGameDetails:(DBBoardGame*) boardGame;
 -(void) updateUIData;
 -(void) doUpdateUIData;
+-(void) updateStatusMessage;
 
 @end
 
@@ -176,6 +177,7 @@
 
 -(void) updateUIData
 {
+    [[[Globals sharedGlobals] breadcrumb] setLoading];
     switch (currentStatus) {
         case MyProfileOwnedGames:
             if([currentProfile needsUpdateOwnedGames])
@@ -239,17 +241,20 @@
     {
         DBBoardGame* dbBoardGame = [[[Globals sharedGlobals] dataAccess] getCreateBoardGame:bggBoardGame.gameId];
         [dbBoardGame updateFromBGGLookup:bggBoardGame];
-        
+        NSDate* current = [NSDate date];
         switch (currentStatus) 
         {
             case MyProfileOwnedGames:
                 [currentProfile addOwnedGamesObject:dbBoardGame];
+                [currentProfile setUpdatedOwnedGames:current];
                 break;
             case MyProfilePlayedGames:
                 [currentProfile addPlayedGamesObject:dbBoardGame];
+                [currentProfile setUpdatedPlayedGames:current];
                 break;
             case MyProfileWishedGames:
                 [currentProfile addWishedGamesObject:dbBoardGame];
+                [currentProfile setUpdatedWishedGames:current];
                 break;
                 
         }
@@ -282,6 +287,8 @@
             break;
     }
     [self.tableView reloadData]; 
+    [self updateStatusMessage];
+    [[[Globals sharedGlobals] breadcrumb] setUpdated];
 }
 
 -(void) gotGameDetails:(NSNotification*) notification
@@ -317,17 +324,123 @@
 
 -(UIView*) menuClicked
 {
-    return nil;
+    UIView* result = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 110)] autorelease];
+    [result setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"popup-back-small.png"]]];
+    
+    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(15.0, 74.0, 60.0, 21.0)] autorelease];
+    label.adjustsFontSizeToFitWidth = YES;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
+    label.minimumFontSize = 10.000;
+    label.numberOfLines = 1;
+    label.opaque = YES;
+    label.shadowOffset = CGSizeMake(0.0, -1.0);
+    label.text = @"Owned";
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.userInteractionEnabled = NO;
+    [result addSubview:label];
+    
+    label = [[UILabel alloc] initWithFrame:CGRectMake(85.0, 74.0, 60.0, 21.0)];
+    label.adjustsFontSizeToFitWidth = YES;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
+    label.minimumFontSize = 10.000;
+    label.numberOfLines = 1;
+    label.opaque = YES;
+    label.shadowOffset = CGSizeMake(0.0, -1.0);
+    label.text = @"Played";
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.userInteractionEnabled = NO;
+    [result addSubview:label];
+    
+    label = [[UILabel alloc] initWithFrame:CGRectMake(156.0, 74.0, 60.0, 21.0)];
+    label.adjustsFontSizeToFitWidth = YES;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
+    label.minimumFontSize = 10.000;
+    label.numberOfLines = 1;
+    label.opaque = YES;
+    label.shadowOffset = CGSizeMake(0.0, -1.0);
+    label.text = @"Wished";
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.userInteractionEnabled = NO;
+    [result addSubview:label];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(20.0, 26.0, 48.0, 48.0);
+    button.adjustsImageWhenDisabled = YES;
+    button.adjustsImageWhenHighlighted = YES;
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_blue.png"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_blue.png"] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_disabled.png"] forState:UIControlStateNormal];
+    [button setSelected:currentStatus == MyProfileOwnedGames];
+    [button setTag:MyProfileOwnedGames];
+    [button addTarget:self action:@selector(popupClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [result addSubview:button];
+    
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(91.0, 26.0, 48.0, 48.0);
+    button.adjustsImageWhenDisabled = YES;
+    button.adjustsImageWhenHighlighted = YES;
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_orange.png"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_orange.png"] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_disabled.png"] forState:UIControlStateNormal];
+    [button setSelected:currentStatus == MyProfilePlayedGames];
+    [button setTag:MyProfilePlayedGames];
+    [button addTarget:self action:@selector(popupClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [result addSubview:button];
+    
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(162.0, 26.0, 48.0, 48.0);
+    button.adjustsImageWhenDisabled = YES;
+    button.adjustsImageWhenHighlighted = YES;
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_green.png"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_green.png"] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_disabled.png"] forState:UIControlStateNormal];
+    [button setSelected:currentStatus == MyProfileWishedGames];
+    [button setTag:MyProfileWishedGames];
+    [button addTarget:self action:@selector(popupClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [result addSubview:button];
+
+    return result;
+}
+
+-(void) updateStatusMessage
+{
+    switch (currentStatus) {
+        case MyProfileOwnedGames:
+            [[[Globals sharedGlobals] breadcrumb] setStatusMessage:@"Owned games"];
+            break;
+        case MyProfilePlayedGames:
+            [[[Globals sharedGlobals] breadcrumb] setStatusMessage:@"Played games"];
+            break;
+        case MyProfileWishedGames:
+            [[[Globals sharedGlobals] breadcrumb] setStatusMessage:@"Wished games"];
+            break;
+        default:
+            ICAssert(NO, @"Invalid status");
+            break;
+    }
+
+}
+
+-(void) popupClicked:(UIButton*) sender
+{
+    currentStatus = [sender tag];
+    [self updateUIData];
+    [[[Globals sharedGlobals] breadcrumb] dismissPopup];
 }
 
 -(void) breadcrumbWillAppear:(id<IBreadcrumbController>) breadcrumb
 {
-    [breadcrumb setStatusMessage:@"My Profile"];
-    [breadcrumb setUpdated];
+    [self updateStatusMessage];
+    [[[Globals sharedGlobals] breadcrumb] setUpdated];
 }
 -(void) breadcrumbWillDisappear:(id<IBreadcrumbController>) breadcrumb
 {
-    
 }
 
 

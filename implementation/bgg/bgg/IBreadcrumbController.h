@@ -16,4 +16,5 @@
 -(void) setLoading;
 -(void) setUpdated;
 
+-(void) dismissPopup;
 @end

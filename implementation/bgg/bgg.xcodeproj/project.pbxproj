@@ -23,8 +23,6 @@
 		49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */; };
 		49A2F2DC137991090021466C /* BoardGameHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2DB137991090021466C /* BoardGameHeaderCell.m */; };
 		49A2F2FD137B09CE0021466C /* BoardGameRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */; };
-		49A2F2FF137B2EB80021466C /* table-cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F2FE137B2EB70021466C /* table-cell.png */; };
-		49A2F301137B2ED40021466C /* table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A2F300137B2ED40021466C /* table-header.png */; };
 		49CBD5D713842390008E8C2F /* BoardGameUsersStatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CBD5D513842390008E8C2F /* BoardGameUsersStatisticsController.m */; };
 		49CBD5D813842390008E8C2F /* BoardGameUsersStatisticsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CBD5D613842390008E8C2F /* BoardGameUsersStatisticsController.xib */; };
 		49CBD5DB138429FE008E8C2F /* BoardGameUsersStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CBD5DA138429FE008E8C2F /* BoardGameUsersStatisticsCell.m */; };
@@ -35,6 +33,10 @@
 		5F0050E61382CCB4007CE0AD /* PersonRemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050E51382CCB4007CE0AD /* PersonRemoteConnector.m */; };
 		5F0050E91382CE8D007CE0AD /* BGGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050E81382CE8D007CE0AD /* BGGPerson.m */; };
 		5F0050F21382F17F007CE0AD /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050F11382F17E007CE0AD /* DBPerson.m */; };
+		5F005138138422EC007CE0AD /* icon_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F005134138422EC007CE0AD /* icon_blue.png */; };
+		5F005139138422EC007CE0AD /* icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F005135138422EC007CE0AD /* icon_disabled.png */; };
+		5F00513A138422EC007CE0AD /* icon_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F005136138422EC007CE0AD /* icon_green.png */; };
+		5F00513B138422EC007CE0AD /* icon_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F005137138422EC007CE0AD /* icon_orange.png */; };
 		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4671370D01400E0B743 /* BGGBoardGame.m */; };
 		5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F10D46913718AC100E0B743 /* popup-back-small.png */; };
@@ -187,8 +189,6 @@
 		49A2F2DB137991090021466C /* BoardGameHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameHeaderCell.m; sourceTree = "<group>"; };
 		49A2F2FB137B09CD0021466C /* BoardGameRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameRatingCell.h; sourceTree = "<group>"; };
 		49A2F2FC137B09CE0021466C /* BoardGameRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameRatingCell.m; sourceTree = "<group>"; };
-		49A2F2FE137B2EB70021466C /* table-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "table-cell.png"; path = "../../../../design/png/table-cell.png"; sourceTree = "<group>"; };
-		49A2F300137B2ED40021466C /* table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "table-header.png"; path = "../../../../design/png/table-header.png"; sourceTree = "<group>"; };
 		49CBD5D413842390008E8C2F /* BoardGameUsersStatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameUsersStatisticsController.h; sourceTree = "<group>"; };
 		49CBD5D513842390008E8C2F /* BoardGameUsersStatisticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameUsersStatisticsController.m; sourceTree = "<group>"; };
 		49CBD5D613842390008E8C2F /* BoardGameUsersStatisticsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameUsersStatisticsController.xib; sourceTree = "<group>"; };
@@ -208,6 +208,10 @@
 		5F0050E81382CE8D007CE0AD /* BGGPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGPerson.m; sourceTree = "<group>"; };
 		5F0050F01382F17E007CE0AD /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
 		5F0050F11382F17E007CE0AD /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
+		5F005134138422EC007CE0AD /* icon_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_blue.png; path = ../../../../design/png/icon_blue.png; sourceTree = "<group>"; };
+		5F005135138422EC007CE0AD /* icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_disabled.png; path = ../../../../design/png/icon_disabled.png; sourceTree = "<group>"; };
+		5F005136138422EC007CE0AD /* icon_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_green.png; path = ../../../../design/png/icon_green.png; sourceTree = "<group>"; };
+		5F005137138422EC007CE0AD /* icon_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_orange.png; path = ../../../../design/png/icon_orange.png; sourceTree = "<group>"; };
 		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
 		5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGXMLScraper.h; sourceTree = "<group>"; };
 		5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGXMLScraper.m; sourceTree = "<group>"; };
@@ -448,6 +452,17 @@
 			name = UsersStatistics;
 			sourceTree = "<group>";
 		};
+		5F005133138422C1007CE0AD /* Popup Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5F005134138422EC007CE0AD /* icon_blue.png */,
+				5F005135138422EC007CE0AD /* icon_disabled.png */,
+				5F005136138422EC007CE0AD /* icon_green.png */,
+				5F005137138422EC007CE0AD /* icon_orange.png */,
+			);
+			name = "Popup Icons";
+			sourceTree = "<group>";
+		};
 		5F164515136068B8001179CA /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,11 +647,10 @@
 		5F757598134142E200C82F3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F005133138422C1007CE0AD /* Popup Icons */,
 				493834B6137C4BF100906C94 /* star-empty.png */,
 				493834B4137C318700906C94 /* star-halffull.png */,
 				493834B2137C313F00906C94 /* star-full.png */,
-				49A2F300137B2ED40021466C /* table-header.png */,
-				49A2F2FE137B2EB70021466C /* table-cell.png */,
 				5F32320813672EF40051F624 /* WEPopover */,
 				5F16451E13607674001179CA /* List */,
 				5F1F97D5135C79DF007EB84C /* CollectionView */,
@@ -976,8 +990,6 @@
 				5F2DC4E5136F165200A9E924 /* text-back@2x.png in Resources */,
 				5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */,
 				5F10D46C13718AC200E0B743 /* popup-back-small@2x.png in Resources */,
-				49A2F2FF137B2EB80021466C /* table-cell.png in Resources */,
-				49A2F301137B2ED40021466C /* table-header.png in Resources */,
 				493834B3137C313F00906C94 /* star-full.png in Resources */,
 				493834B5137C318700906C94 /* star-halffull.png in Resources */,
 				493834B7137C4BF100906C94 /* star-empty.png in Resources */,
@@ -985,6 +997,10 @@
 				492B3A48137D81C3000207DE /* BoardGameController.xib in Resources */,
 				492B3A4D137D8AE3000207DE /* BoardGameCommentsController.xib in Resources */,
 				5F78E1AD13805F3A00C85AD4 /* MyProfileViewController.xib in Resources */,
+				5F005138138422EC007CE0AD /* icon_blue.png in Resources */,
+				5F005139138422EC007CE0AD /* icon_disabled.png in Resources */,
+				5F00513A138422EC007CE0AD /* icon_green.png in Resources */,
+				5F00513B138422EC007CE0AD /* icon_orange.png in Resources */,
 				49CBD5D813842390008E8C2F /* BoardGameUsersStatisticsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

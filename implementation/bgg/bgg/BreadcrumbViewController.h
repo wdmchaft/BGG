@@ -24,6 +24,7 @@
 	StackSegmentedControl* cSegmentedControl;
     
     WEPopoverController* popoverController;
+    UIButton* invisibleButton;
 	
 }
 @property (nonatomic, retain) WEPopoverController *popoverController;

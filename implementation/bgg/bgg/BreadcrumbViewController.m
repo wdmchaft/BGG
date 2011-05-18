@@ -104,12 +104,27 @@
 	[scrollView scrollRectToVisible:[[[cSegmentedControl buttons] objectAtIndex:[viewControllers count]-1] frame] animated:YES];
 }
 
--(void) popupClicked:(UIButton*) sender
+
+-(void) dismissPopup
 {
     if (self.popoverController) {
 		[self.popoverController dismissPopoverAnimated:YES];
+        [invisibleButton removeFromSuperview];
 		self.popoverController = nil;
+	}
+}
+
+-(void) popupClicked:(UIButton*) sender
+{
+    if (self.popoverController) {
+		[self dismissPopup];
 	} else {
+        
+        invisibleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [invisibleButton setFrame:[[UIScreen mainScreen] bounds]];
+        [invisibleButton setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
+        [invisibleButton addTarget:self action:@selector(invisibleDismissPopup:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:invisibleButton];
         
         UIViewController* currentController = [viewControllers objectAtIndex:[viewControllers count]-1];
         
@@ -124,14 +139,20 @@
         
         UIViewController* controller = [[[UIViewController alloc] init] autorelease];
         controller.view = popupView;
+        
         controller.contentSizeForViewInPopover = popupView.frame.size;
         
 		self.popoverController = [[[WEPopoverController alloc] initWithContentViewController:controller] autorelease];
-        [self.popoverController presentPopoverFromRect:sender.frame
-												inView:footerView
+        [self.popoverController presentPopoverFromRect:CGRectOffset(sender.frame, 0, 400.0)
+												inView:self.view
 							  permittedArrowDirections:UIPopoverArrowDirectionDown
 											  animated:YES];
 	}
+}
+
+-(void) invisibleDismissPopup:(UIButton*) sender
+{
+    [self popupClicked:nil];
 }
 
 #pragma mark - View lifecycle
