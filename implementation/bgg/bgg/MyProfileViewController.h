@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "IBreadcrumbMenuDelegate.h"
+@class DBPerson;
+
+typedef enum
+{
+    MyProfileOwnedGames,
+    MyProfilePlayedGames,
+    MyProfileWishedGames
+} MyProfileStatus;
 
 @interface MyProfileViewController : UITableViewController<IBreadcrumbMenuDelegate> {
     NSArray* _boardGames;
+    
+    DBPerson* currentProfile;
+    
+    MyProfileStatus currentStatus;
 }
 
 @property (nonatomic, retain) NSArray* boardGames;

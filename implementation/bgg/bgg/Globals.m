@@ -94,7 +94,7 @@ static Globals *sharedSingleton = nil;
 {
     if(_hud == nil)
     {
-        _hud = [[SSHUDView alloc] initWithTitle:@"Loading game..."];
+        _hud = [[[SSHUDView alloc] initWithTitle:message] autorelease];
     }
     else
     {
@@ -104,13 +104,21 @@ static Globals *sharedSingleton = nil;
     [_hud show];
 }
 
+-(void) closeHUDWithSuccessMessage:(NSString*) message
+{
+    if(_hud == nil) 
+    return;
+    
+    [_hud completeAndDismissWithTitle:message];
+    _hud = nil;
+}
+
 -(void) closeHUD
 {
     if(_hud == nil) 
         return;
     
     [_hud dismiss];
-    [_hud release];
     _hud = nil;
 }
 

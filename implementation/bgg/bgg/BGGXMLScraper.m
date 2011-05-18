@@ -12,6 +12,7 @@
 #import "BGGIdNameLookup.h"
 #import "BGGBoardGameVideo.h"
 #import "BGGBoardGameRating.h"
+#import "BGGPerson.h"
 
 @interface BGGXMLScraper (Private)
 
@@ -97,6 +98,58 @@
         rating.rating = [NSNumber numberWithDouble:[[[ratings objectAtIndex:i] objectForKey:@"nodeContent"] doubleValue]];
         
         [resultArray addObject:rating];
+    }
+    
+    return resultArray;
+}
+
+-(BGGPerson*) getUserDetails:(NSData *)document
+{
+    NSArray* username = PerformXMLXPathQuery(document, @"/user/@name");
+    NSArray* firstName = PerformXMLXPathQuery(document, @"/user/firstname/@value");
+    NSArray* lastName = PerformXMLXPathQuery(document, @"/user/lastname/@value");
+    NSArray* userid = PerformXMLXPathQuery(document, @"/user/@id");
+    
+    ICAssert([username count] > 0, @"getUserDetails count");
+    ICAssert([username count] == [firstName count], @"getUserDetails count");
+    ICAssert([firstName count] == [lastName count], @"getUserDetails count");
+    ICAssert([lastName count] == [userid count], @"getUserDetails count");
+    
+    
+    BGGPerson* user = [[[BGGPerson alloc] init]autorelease];
+    
+    user.id = [[userid objectAtIndex:0] objectForKey:@"nodeContent"];
+    user.name = [NSString stringWithFormat:@"%@ %@", 
+                 [[firstName objectAtIndex:0] objectForKey:@"nodeContent"],
+                 [[lastName objectAtIndex:0] objectForKey:@"nodeContent"]];
+    user.username = [[username objectAtIndex:0] objectForKey:@"nodeContent"];
+    
+    return user;
+}
+
+-(NSArray*) getUserCollection:(NSData*) document
+{
+    NSArray* titles = PerformXMLXPathQuery(document, @"/items/item/name");
+    NSArray* ids = PerformXMLXPathQuery(document, @"/items/item/@objectid");
+    NSArray* ranks = PerformXMLXPathQuery(document, @"/items/item/stats/rating/ranks/rank[@type='subtype']/@value");
+    NSArray* images = PerformXMLXPathQuery(document, @"/items/item/thumbnail");
+    
+    ICAssert([titles count] == [ids count], @"getUserCollection: should have same count_1!");
+    ICAssert([ids count] == [ranks count], @"getUserCollection: should have same count_2!");
+    ICAssert([ranks count] == [images count], @"getUserCollection: should have same count_2!");
+    
+    NSMutableArray* resultArray = [[[NSMutableArray alloc] initWithCapacity:[titles count]] autorelease];
+    
+    for(int i = 0; i < [titles count]; i++)
+    {
+        BGGBoardGameLookup* lookup = [[[BGGBoardGameLookup alloc] init] autorelease];
+
+        lookup.primaryTitle = [[titles objectAtIndex:i] objectForKey:@"nodeContent"];
+        lookup.gameId = [[ids objectAtIndex:i] objectForKey:@"nodeContent"]; 
+        lookup.imageURL = [[images objectAtIndex:i] objectForKey:@"nodeContent"]; 
+        lookup.rank = [NSNumber numberWithInt:[[[ranks objectAtIndex:i] objectForKey:@"nodeContent"] intValue]];
+        
+        [resultArray addObject:lookup];
     }
     
     return resultArray;

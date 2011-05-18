@@ -8,14 +8,20 @@
 
 #import "MyProfileViewController.h"
 #import "BoardGameController.h"
+#import "DBPerson.h"
 #import "DBBoardGame.h"
 #import "BoardGameListCell.h"
 #import "DataAccess+BoardGame.h"
 #import "BGGBoardGame.h"
+#import "Globals.h"
+#import "PersonRemoteConnector.h"
+
 
 @interface MyProfileViewController (Private)
 
 -(void) showGameDetails:(DBBoardGame*) boardGame;
+-(void) updateUIData;
+-(void) doUpdateUIData;
 
 @end
 
@@ -26,9 +32,15 @@
 -(id) init
 {
 	self = [self initWithNibName:@"BoardGameListController" bundle:nil];
-	[self setTitle:@"Board Games"];
+	
     
     ICAssert([[Globals sharedGlobals] bggUsername] != nil, @"Need a profile name");
+    
+    currentProfile = [[[[Globals sharedGlobals] dataAccess] getCreatePersonByUsername:[[Globals sharedGlobals] bggUsername]] retain];
+    
+    [self setTitle:currentProfile.username];
+    
+    currentStatus = MyProfileOwnedGames;
     
     return self;
 }
@@ -45,6 +57,7 @@
 
 - (void)dealloc
 {
+    [currentProfile release];
     [_boardGames release];
     [super dealloc];
 }
@@ -64,11 +77,12 @@
     [super viewDidLoad];
     
     [self.tableView setRowHeight:76.0];
-    
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     
-//    NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
-//    [self setBoardGames:products];
+    
+    [self updateUIData];
+    //    NSArray* products = [[[Globals sharedGlobals] dataAccess] getTop100];
+    //    [self setBoardGames:products];
 }
 
 - (void)viewDidUnload
@@ -110,7 +124,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+    if(_boardGames == nil)
+        return 0;
     return [_boardGames count];
 }
 
@@ -159,6 +174,116 @@
 
 #pragma mark Private
 
+-(void) updateUIData
+{
+    switch (currentStatus) {
+        case MyProfileOwnedGames:
+            if([currentProfile needsUpdateOwnedGames])
+            {
+                [[Globals sharedGlobals] showHUDWithMessage:@"Loading owned games..."];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                         selector:@selector(gotUserCollection:) 
+                                                             name:[[[Globals sharedGlobals] remoteConnector] getUserOwnedCollection:[currentProfile username]]
+                                                           object:nil];
+            }
+            else
+            {
+                [self doUpdateUIData];
+            }
+            break;
+        case MyProfilePlayedGames:
+            if([currentProfile needsUpdatePlayedGames])
+            {
+                [[Globals sharedGlobals] showHUDWithMessage:@"Loading played games..."];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                         selector:@selector(gotUserCollection:) 
+                                                             name:[[[Globals sharedGlobals] remoteConnector] getUserPlayedCollection:[currentProfile username]]
+                                                           object:nil];
+            }
+            else
+            {
+                [self doUpdateUIData];
+            }
+            break;
+        case MyProfileWishedGames:
+            if([currentProfile needsUpdateWishedGames])
+            {
+                [[Globals sharedGlobals] showHUDWithMessage:@"Loading wished games..."];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                         selector:@selector(gotUserCollection:) 
+                                                             name:[[[Globals sharedGlobals] remoteConnector] getUserWishlistCollection:[currentProfile username]]
+                                                           object:nil];
+            }
+            else
+            {
+                [self doUpdateUIData];
+            }
+            break;
+        default:
+            ICAssert(NO, @"Invalid status");
+            break;
+    }
+}
+
+-(void) gotUserCollection:(NSNotification*) notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
+	
+	NSArray * userCollection = [[notification object] objectForKey:@"data"];
+    
+    
+    for(BGGBoardGameLookup* bggBoardGame in userCollection)
+    {
+        DBBoardGame* dbBoardGame = [[[Globals sharedGlobals] dataAccess] getCreateBoardGame:bggBoardGame.gameId];
+        [dbBoardGame updateFromBGGLookup:bggBoardGame];
+        
+        switch (currentStatus) 
+        {
+            case MyProfileOwnedGames:
+                [currentProfile addOwnedGamesObject:dbBoardGame];
+                break;
+            case MyProfilePlayedGames:
+                [currentProfile addPlayedGamesObject:dbBoardGame];
+                break;
+            case MyProfileWishedGames:
+                [currentProfile addWishedGamesObject:dbBoardGame];
+                break;
+                
+        }
+    }
+    [[[Globals sharedGlobals] dataAccess] saveChanges];
+    [self doUpdateUIData];
+    
+    [[Globals sharedGlobals] closeHUD];
+}
+
+-(void) doUpdateUIData
+{
+    switch (currentStatus) {
+        case MyProfileOwnedGames:
+            [self setBoardGames:[[currentProfile ownedGames] allObjects]];
+            
+            break;
+        case MyProfilePlayedGames:
+            
+            [self setBoardGames:[[currentProfile playedGames] allObjects]];
+            
+            break;
+        case MyProfileWishedGames:
+            
+            [self setBoardGames:[[currentProfile wishedGames] allObjects]];
+            
+            break;
+        default:
+            ICAssert(NO, @"Invalid status");
+            break;
+    }
+    [self.tableView reloadData]; 
+}
+
 -(void) gotGameDetails:(NSNotification*) notification
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
@@ -184,8 +309,9 @@
     [controller setBoardGame:gameWithConnections];
     
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
-    
 }
+
+
 
 #pragma mark IBreadcrumbMenu
 
@@ -196,7 +322,7 @@
 
 -(void) breadcrumbWillAppear:(id<IBreadcrumbController>) breadcrumb
 {
-    [breadcrumb setStatusMessage:@"Top 100"];
+    [breadcrumb setStatusMessage:@"My Profile"];
     [breadcrumb setUpdated];
 }
 -(void) breadcrumbWillDisappear:(id<IBreadcrumbController>) breadcrumb

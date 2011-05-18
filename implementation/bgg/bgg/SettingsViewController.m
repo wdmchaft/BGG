@@ -7,7 +7,9 @@
 //
 
 #import "SettingsViewController.h"
-
+#import "Globals.h"
+#import "PersonRemoteConnector.h"
+#import "BGGPerson.h"
 
 @interface SettingsViewController (Private)
 -(void) save;
@@ -90,11 +92,33 @@
 
 -(void) save
 {
+    [self retain];
     [[Globals sharedGlobals] setBggUsername:[bggUsername text]];
     needsToSave = NO;
-    SSHUDView* hud = [[[SSHUDView alloc] initWithTitle:@"Saved!"] autorelease];
-    [hud completeQuicklyWithTitle:@"Saved!"];
+    
+    [[Globals sharedGlobals] showHUDWithMessage:@"Saving..."];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(gotUserDetails:) 
+                                                 name:[[[Globals sharedGlobals] remoteConnector] getUserDetails:[bggUsername text]]
+                                               object:nil];
 }
+
+#pragma mark Private
+
+-(void) gotUserDetails:(NSNotification*) notification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:[[notification object] objectForKey:@"key"] object:nil];
+	
+	BGGPerson * person = [[notification object] objectForKey:@"data"];
+    
+    DBPerson* dbPerson = [[[Globals sharedGlobals] dataAccess] getCreatePersonById:person.id];
+    [dbPerson updateFromBGGPerson:person];
+    [[[Globals sharedGlobals] dataAccess] saveChanges];
+    
+    [[Globals sharedGlobals] closeHUDWithSuccessMessage:@"Saved!"];
+    [self autorelease];
+}
+
 
 
 @end

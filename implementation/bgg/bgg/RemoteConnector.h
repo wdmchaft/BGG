@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define timeout 30.0
+#define timeout 20.0
 
 @interface RemoteConnector : NSObject {
 	NSMutableDictionary* flagDictionary;
@@ -18,6 +18,8 @@
 -(NSDictionary*) generateResult:(id) data :(NSString*) key;
 
 -(NSString*) getRawRequest:(NSString*)url;
+-(NSString*) getRawRequest:(NSString*)url target:(id) target selector:(SEL)selector;
 
 @end
+
 

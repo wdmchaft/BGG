@@ -131,14 +131,11 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{ 
     DBBoardGame* boardGame = [_boardGames objectAtIndex:[indexPath indexAtPosition:1]];
-    int secondsInDay = 86400;
-    NSDate * today = [NSDate date];
-    NSDate * refDate = [NSDate dateWithTimeInterval:secondsInDay sinceDate:boardGame.updated]; 
-    NSComparisonResult compared = [refDate compare:today];
     
-    if(compared < 0 || ![boardGame.hasDetails boolValue])
+    
+    if([boardGame needsUpdate])
     {
         [[Globals sharedGlobals] showHUDWithMessage:@"Loading game..."]; 
         [[NSNotificationCenter defaultCenter] addObserver:self 

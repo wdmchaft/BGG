@@ -51,6 +51,11 @@ static NSString * _server = @"http://www.boardgamegeek.com/";
 #pragma mark Raw Request
 -(NSString*) getRawRequest:(NSString*)url
 {
+    return [self getRawRequest:url target:self selector:@selector(gotRawRequest:)];
+}
+
+-(NSString*) getRawRequest:(NSString*)url target:(id) target selector:(SEL)selector
+{
     NSString* requestIdentifier = url;
 	
 	if([flagDictionary valueForKey:requestIdentifier] != nil)
@@ -59,8 +64,8 @@ static NSString * _server = @"http://www.boardgamegeek.com/";
 	
 	DataLoader* loader = [[DataLoader alloc] init];
 	loader.tag = requestIdentifier;
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(gotRawRequest:) 
+	[[NSNotificationCenter defaultCenter] addObserver:target 
+											 selector:selector 
 												 name:Notifications_DataLoader 
 											   object:loader];
 	

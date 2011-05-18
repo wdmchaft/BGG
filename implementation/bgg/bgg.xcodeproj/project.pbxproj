@@ -28,6 +28,9 @@
 		49F861C1138062C000216AFF /* BoardGameArtistsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F861C0138062C000216AFF /* BoardGameArtistsCell.m */; };
 		49F861C41380639900216AFF /* BoardGamePublishersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F861C31380639900216AFF /* BoardGamePublishersCell.m */; };
 		49FAF6481378705D00CC4D43 /* BoardGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAF6461378705D00CC4D43 /* BoardGameController.m */; };
+		5F0050E61382CCB4007CE0AD /* PersonRemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050E51382CCB4007CE0AD /* PersonRemoteConnector.m */; };
+		5F0050E91382CE8D007CE0AD /* BGGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050E81382CE8D007CE0AD /* BGGPerson.m */; };
+		5F0050F21382F17F007CE0AD /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0050F11382F17E007CE0AD /* DBPerson.m */; };
 		5F10D4651370BF6F00E0B743 /* BGGXMLScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */; };
 		5F10D4681370D01400E0B743 /* BGGBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D4671370D01400E0B743 /* BGGBoardGame.m */; };
 		5F10D46B13718AC200E0B743 /* popup-back-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F10D46913718AC100E0B743 /* popup-back-small.png */; };
@@ -89,7 +92,6 @@
 		5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E1AA13805F3A00C85AD4 /* MyProfileViewController.m */; };
 		5F78E1AD13805F3A00C85AD4 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */; };
 		5F78E1D813806AFE00C85AD4 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E1D713806AFE00C85AD4 /* UIDevice+Hardware.m */; };
-		5F78E2011381980600C85AD4 /* DBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F78E2001381980500C85AD4 /* DBPerson.m */; };
 		5FA0C57E13819AB400E58B13 /* DBBoardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0C57D13819AB400E58B13 /* DBBoardGame.m */; };
 		5FB10ECF137C56D200EFFD6E /* DBVideos+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ECE137C56D200EFFD6E /* DBVideos+Extras.m */; };
 		5FB10ED2137C57F700EFFD6E /* DataAccess+Videos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB10ED1137C57F700EFFD6E /* DataAccess+Videos.m */; };
@@ -189,6 +191,12 @@
 		49F861C31380639900216AFF /* BoardGamePublishersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGamePublishersCell.m; sourceTree = "<group>"; };
 		49FAF6451378705D00CC4D43 /* BoardGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameController.h; sourceTree = "<group>"; };
 		49FAF6461378705D00CC4D43 /* BoardGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameController.m; sourceTree = "<group>"; };
+		5F0050E41382CCB4007CE0AD /* PersonRemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonRemoteConnector.h; sourceTree = "<group>"; };
+		5F0050E51382CCB4007CE0AD /* PersonRemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonRemoteConnector.m; sourceTree = "<group>"; };
+		5F0050E71382CE8D007CE0AD /* BGGPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGPerson.h; sourceTree = "<group>"; };
+		5F0050E81382CE8D007CE0AD /* BGGPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGPerson.m; sourceTree = "<group>"; };
+		5F0050F01382F17E007CE0AD /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
+		5F0050F11382F17E007CE0AD /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
 		5F07A55D13670F2A007336DC /* IBreadcrumbMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBreadcrumbMenuDelegate.h; sourceTree = "<group>"; };
 		5F10D4631370BF6F00E0B743 /* BGGXMLScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGXMLScraper.h; sourceTree = "<group>"; };
 		5F10D4641370BF6F00E0B743 /* BGGXMLScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGXMLScraper.m; sourceTree = "<group>"; };
@@ -285,8 +293,6 @@
 		5F78E1AB13805F3A00C85AD4 /* MyProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
 		5F78E1D613806AFE00C85AD4 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		5F78E1D713806AFE00C85AD4 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
-		5F78E1FF1381980500C85AD4 /* DBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPerson.h; sourceTree = "<group>"; };
-		5F78E2001381980500C85AD4 /* DBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPerson.m; sourceTree = "<group>"; };
 		5FA0C57C13819AB400E58B13 /* DBBoardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoardGame.h; sourceTree = "<group>"; };
 		5FA0C57D13819AB400E58B13 /* DBBoardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBoardGame.m; sourceTree = "<group>"; };
 		5FB10ECD137C56D200EFFD6E /* DBVideos+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBVideos+Extras.h"; sourceTree = "<group>"; };
@@ -421,10 +427,10 @@
 		5F164515136068B8001179CA /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				5F0050F01382F17E007CE0AD /* DBPerson.h */,
+				5F0050F11382F17E007CE0AD /* DBPerson.m */,
 				5FA0C57C13819AB400E58B13 /* DBBoardGame.h */,
 				5FA0C57D13819AB400E58B13 /* DBBoardGame.m */,
-				5F78E1FF1381980500C85AD4 /* DBPerson.h */,
-				5F78E2001381980500C85AD4 /* DBPerson.m */,
 				5FB10EDF137C59CF00EFFD6E /* DBVideos.h */,
 				5FB10EE0137C59D000EFFD6E /* DBVideos.m */,
 				5FB10EDC137C59CE00EFFD6E /* DBMechanic.h */,
@@ -759,6 +765,8 @@
 				5FDBA761135DC64E001C8292 /* RemoteConnector.m */,
 				5FDBA795135DD304001C8292 /* GamesRemoteConnector.h */,
 				5FDBA796135DD304001C8292 /* GamesRemoteConnector.m */,
+				5F0050E41382CCB4007CE0AD /* PersonRemoteConnector.h */,
+				5F0050E51382CCB4007CE0AD /* PersonRemoteConnector.m */,
 			);
 			name = WS;
 			sourceTree = "<group>";
@@ -825,6 +833,8 @@
 				5F5EE5BF137C4B460074F4EB /* BGGBoardGameVideo.m */,
 				5FB10F3A137D9E7200EFFD6E /* BGGBoardGameRating.h */,
 				5FB10F3B137D9E7200EFFD6E /* BGGBoardGameRating.m */,
+				5F0050E71382CE8D007CE0AD /* BGGPerson.h */,
+				5F0050E81382CE8D007CE0AD /* BGGPerson.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1023,8 +1033,10 @@
 				49F861C41380639900216AFF /* BoardGamePublishersCell.m in Sources */,
 				5F78E1AC13805F3A00C85AD4 /* MyProfileViewController.m in Sources */,
 				5F78E1D813806AFE00C85AD4 /* UIDevice+Hardware.m in Sources */,
-				5F78E2011381980600C85AD4 /* DBPerson.m in Sources */,
 				5FA0C57E13819AB400E58B13 /* DBBoardGame.m in Sources */,
+				5F0050E61382CCB4007CE0AD /* PersonRemoteConnector.m in Sources */,
+				5F0050E91382CE8D007CE0AD /* BGGPerson.m in Sources */,
+				5F0050F21382F17F007CE0AD /* DBPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

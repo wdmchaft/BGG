@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "DBPerson.h"
 #import "BGGIdNameLookup.h"
+#import "BGGPerson.h"
 
 @interface DBPerson (Extras)
 
 -(void) updateFromBGGLookup:(BGGIdNameLookup*) bggLookup;
+-(void) updateFromBGGPerson:(BGGPerson*) bggPerson;
+-(bool) needsUpdateOwnedGames;
+-(bool) needsUpdatePlayedGames;
+-(bool) needsUpdateWishedGames;
 
 @end
 

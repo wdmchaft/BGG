@@ -43,6 +43,7 @@
 -(void) pushFrom:(UIViewController*) currentView toView:(UIViewController*) destinationView :(BOOL) back;
 
 -(void) showHUDWithMessage:(NSString*) message;
+-(void) closeHUDWithSuccessMessage:(NSString*) message;
 -(void) closeHUD;
 
 @end

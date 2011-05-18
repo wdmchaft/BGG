@@ -88,7 +88,7 @@
     
     for(BGGIdNameLookup* bggObj in bggBoardGame.designers)
     {
-        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePerson:bggObj.id];
+        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePersonById:bggObj.id];
         [dbObj updateFromBGGLookup:bggObj];
         [dbObj addBoardGamesDesignerObject:self];
         [self addDesignersObject:dbObj];
@@ -96,7 +96,7 @@
     
     for(BGGIdNameLookup* bggObj in bggBoardGame.artists)
     {
-        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePerson:bggObj.id];
+        DBPerson* dbObj = [[[Globals sharedGlobals] dataAccess] getCreatePersonById:bggObj.id];
         [dbObj updateFromBGGLookup:bggObj];
         [dbObj addBoardGamesArtistObject:self];
         [self addArtistsObject:dbObj];
@@ -107,7 +107,7 @@
         DBVideos* dbvideo = [[[Globals sharedGlobals] dataAccess] getCreateVideo:video.id];
         [dbvideo updateFromBGGVideo:video];
         
-        DBPerson* owner = [[[Globals sharedGlobals] dataAccess] getCreatePerson:video.userId];
+        DBPerson* owner = [[[Globals sharedGlobals] dataAccess] getCreatePersonById:video.userId];
         owner.id = video.userId;
         owner.name = video.userName;
         
@@ -151,6 +151,18 @@
                                                      name:[[[Globals sharedGlobals] remoteConnector] getRawRequest:bggBoardGame.imageURL]
                                                    object:nil];
     }
+}
+
+-(bool) needsUpdate
+{
+    int secondsInDay = 86400;
+    NSDate * today = [NSDate date];
+    NSDate * refDate = [NSDate dateWithTimeInterval:secondsInDay sinceDate:self.updated]; 
+    NSComparisonResult compared = [refDate compare:today];
+    
+    if(compared < 0 || ![self.hasDetails boolValue])
+        return YES;
+    return NO;
 }
 
 -(void) awakeFromInsert 

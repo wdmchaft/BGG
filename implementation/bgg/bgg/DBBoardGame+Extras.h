@@ -22,6 +22,8 @@
 -(void) updateFromBGG:(BGGBoardGame*) bggBoardGame;
 -(void) updateFromBGGLookup:(BGGBoardGameLookup*) bggBoardGame;
 
+-(bool) needsUpdate;
+
 @end
 
 @interface DBBoardGame (CoreData)

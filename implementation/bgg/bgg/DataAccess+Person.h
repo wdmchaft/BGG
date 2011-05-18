@@ -11,8 +11,10 @@
 
 @interface DataAccess (Person)
 
--(DBPerson*) getCreatePerson:(NSString*) cId;
 -(DBPerson*) createPerson;
--(DBPerson*) getPersonById:(NSString*) cId;
+-(DBPerson*) getCreatePersonById:(NSString*) mid;
+-(DBPerson*) getPersonById:(NSString*) mid;
+-(DBPerson*) getCreatePersonByUsername:(NSString*) username;
+-(DBPerson*) getPersonByUsername:(NSString*) username;
 
 @end

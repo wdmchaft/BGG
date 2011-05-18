@@ -13,34 +13,11 @@
 
 @implementation RemoteConnector (Games)
 
-
-static NSString * top100Key = @"top100Key";
-
 -(NSString*) getTop100;
 {
-	NSString* requestIdentifier = top100Key;
-	
-	if([flagDictionary valueForKey:requestIdentifier] != nil)
-		return requestIdentifier;
-	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
-	
-	DataLoader* loader = [[DataLoader alloc] init];
-	loader.tag = requestIdentifier;
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(loadedTop100:) 
-												 name:Notifications_DataLoader 
-											   object:loader];
-	
-	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:
-                                    [NSURL URLWithString: 
-                                     [NSString stringWithFormat:
-                                      [RemoteConnector server], @"browse/boardgame/top100.cache.html"]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-													   timeoutInterval:timeout];
-	
-	[loader performRequest:request];
-	
-	return requestIdentifier;
+    return [self getRawRequest:[NSString stringWithFormat:[RemoteConnector server], @"browse/boardgame/top100.cache.html"] 
+                        target:self 
+                      selector:@selector(loadedTop100:)];
 }
 
 -(void) loadedTop100:(NSNotification*) sender
@@ -60,37 +37,16 @@ static NSString * top100Key = @"top100Key";
 
 #pragma mark Game Ratings
 
-//
-static NSString * getGameRatings = @"getGameRatingsKey";
 
 -(NSString*) getGameRatings:(NSString*) gameId :(int) pageNumber
 {
-    NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@_%d", getGameRatings, gameId, pageNumber];
-	
-	if([flagDictionary valueForKey:requestIdentifier] != nil)
-		return requestIdentifier;
-	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
-	
     NSString* requestString = @"xmlapi2/thing?type=boardgame&id=%@&versions=0&videos=0&stats=0&historical=0&page=%d&pagesize=100&ratingcomments=1";
-	DataLoader* loader = [[DataLoader alloc] init];
-	loader.tag = requestIdentifier;
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(loadedGameRatings:) 
-												 name:Notifications_DataLoader 
-											   object:loader];
 	
-	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:
-                                    [NSURL URLWithString: 
-                                     [NSString stringWithFormat:
-                                      [RemoteConnector server], 
-                                      [NSString stringWithFormat:requestString, gameId, pageNumber]]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-													   timeoutInterval:timeout];
-	
-	[loader performRequest:request];
-	
-	return requestIdentifier;
-    
+    return [self getRawRequest:[NSString stringWithFormat:
+                                [RemoteConnector server], 
+                                [NSString stringWithFormat:requestString, gameId, pageNumber]]
+                        target:self 
+                      selector:@selector(loadedGameRatings:)];
 }
 
 
@@ -113,36 +69,15 @@ static NSString * getGameRatings = @"getGameRatingsKey";
 
 #pragma mark GameDetails
 
-static NSString * getGameDetailsKey = @"getGameDetailsKey";
-
 -(NSString*) getGameDetails:(NSString*) gameId
 {
-    NSString* requestIdentifier = [NSString stringWithFormat:@"%@_%@", getGameDetailsKey, gameId];
-	
-	if([flagDictionary valueForKey:requestIdentifier] != nil)
-		return requestIdentifier;
-	[flagDictionary setValue:[NSNumber numberWithBool:YES] forKey:requestIdentifier];
-	
     NSString* requestString = @"xmlapi2/thing?type=boardgame&id=%@&versions=0&videos=1&stats=1&historical=0&comments=0&ratingcomments=0";
-	DataLoader* loader = [[DataLoader alloc] init];
-	loader.tag = requestIdentifier;
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(loadedGameDetails:) 
-												 name:Notifications_DataLoader 
-											   object:loader];
 	
-	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:
-                                    [NSURL URLWithString: 
-                                     [NSString stringWithFormat:
-                                      [RemoteConnector server], 
-                                      [NSString stringWithFormat:requestString, gameId]]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-													   timeoutInterval:timeout];
-	
-	[loader performRequest:request];
-	
-	return requestIdentifier;
-    
+    return [self getRawRequest:[NSString stringWithFormat:
+                                [RemoteConnector server], 
+                                [NSString stringWithFormat:requestString, gameId]] 
+                        target:self 
+                      selector:@selector(loadedGameDetails:)];
 }
 
 

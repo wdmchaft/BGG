@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class BGGBoardGame;
+@class BGGBoardGame,BGGPerson;
 
 @interface BGGXMLScraper : NSObject {
     
@@ -16,5 +16,9 @@
 -(BGGBoardGame*) getGameDetails:(NSData *)document;
 
 -(NSArray*) getGameRatings:(NSData *)document;
+
+-(BGGPerson*) getUserDetails:(NSData *)document;
+
+-(NSArray*) getUserCollection:(NSData*) document;
 
 @end
