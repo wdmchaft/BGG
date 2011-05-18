@@ -17,6 +17,7 @@
 		493834BA137C570900906C94 /* BoardGameGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493834B9137C570900906C94 /* BoardGameGenericCell.m */; };
 		493834BE137D7A4A00906C94 /* BoardGameForumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493834BC137D7A4900906C94 /* BoardGameForumsController.m */; };
 		493834BF137D7A4A00906C94 /* BoardGameForumsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */; };
+		49542BB413806F9F003DDFD0 /* BoardGameCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49542BB313806F9F003DDFD0 /* BoardGameCommentCell.m */; };
 		4982336E137DA9DA00AC63C6 /* BoardGameDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */; };
 		49823371137DB46700AC63C6 /* BoardGameMechanicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49823370137DB46700AC63C6 /* BoardGameMechanicsCell.m */; };
 		49823377137DCB6500AC63C6 /* BoardGameCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49823376137DCB6400AC63C6 /* BoardGameCategoriesCell.m */; };
@@ -169,6 +170,8 @@
 		493834BB137D7A4900906C94 /* BoardGameForumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameForumsController.h; sourceTree = "<group>"; };
 		493834BC137D7A4900906C94 /* BoardGameForumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameForumsController.m; sourceTree = "<group>"; };
 		493834BD137D7A4A00906C94 /* BoardGameForumsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardGameForumsController.xib; sourceTree = "<group>"; };
+		49542BB213806F9F003DDFD0 /* BoardGameCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameCommentCell.h; sourceTree = "<group>"; };
+		49542BB313806F9F003DDFD0 /* BoardGameCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameCommentCell.m; sourceTree = "<group>"; };
 		4982336C137DA9DA00AC63C6 /* BoardGameDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameDescriptionCell.h; sourceTree = "<group>"; };
 		4982336D137DA9DA00AC63C6 /* BoardGameDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameDescriptionCell.m; sourceTree = "<group>"; };
 		4982336F137DB46700AC63C6 /* BoardGameMechanicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameMechanicsCell.h; sourceTree = "<group>"; };
@@ -391,6 +394,8 @@
 				492B3A4B137D8AE3000207DE /* BoardGameCommentsController.xib */,
 				492B3A49137D8AE3000207DE /* BoardGameCommentsController.h */,
 				492B3A4A137D8AE3000207DE /* BoardGameCommentsController.m */,
+				49542BB213806F9F003DDFD0 /* BoardGameCommentCell.h */,
+				49542BB313806F9F003DDFD0 /* BoardGameCommentCell.m */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -1037,6 +1042,7 @@
 				5F0050E61382CCB4007CE0AD /* PersonRemoteConnector.m in Sources */,
 				5F0050E91382CE8D007CE0AD /* BGGPerson.m in Sources */,
 				5F0050F21382F17F007CE0AD /* DBPerson.m in Sources */,
+				49542BB413806F9F003DDFD0 /* BoardGameCommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

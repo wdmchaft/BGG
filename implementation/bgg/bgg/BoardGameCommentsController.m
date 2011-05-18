@@ -7,18 +7,29 @@
 //
 
 #import "BoardGameCommentsController.h"
-
+#import "BGGBoardGameRating.h"
+#import "BoardGameCommentCell.h"
 
 @implementation BoardGameCommentsController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [self initWithNibName:@"BoardGameCommentsController" bundle:nil];
+    
+	return self;
+}
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
+
 
 - (void)dealloc
 {
@@ -44,6 +55,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     [self setTitle:@"Ratings"];
 }
 
@@ -88,24 +100,48 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(_ratings != nil)
-        return [_ratings count];
-    return 0;
+    if(section == 0){
+        if(_ratings != nil)
+            return [_ratings count];
+        return 0;
+    }else{
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if(indexPath.section == 0){
+        CellIdentifier = @"CommentCell";
+        
+        BoardGameCommentCell *cell = (BoardGameCommentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[BoardGameCommentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
+        BGGBoardGameRating* rating = [_ratings objectAtIndex:[indexPath indexAtPosition:1]];
+        
+        [cell setRating:rating];
+        
+        return cell;
+    }else {
+        return NULL;
     }
-    
-    // Configure the cell...
-    
-    return cell;
 }
+
+#pragma mark - Table Delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    BGGBoardGameRating* rating = [_ratings objectAtIndex:[indexPath indexAtPosition:1]];
+
+    CGFloat cellHeight = [BoardGameCommentCell calculateCellHeight:rating]; 
+    
+    return cellHeight;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

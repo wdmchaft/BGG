@@ -272,6 +272,7 @@
     return cell;
 }
 
+#pragma mark - Table view delegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -288,8 +289,6 @@
     }
     return NULL;
 }
-
-#pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -379,8 +378,6 @@
                                                  name:[[[Globals sharedGlobals] remoteConnector] getGameRatings:_boardGame.gameId :1]
                                                object:nil];
 }
-
-#pragma mark Private
 
 -(void) gotRatingsForGame:(NSNotification*) notification
 {

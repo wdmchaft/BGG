@@ -27,18 +27,17 @@
     return self;
 }
 
--(void) setBoardGame:(DBBoardGame*) boardGame
+-(void) drawStars:(DBBoardGame*) boardGame
 {
-    _boardGame = [boardGame retain];
-    
     //TODO: half stars. value type of rating should be corrected?
     int i;
     UIImageView *star;
+    
     for (i=0; i< [boardGame.rating intValue]; i++) {
-         
+        
         star = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star-full.png"]] autorelease];        
         star.frame = CGRectMake(CELL_MARGIN + (22*i), CELL_MARGIN, STAR_SIZE, STAR_SIZE);
-
+        
         [self.contentView addSubview:star];
     }
     for( ; i<10 ; i++){
@@ -49,6 +48,14 @@
         [self.contentView addSubview:star];
     }
 
+}
+
+-(void) setBoardGame:(DBBoardGame*) boardGame
+{
+    _boardGame = [boardGame retain];
+    
+    [self drawStars:boardGame];
+    
     [[self textLabel] setText:[NSString stringWithFormat:@"%.2f/10 (%@ votes)", 
                                [boardGame.rating doubleValue],
                                [boardGame.ratingCount stringValue]]];
