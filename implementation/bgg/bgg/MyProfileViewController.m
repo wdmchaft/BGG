@@ -29,18 +29,12 @@
 @implementation MyProfileViewController
 
 @synthesize boardGames = _boardGames;
+@synthesize currentProfile;
 
 -(id) init
 {
 	self = [self initWithNibName:@"BoardGameListController" bundle:nil];
 	
-    
-    ICAssert([[Globals sharedGlobals] bggUsername] != nil, @"Need a profile name");
-    
-    currentProfile = [[[[Globals sharedGlobals] dataAccess] getCreatePersonByUsername:[[Globals sharedGlobals] bggUsername]] retain];
-    
-    [self setTitle:currentProfile.username];
-    
     currentStatus = MyProfileOwnedGames;
     
     return self;
@@ -76,6 +70,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    ICAssert(currentProfile != nil, @"Need a profile name");
+    
+    [self setTitle:currentProfile.username];
     
     [self.tableView setRowHeight:76.0];
     [self.tableView setBackgroundColor:[UIColor clearColor]];

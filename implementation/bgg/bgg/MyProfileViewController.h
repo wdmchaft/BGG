@@ -27,4 +27,6 @@ typedef enum
 
 @property (nonatomic, retain) NSMutableArray* boardGames;
 
+@property (nonatomic, retain) DBPerson* currentProfile;
+
 @end

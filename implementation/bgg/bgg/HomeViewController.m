@@ -174,7 +174,8 @@
 -(void) navigatToMyProfile
 {
     MyProfileViewController* controller = [[[MyProfileViewController alloc] init] autorelease];
-    
+    [controller setCurrentProfile: [[[Globals sharedGlobals] dataAccess] getCreatePersonByUsername:[[Globals sharedGlobals] bggUsername]]];
+
 	[[[Globals sharedGlobals] breadcrumb] addViewController:controller animated:YES];
 }
 @end
